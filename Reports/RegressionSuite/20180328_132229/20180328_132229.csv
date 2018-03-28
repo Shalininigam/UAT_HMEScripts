@@ -1,0 +1,57 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+RegressionSuite,Chrome 65.0.3325.181,,2018-03-28 13:22:31,2018-03-28 13:23:30,58.812s,FAILED
+,,,,,,
+Test Cases/AddAccount,Chrome 65.0.3325.181,,2018-03-28 13:22:32,2018-03-28 13:23:06,34.187s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 65.0.3325.181,,2018-03-28 13:22:32,2018-03-28 13:22:41,8.932s,PASSED
+projectSpecific.Reusability.login,Chrome 65.0.3325.181,User login to Application,2018-03-28 13:22:41,2018-03-28 13:22:43,2.595s,PASSED
+uiaction.CommonUIActions.click,Chrome 65.0.3325.181,Click on Accounts,2018-03-28 13:22:43,2018-03-28 13:22:49,5.421s,PASSED
+click,Chrome 65.0.3325.181,Click on Add an Account,2018-03-28 13:22:49,2018-03-28 13:22:49,0.546s,PASSED
+setText,Chrome 65.0.3325.181,Enter First Name,2018-03-28 13:22:49,2018-03-28 13:22:50,0.146s,PASSED
+setText,Chrome 65.0.3325.181,Enter Last Name,2018-03-28 13:22:50,2018-03-28 13:22:50,0.128s,PASSED
+setText,Chrome 65.0.3325.181,Enter Avante Number,2018-03-28 13:22:50,2018-03-28 13:22:50,0.129s,PASSED
+setText,Chrome 65.0.3325.181,Enter Company name,2018-03-28 13:22:50,2018-03-28 13:22:50,0.123s,PASSED
+click,Chrome 65.0.3325.181,Select Company Country,2018-03-28 13:22:50,2018-03-28 13:22:50,0.095s,PASSED
+scrollToElement,Chrome 65.0.3325.181,Scroll to WebElement,2018-03-28 13:22:50,2018-03-28 13:22:50,0.041s,PASSED
+click,Chrome 65.0.3325.181,Click on Country,2018-03-28 13:22:50,2018-03-28 13:22:50,0.049s,PASSED
+click,Chrome 65.0.3325.181,Click on Grid,2018-03-28 13:22:50,2018-03-28 13:22:50,0.066s,PASSED
+click,Chrome 65.0.3325.181,Click & set text into Company Region field,2018-03-28 13:22:50,2018-03-28 13:22:50,0.070s,PASSED
+setText,Chrome 65.0.3325.181,,2018-03-28 13:22:50,2018-03-28 13:22:50,0.123s,PASSED
+click,Chrome 65.0.3325.181,Distributor,2018-03-28 13:22:50,2018-03-28 13:22:50,0.076s,PASSED
+click,Chrome 65.0.3325.181,,2018-03-28 13:22:50,2018-03-28 13:22:51,0.050s,PASSED
+click,Chrome 65.0.3325.181,Company Type,2018-03-28 13:22:51,2018-03-28 13:22:51,0.055s,PASSED
+click,Chrome 65.0.3325.181,Corporate Brand,2018-03-28 13:22:51,2018-03-28 13:22:51,0.075s,PASSED
+click,Chrome 65.0.3325.181,,2018-03-28 13:22:51,2018-03-28 13:22:51,0.050s,PASSED
+click,Chrome 65.0.3325.181,,2018-03-28 13:22:51,2018-03-28 13:22:51,0.032s,PASSED
+click,Chrome 65.0.3325.181,Email address,2018-03-28 13:22:51,2018-03-28 13:22:51,0.053s,PASSED
+setText,Chrome 65.0.3325.181,,2018-03-28 13:22:51,2018-03-28 13:22:51,0.140s,PASSED
+click,Chrome 65.0.3325.181,Confirm Email address,2018-03-28 13:22:51,2018-03-28 13:22:51,0.058s,PASSED
+setText,Chrome 65.0.3325.181,,2018-03-28 13:22:51,2018-03-28 13:22:51,0.139s,PASSED
+click,Chrome 65.0.3325.181,Set Start Date,2018-03-28 13:22:51,2018-03-28 13:22:51,0.081s,PASSED
+click,Chrome 65.0.3325.181,,2018-03-28 13:22:51,2018-03-28 13:22:51,0.099s,PASSED
+delay,Chrome 65.0.3325.181,,2018-03-28 13:22:51,2018-03-28 13:22:54,3.015s,PASSED
+click,Chrome 65.0.3325.181,Set End Date,2018-03-28 13:22:54,2018-03-28 13:22:54,0.117s,PASSED
+click,Chrome 65.0.3325.181,,2018-03-28 13:22:54,2018-03-28 13:22:55,0.102s,PASSED
+click,Chrome 65.0.3325.181,,2018-03-28 13:22:55,2018-03-28 13:22:55,0.059s,PASSED
+delay,Chrome 65.0.3325.181,,2018-03-28 13:22:55,2018-03-28 13:22:58,3.002s,PASSED
+click,Chrome 65.0.3325.181,Set Subscription Type,2018-03-28 13:22:58,2018-03-28 13:22:58,0.101s,PASSED
+delay,Chrome 65.0.3325.181,,2018-03-28 13:22:58,2018-03-28 13:23:01,3.000s,PASSED
+click,Chrome 65.0.3325.181,,2018-03-28 13:23:01,2018-03-28 13:23:02,0.824s,PASSED
+delay,Chrome 65.0.3325.181,,2018-03-28 13:23:02,2018-03-28 13:23:05,3.002s,PASSED
+verifyElementText,Chrome 65.0.3325.181,verify create accounts successful,2018-03-28 13:23:05,2018-03-28 13:23:05,0.784s,FAILED
+Start listener action : sampleAfterTestCase,Chrome 65.0.3325.181,,2018-03-28 13:23:05,2018-03-28 13:23:06,0.649s,PASSED
+,,,,,,
+Test Cases/verifyUserAccount,Chrome 65.0.3325.181,,2018-03-28 13:23:06,2018-03-28 13:23:30,24.210s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 65.0.3325.181,,2018-03-28 13:23:06,2018-03-28 13:23:14,8.007s,PASSED
+projectSpecific.Reusability.login,Chrome 65.0.3325.181,User login to Application,2018-03-28 13:23:14,2018-03-28 13:23:17,2.394s,PASSED
+delay,Chrome 65.0.3325.181,,2018-03-28 13:23:17,2018-03-28 13:23:22,5.000s,PASSED
+uiaction.CommonUIActions.click,Chrome 65.0.3325.181,Click on Users,2018-03-28 13:23:22,2018-03-28 13:23:22,0.972s,PASSED
+uiaction.CommonUIActions.enter,Chrome 65.0.3325.181,Search for Users,2018-03-28 13:23:22,2018-03-28 13:23:23,0.122s,PASSED
+uiaction.CommonUIActions.click,Chrome 65.0.3325.181,,2018-03-28 13:23:23,2018-03-28 13:23:23,0.507s,PASSED
+delay,Chrome 65.0.3325.181,,2018-03-28 13:23:23,2018-03-28 13:23:28,5.001s,PASSED
+uiaction.CommonUIActions.click,Chrome 65.0.3325.181,Click on View/Edit User,2018-03-28 13:23:28,2018-03-28 13:23:29,1.330s,PASSED
+"Statement - s1 = com.kms.katalon.core.testdata.TestDataFactory.findTestData(AdminCredentials).getValue(""EmailAddress"", 1)",Chrome 65.0.3325.181,verify User details,2018-03-28 13:23:29,2018-03-28 13:23:29,0.032s,PASSED
+Statement - out.println(s1),Chrome 65.0.3325.181,,2018-03-28 13:23:29,2018-03-28 13:23:29,0.011s,PASSED
+Statement - s2 = CustomKeywords.uiaction.CommonUIActions.getText(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(UsersPage/Verifyemail)),Chrome 65.0.3325.181,,2018-03-28 13:23:29,2018-03-28 13:23:30,0.036s,PASSED
+"Statement - execFlag = com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.verifyMatch(s1, s2, false)",Chrome 65.0.3325.181,,2018-03-28 13:23:30,2018-03-28 13:23:30,0.007s,PASSED
+Statement - If (execFlag),Chrome 65.0.3325.181,,2018-03-28 13:23:30,2018-03-28 13:23:30,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 65.0.3325.181,,2018-03-28 13:23:30,2018-03-28 13:23:30,0.666s,PASSED

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <tag></tag>
+   <GlobalVariableEntity>
+      <description>Super Admin URL</description>
+      <initValue>'http://uatadmin.hme.com/hmecloud/?pg=Login'</initValue>
+      <name>AppURL</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>

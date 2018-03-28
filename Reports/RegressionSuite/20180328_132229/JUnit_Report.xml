@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="RegressionSuite" time="58" tests="1" failures="1" errors="0">
+   <testsuite name="RegressionSuite" tests="1" failures="1" errors="0" time="58" timestamp="2018-03-28 13:22:31" hostname="shalinin - NIBC2129.nousinfo.com" id="Test Suites/RegressionSuite">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="C:\\Users\\shalinin\\Katalon Studio\\HME\\Reports\\RegressionSuite\\20180328_132229"/>
+         <property name="logFiles" value="C:\\Users\\shalinin\\Katalon Studio\\HME\\Reports\\RegressionSuite\\20180328_132229\\execution0.log"/>
+         <property name="attachments" value="C:\\Users\\shalinin\\Katalon Studio\\HME\\Reports\\RegressionSuite\\20180328_132229\\1522223585144.png, C:\\Users\\shalinin\\Katalon Studio\\HME\\Reports\\RegressionSuite\\20180328_132229\\1522223585530.png"/>
+         <property name="hostName" value="shalinin - NIBC2129.nousinfo.com"/>
+         <property name="os" value="Windows 7 64bit"/>
+         <property name="katalonVersion" value="5.3.1.1"/>
+         <property name="browser" value="Chrome 65.0.3325.181"/>
+         <property name="hostAddress" value="192.168.24.72"/>
+         <property name="sessionId" value="7be9c739f4bc08e219a5501ec42734e7"/>
+         <property name="seleniumVersion" value="3.7.1"/>
+         <property name="proxyInformation" value="ProxyInformation{proxyOption=NO_PROXY, proxyServerType=HTTP, password=, proxyServerAddress=, proxyServerPort=0}"/>
+         <property name="platform" value="Windows 7"/>
+      </properties>
+      <testcase name="Test Cases/AddAccount" classname="Test Cases/AddAccount" status="FAILED">
+         <failure type="FAILED" message="Verify element text of test object 'Object Repository/Verification/AccountsSuccessfulMsg' FAILED. (Root cause: Actual text 'Create an Account' and expected text 'User Sign Up Successful' of test object 'Object Repository/Verification/AccountsSuccessfulMsg' are NOT matched.)"/>
+         <system-out><![CDATA[2018-03-28 13:22:32 - [TEST_CASE][FAILED] - Test Cases/AddAccount: Test Cases/AddAccount FAILED because (of) Verify element text of test object 'Object Repository/Verification/AccountsSuccessfulMsg' FAILED. (Root cause: Actual text 'Create an Account' and expected text 'User Sign Up Successful' of test object 'Object Repository/Verification/AccountsSuccessfulMsg' are NOT matched.)
+
+2018-03-28 13:22:32 - [TEST_STEP][PASSED] - Start listener action : sampleBeforeTestCase: Current window maximized
+
+2018-03-28 13:22:32 - [TEST_STEP][PASSED] - openBrowser: Browser is opened with url: ''
+
+2018-03-28 13:22:35 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+2018-03-28 13:22:35 - [TEST_STEP][PASSED] - navigateToUrl: Navigate to 'http://uatadmin.hme.com/hmecloud/?pg=Login' successfully
+
+2018-03-28 13:22:40 - [MESSAGE][PASSED] - Navigate to 'http://uatadmin.hme.com/hmecloud/?pg=Login' successfully
+
+2018-03-28 13:22:40 - [TEST_STEP][PASSED] - maximizeWindow: Current window maximized
+
+2018-03-28 13:22:41 - [MESSAGE][PASSED] - Current window maximized
+
+2018-03-28 13:22:41 - [TEST_STEP][PASSED] - projectSpecific.Reusability.login: projectSpecific.Reusability.login is PASSED
+
+2018-03-28 13:22:42 - [MESSAGE][PASSED] - Text 'nous-abhradipr' is set on object 'Object Repository/LoginPage/Username'
+
+2018-03-28 13:22:42 - [MESSAGE][PASSED] - Text '6Qt*qmL88' is set on object 'Object Repository/LoginPage/Password'
+
+2018-03-28 13:22:43 - [MESSAGE][PASSED] - Object: 'Object Repository/LoginPage/Login' is clicked on
+
+2018-03-28 13:22:43 - [MESSAGE][PASSED] - projectSpecific.Reusability.login is PASSED
+
+2018-03-28 13:22:43 - [TEST_STEP][PASSED] - uiaction.CommonUIActions.click: uiaction.CommonUIActions.click is PASSED
+
+2018-03-28 13:22:49 - [MESSAGE][PASSED] - uiaction.CommonUIActions.click is PASSED
+
+2018-03-28 13:22:49 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/AddanAccount' is clicked on
+
+2018-03-28 13:22:49 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/AddanAccount' is clicked on
+
+2018-03-28 13:22:49 - [TEST_STEP][PASSED] - setText: Text 'Nous' is set on object 'Object Repository/Accounts/FirstName'
+
+2018-03-28 13:22:50 - [MESSAGE][PASSED] - Text 'Nous' is set on object 'Object Repository/Accounts/FirstName'
+
+2018-03-28 13:22:50 - [TEST_STEP][PASSED] - setText: Text 'Info' is set on object 'Object Repository/Accounts/LastName'
+
+2018-03-28 13:22:50 - [MESSAGE][PASSED] - Text 'Info' is set on object 'Object Repository/Accounts/LastName'
+
+2018-03-28 13:22:50 - [TEST_STEP][PASSED] - setText: Text '1234' is set on object 'Object Repository/Accounts/AvanteNumber'
+
+2018-03-28 13:22:50 - [MESSAGE][PASSED] - Text '1234' is set on object 'Object Repository/Accounts/AvanteNumber'
+
+2018-03-28 13:22:50 - [TEST_STEP][PASSED] - setText: Text 'Nous' is set on object 'Object Repository/Accounts/CompanyName'
+
+2018-03-28 13:22:50 - [MESSAGE][PASSED] - Text 'Nous' is set on object 'Object Repository/Accounts/CompanyName'
+
+2018-03-28 13:22:50 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/companyCountry' is clicked on
+
+2018-03-28 13:22:50 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/companyCountry' is clicked on
+
+2018-03-28 13:22:50 - [TEST_STEP][PASSED] - scrollToElement: Scroll to object 'Object Repository/Accounts/scrollToIndia' successfully
+
+2018-03-28 13:22:50 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Accounts/scrollToIndia' successfully
+
+2018-03-28 13:22:50 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/scrollToIndia' is clicked on
+
+2018-03-28 13:22:50 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/scrollToIndia' is clicked on
+
+2018-03-28 13:22:50 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/accountsGrid' is clicked on
+
+2018-03-28 13:22:50 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/accountsGrid' is clicked on
+
+2018-03-28 13:22:50 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/companyRegion' is clicked on
+
+2018-03-28 13:22:50 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/companyRegion' is clicked on
+
+2018-03-28 13:22:50 - [TEST_STEP][PASSED] - setText: Text 'Bangalore' is set on object 'Object Repository/Accounts/companyRegion'
+
+2018-03-28 13:22:50 - [MESSAGE][PASSED] - Text 'Bangalore' is set on object 'Object Repository/Accounts/companyRegion'
+
+2018-03-28 13:22:50 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/distributor' is clicked on
+
+2018-03-28 13:22:50 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/distributor' is clicked on
+
+2018-03-28 13:22:50 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/clickDistributorDD' is clicked on
+
+2018-03-28 13:22:51 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/clickDistributorDD' is clicked on
+
+2018-03-28 13:22:51 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/companyType' is clicked on
+
+2018-03-28 13:22:51 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/companyType' is clicked on
+
+2018-03-28 13:22:51 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/corporateBrand' is clicked on
+
+2018-03-28 13:22:51 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/corporateBrand' is clicked on
+
+2018-03-28 13:22:51 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/brandDD' is clicked on
+
+2018-03-28 13:22:51 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/brandDD' is clicked on
+
+2018-03-28 13:22:51 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/accountsGrid' is clicked on
+
+2018-03-28 13:22:51 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/accountsGrid' is clicked on
+
+2018-03-28 13:22:51 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/Email' is clicked on
+
+2018-03-28 13:22:51 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/Email' is clicked on
+
+2018-03-28 13:22:51 - [TEST_STEP][PASSED] - setText: Text 'test8@gmail.com' is set on object 'Object Repository/Accounts/Email'
+
+2018-03-28 13:22:51 - [MESSAGE][PASSED] - Text 'test8@gmail.com' is set on object 'Object Repository/Accounts/Email'
+
+2018-03-28 13:22:51 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/Email2' is clicked on
+
+2018-03-28 13:22:51 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/Email2' is clicked on
+
+2018-03-28 13:22:51 - [TEST_STEP][PASSED] - setText: Text 'test8@gmail.com' is set on object 'Object Repository/Accounts/Email2'
+
+2018-03-28 13:22:51 - [MESSAGE][PASSED] - Text 'test8@gmail.com' is set on object 'Object Repository/Accounts/Email2'
+
+2018-03-28 13:22:51 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/SubscriptionStartDate' is clicked on
+
+2018-03-28 13:22:51 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/SubscriptionStartDate' is clicked on
+
+2018-03-28 13:22:51 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/dateNumber' is clicked on
+
+2018-03-28 13:22:51 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/dateNumber' is clicked on
+
+2018-03-28 13:22:51 - [TEST_STEP][PASSED] - delay: Delayed 3 second(s)
+
+2018-03-28 13:22:54 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+2018-03-28 13:22:54 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/SubscriptionEndDate' is clicked on
+
+2018-03-28 13:22:54 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/SubscriptionEndDate' is clicked on
+
+2018-03-28 13:22:54 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/forwardSelector' is clicked on
+
+2018-03-28 13:22:55 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/forwardSelector' is clicked on
+
+2018-03-28 13:22:55 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/dateNumber' is clicked on
+
+2018-03-28 13:22:55 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/dateNumber' is clicked on
+
+2018-03-28 13:22:55 - [TEST_STEP][PASSED] - delay: Delayed 3 second(s)
+
+2018-03-28 13:22:58 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+2018-03-28 13:22:58 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/SubscriptionType' is clicked on
+
+2018-03-28 13:22:58 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/SubscriptionType' is clicked on
+
+2018-03-28 13:22:58 - [TEST_STEP][PASSED] - delay: Delayed 3 second(s)
+
+2018-03-28 13:23:01 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+2018-03-28 13:23:01 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/Accounts/createAccount' is clicked on
+
+2018-03-28 13:23:02 - [MESSAGE][PASSED] - Object: 'Object Repository/Accounts/createAccount' is clicked on
+
+2018-03-28 13:23:02 - [TEST_STEP][PASSED] - delay: Delayed 3 second(s)
+
+2018-03-28 13:23:05 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+2018-03-28 13:23:05 - [TEST_STEP][FAILED] - verifyElementText: Verify element text of test object 'Object Repository/Verification/AccountsSuccessfulMsg' FAILED. (Root cause: Actual text 'Create an Account' and expected text 'User Sign Up Successful' of test object 'Object Repository/Verification/AccountsSuccessfulMsg' are NOT matched.)
+
+2018-03-28 13:23:05 - [MESSAGE][FAILED] - Actual text 'Create an Account' and expected text 'User Sign Up Successful' of test object 'Object Repository/Verification/AccountsSuccessfulMsg' are NOT matched.
+[[ATTACHMENT|C:\\Users\\shalinin\\Katalon Studio\\HME\\Reports\\RegressionSuite\\20180328_132229\\1522223585144.png]]
+
+2018-03-28 13:23:05 - [MESSAGE][FAILED] - Verify element text of test object 'Object Repository/Verification/AccountsSuccessfulMsg' FAILED. (Root cause: Actual text 'Create an Account' and expected text 'User Sign Up Successful' of test object 'Object Repository/Verification/AccountsSuccessfulMsg' are NOT matched.)
+[[ATTACHMENT|C:\\Users\\shalinin\\Katalon Studio\\HME\\Reports\\RegressionSuite\\20180328_132229\\1522223585530.png]]
+
+2018-03-28 13:23:05 - [TEST_STEP][PASSED] - Start listener action : sampleAfterTestCase: Browser is closed
+
+2018-03-28 13:23:05 - [TEST_STEP][PASSED] - Statement - println(testCaseContext.getTestCaseId()): null
+
+2018-03-28 13:23:05 - [TEST_STEP][PASSED] - Statement - println(testCaseContext.getTestCaseStatus()): null
+
+2018-03-28 13:23:05 - [TEST_STEP][PASSED] - closeBrowser: Browser is closed
+
+2018-03-28 13:23:06 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[2018-03-28 13:22:32 - [TEST_CASE][FAILED] - Test Cases/AddAccount: Test Cases/AddAccount FAILED because (of) Verify element text of test object 'Object Repository/Verification/AccountsSuccessfulMsg' FAILED. (Root cause: Actual text 'Create an Account' and expected text 'User Sign Up Successful' of test object 'Object Repository/Verification/AccountsSuccessfulMsg' are NOT matched.)]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/verifyUserAccount" classname="Test Cases/verifyUserAccount" status="PASSED">
+         <system-out><![CDATA[2018-03-28 13:23:06 - [TEST_CASE][PASSED] - Test Cases/verifyUserAccount: Browser is closed
+
+2018-03-28 13:23:06 - [TEST_STEP][PASSED] - Start listener action : sampleBeforeTestCase: Current window maximized
+
+2018-03-28 13:23:06 - [TEST_STEP][PASSED] - openBrowser: Browser is opened with url: ''
+
+2018-03-28 13:23:08 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+2018-03-28 13:23:08 - [TEST_STEP][PASSED] - navigateToUrl: Navigate to 'http://uatadmin.hme.com/hmecloud/?pg=Login' successfully
+
+2018-03-28 13:23:13 - [MESSAGE][PASSED] - Navigate to 'http://uatadmin.hme.com/hmecloud/?pg=Login' successfully
+
+2018-03-28 13:23:13 - [TEST_STEP][PASSED] - maximizeWindow: Current window maximized
+
+2018-03-28 13:23:14 - [MESSAGE][PASSED] - Current window maximized
+
+2018-03-28 13:23:14 - [TEST_STEP][PASSED] - projectSpecific.Reusability.login: projectSpecific.Reusability.login is PASSED
+
+2018-03-28 13:23:14 - [MESSAGE][PASSED] - Text 'nous-abhradipr' is set on object 'Object Repository/LoginPage/Username'
+
+2018-03-28 13:23:14 - [MESSAGE][PASSED] - Text '6Qt*qmL88' is set on object 'Object Repository/LoginPage/Password'
+
+2018-03-28 13:23:17 - [MESSAGE][PASSED] - Object: 'Object Repository/LoginPage/Login' is clicked on
+
+2018-03-28 13:23:17 - [MESSAGE][PASSED] - projectSpecific.Reusability.login is PASSED
+
+2018-03-28 13:23:17 - [TEST_STEP][PASSED] - delay: Delayed 5 second(s)
+
+2018-03-28 13:23:22 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+2018-03-28 13:23:22 - [TEST_STEP][PASSED] - uiaction.CommonUIActions.click: uiaction.CommonUIActions.click is PASSED
+
+2018-03-28 13:23:22 - [MESSAGE][PASSED] - uiaction.CommonUIActions.click is PASSED
+
+2018-03-28 13:23:22 - [TEST_STEP][PASSED] - uiaction.CommonUIActions.enter: uiaction.CommonUIActions.enter is PASSED
+
+2018-03-28 13:23:23 - [MESSAGE][PASSED] - uiaction.CommonUIActions.enter is PASSED
+
+2018-03-28 13:23:23 - [TEST_STEP][PASSED] - uiaction.CommonUIActions.click: uiaction.CommonUIActions.click is PASSED
+
+2018-03-28 13:23:23 - [MESSAGE][PASSED] - uiaction.CommonUIActions.click is PASSED
+
+2018-03-28 13:23:23 - [TEST_STEP][PASSED] - delay: Delayed 5 second(s)
+
+2018-03-28 13:23:28 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+2018-03-28 13:23:28 - [TEST_STEP][PASSED] - uiaction.CommonUIActions.click: uiaction.CommonUIActions.click is PASSED
+
+2018-03-28 13:23:29 - [MESSAGE][PASSED] - uiaction.CommonUIActions.click is PASSED
+
+2018-03-28 13:23:29 - [TEST_STEP][PASSED] - Statement - s1 = com.kms.katalon.core.testdata.TestDataFactory.findTestData(AdminCredentials).getValue("EmailAddress", 1): Reading excel file with source file 'C:\Users\shalinin\Katalon Studio\HME\Data Files\TestData.xlsx' and sheet name 'Sheet1'
+
+2018-03-28 13:23:29 - [TEST_STEP][PASSED] - Statement - out.println(s1): null
+
+2018-03-28 13:23:29 - [TEST_STEP][PASSED] - Statement - s2 = CustomKeywords.uiaction.CommonUIActions.getText(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(UsersPage/Verifyemail)): uiaction.CommonUIActions.getText is PASSED
+
+2018-03-28 13:23:30 - [MESSAGE][PASSED] - uiaction.CommonUIActions.getText is PASSED
+
+2018-03-28 13:23:30 - [TEST_STEP][PASSED] - Statement - execFlag = com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.verifyMatch(s1, s2, false): Actual text 'test8@gmail.com' and expected text 'test8@gmail.com' are matched 
+
+2018-03-28 13:23:30 - [MESSAGE][PASSED] - Actual text 'test8@gmail.com' and expected text 'test8@gmail.com' are matched 
+
+2018-03-28 13:23:30 - [TEST_STEP][PASSED] - Statement - If (execFlag): null
+
+2018-03-28 13:23:30 - [TEST_STEP][PASSED] - Start listener action : sampleAfterTestCase: Browser is closed
+
+2018-03-28 13:23:30 - [TEST_STEP][PASSED] - Statement - println(testCaseContext.getTestCaseId()): null
+
+2018-03-28 13:23:30 - [TEST_STEP][PASSED] - Statement - println(testCaseContext.getTestCaseStatus()): null
+
+2018-03-28 13:23:30 - [TEST_STEP][PASSED] - closeBrowser: Browser is closed
+
+2018-03-28 13:23:30 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2018-03-28 13:22:31 - [TEST_SUITE][FAILED] - RegressionSuite: Test Cases/AddAccount FAILED because (of) Verify element text of test object 'Object Repository/Verification/AccountsSuccessfulMsg' FAILED. (Root cause: Actual text 'Create an Account' and expected text 'User Sign Up Successful' of test object 'Object Repository/Verification/AccountsSuccessfulMsg' are NOT matched.)]]></system-out>
+      <system-err><![CDATA[2018-03-28 13:22:31 - [TEST_SUITE][FAILED] - RegressionSuite: Test Cases/AddAccount FAILED because (of) Verify element text of test object 'Object Repository/Verification/AccountsSuccessfulMsg' FAILED. (Root cause: Actual text 'Create an Account' and expected text 'User Sign Up Successful' of test object 'Object Repository/Verification/AccountsSuccessfulMsg' are NOT matched.)]]></system-err>
+   </testsuite>
+</testsuites>
