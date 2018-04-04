@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportCollectionEntity>
+   <description></description>
+   <name>20180404_151731</name>
+   <tag></tag>
+   <displayName>20180404_151731</displayName>
+   <reportItemDescriptions>
+      <ReportItemDescription>
+         <reportLocation>Reports/RegressionSuite/20180404_151731</reportLocation>
+         <runConfigDescription>
+            <groupName>Web Desktop</groupName>
+            <runConfigurationId>Chrome</runConfigurationId>
+         </runConfigDescription>
+      </ReportItemDescription>
+      <ReportItemDescription>
+         <reportLocation>Reports/RegressionSuite/20180404_151732</reportLocation>
+         <runConfigDescription>
+            <groupName>Web Desktop</groupName>
+            <runConfigurationId>IE</runConfigurationId>
+         </runConfigDescription>
+      </ReportItemDescription>
+   </reportItemDescriptions>
+</ReportCollectionEntity>

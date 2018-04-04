@@ -20,11 +20,11 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 'User login to Application'
-/*WebUI.setText(findTestObject('LoginPage/Username'),findTestData('AdminCredentials').getValue('Username', 1))
-WebUI.setText(findTestObject('LoginPage/Password'),findTestData('AdminCredentials').getValue('Password', 1) )
-WebUI.click(findTestObject('LoginPage/Login'))*/
-CustomKeywords.'projectSpecific.Reusability.login'(findTestData('AdminCredentials').getValue('Username', 1), 
-	findTestData('AdminCredentials').getValue('Password', 1))
+WebUI.navigateToUrl(GlobalVariable.AppURL)
+WebUI.maximizeWindow()
+
+CustomKeywords.'projectSpecific.Reusability.login'(findTestData('AdminCredentials').getValue('Username', 1),
+		findTestData('AdminCredentials').getValue('Password', 1))
 
 
 'Click on Accounts'
@@ -106,7 +106,7 @@ WebUI.delay(3)
 
 'verify create accounts successful'
 WebUI.verifyElementText(findTestObject('Verification/AccountsSuccessfulMsg'),findTestData('AdminCredentials').getValue('VerifySignupMsg', 1))
-
+WebUI.takeScreenshot()
 
 
 

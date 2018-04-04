@@ -7,11 +7,13 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//*[@id=&quot;Content&quot;]/div/div/form/table/tbody/tr[1]/td/input</value>
+         <value>//*[@id=&quot;Content&quot;]/div/div/form/table/tbody/tr[1]/td/input
+
+
+</value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

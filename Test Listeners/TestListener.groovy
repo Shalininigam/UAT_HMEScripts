@@ -30,8 +30,11 @@ class TestListener {
 	@BeforeTestCase
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
 		WebUI.openBrowser('')
-		WebUI.navigateToUrl(GlobalVariable.AppURL)
+		WebUI.navigateToUrl(GlobalVariable.Superuser_url)
 		WebUI.maximizeWindow()
+		
+		/*WebUI.navigateToUrl(GlobalVariable.AppURL)
+		WebUI.maximizeWindow()*/
 	}
 
 	/**
@@ -42,6 +45,7 @@ class TestListener {
 	def sampleAfterTestCase(TestCaseContext testCaseContext) {
 		println testCaseContext.getTestCaseId()
 		println testCaseContext.getTestCaseStatus()
+		
 		WebUI.closeBrowser()
 	}
 

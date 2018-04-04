@@ -64,7 +64,35 @@ public class CommonUIActions {
 			}
 	}
 	
+	/***************************************************************
+	 * Assignment : Get text from list of web elements
+	 * Summary : The purpose of this utility is to get all Gene text from list of web elements.
+	 ***************************************************************/
+	@Keyword
+	def	public ArrayList<String> getListWebElementsTxt(String locator) {
+		
+		ArrayList<String> listWebelementTxt = new ArrayList<String>();
+		try {
 
+			
+				
+				List<WebElement> wes = CreateThreadLocal.getDriver().findElements(By.xpath(locator));
+				for(WebElement we: wes)
+				{
+					listWebelementTxt.add(we.getText());
+				}
+
+		
+			
+				return listWebelementTxt;
+			
+		} catch (Exception ex) {
+		
+			ex.printStackTrace();
+			
+		}
+		
+	}
 
 
 }

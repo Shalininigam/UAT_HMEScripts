@@ -1,0 +1,48 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+RegressionSuite,Chrome 65.0.3325.181,,2018-04-04 15:23:58,2018-04-04 15:24:28,30.409s,PASSED
+,,,,,,
+Test Cases/HME-StoreDetailsPage-09,Chrome 65.0.3325.181,To verify that public admin is able to view store details page,2018-04-04 15:23:58,2018-04-04 15:24:28,29.741s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 65.0.3325.181,,2018-04-04 15:23:58,2018-04-04 15:24:17,18.738s,PASSED
+Statement - TCflag = true,Chrome 65.0.3325.181,,2018-04-04 15:24:17,2018-04-04 15:24:17,0.002s,PASSED
+projectSpecific.Reusability.login,Chrome 65.0.3325.181,User login to Application,2018-04-04 15:24:17,2018-04-04 15:24:22,4.679s,PASSED
+"Statement - str = com.kms.katalon.core.testdata.TestDataFactory.findTestData(AdminCredentials).getValue(""StoreDetails"", 1)",Chrome 65.0.3325.181,,2018-04-04 15:24:22,2018-04-04 15:24:22,0.025s,PASSED
+uiaction.CommonUIActions.click,Chrome 65.0.3325.181,,2018-04-04 15:24:22,2018-04-04 15:24:24,1.893s,PASSED
+verifyElementPresent,Chrome 65.0.3325.181,,2018-04-04 15:24:24,2018-04-04 15:24:24,0.042s,PASSED
+Statement - driver = com.kms.katalon.core.webui.driver.DriverFactory.getWebDriver(),Chrome 65.0.3325.181,,2018-04-04 15:24:24,2018-04-04 15:24:24,0.007s,PASSED
+"Statement - wes = driver.findElements(org.openqa.selenium.By.xpath(""//div[@class='ctable']/table//tr/th""))",Chrome 65.0.3325.181,,2018-04-04 15:24:24,2018-04-04 15:24:24,0.036s,PASSED
+"Statement - ar = ["" "", ""Brand"", ""Store"", ""Store Address"", ""City, State"", ""Leaderboard Groups"", ""System Name"", ""System Version"", ""System Status""]",Chrome 65.0.3325.181,,2018-04-04 15:24:24,2018-04-04 15:24:24,0.000s,PASSED
+Statement - count = 1,Chrome 65.0.3325.181,,2018-04-04 15:24:24,2018-04-04 15:24:24,0.000s,PASSED
+"Statement - For ([i = 1, i < wes.size(), (i++)])",Chrome 65.0.3325.181,,2018-04-04 15:24:24,2018-04-04 15:24:24,0.232s,PASSED
+Statement - If (count == wes.size()),Chrome 65.0.3325.181,,2018-04-04 15:24:24,2018-04-04 15:24:25,0.392s,PASSED
+uiaction.CommonUIActions.click,Chrome 65.0.3325.181,,2018-04-04 15:24:25,2018-04-04 15:24:26,1.139s,PASSED
+verifyElementPresent,Chrome 65.0.3325.181,,2018-04-04 15:24:26,2018-04-04 15:24:26,0.036s,PASSED
+verifyElementPresent,Chrome 65.0.3325.181,,2018-04-04 15:24:26,2018-04-04 15:24:26,0.028s,PASSED
+"Statement - attr = com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.getAttribute(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(StorePage/defaultstoredetsails), ""aria-selected"")",Chrome 65.0.3325.181,,2018-04-04 15:24:26,2018-04-04 15:24:26,0.056s,PASSED
+Statement - If (attr),Chrome 65.0.3325.181,,2018-04-04 15:24:26,2018-04-04 15:24:26,0.017s,PASSED
+"Statement - storeArray = str.split("","")",Chrome 65.0.3325.181,,2018-04-04 15:24:26,2018-04-04 15:24:26,0.003s,PASSED
+Statement - storeList = new java.util.ArrayList(java.util.Arrays.asList(storeArray)),Chrome 65.0.3325.181,,2018-04-04 15:24:26,2018-04-04 15:24:26,0.020s,PASSED
+Statement - storeList.unique(),Chrome 65.0.3325.181,,2018-04-04 15:24:26,2018-04-04 15:24:26,0.002s,PASSED
+Statement - out.println(storeList),Chrome 65.0.3325.181,,2018-04-04 15:24:26,2018-04-04 15:24:26,0.001s,PASSED
+"Statement - wes1 = driver.findElements(org.openqa.selenium.By.xpath(""//form[@name='store_submit']/table/tbody/tr/th""))",Chrome 65.0.3325.181,,2018-04-04 15:24:26,2018-04-04 15:24:26,0.036s,PASSED
+Statement - actualList = new java.util.ArrayList(),Chrome 65.0.3325.181,,2018-04-04 15:24:26,2018-04-04 15:24:26,0.001s,PASSED
+"Statement - For ([i = 0, i < wes1.size(), (i++)])",Chrome 65.0.3325.181,,2018-04-04 15:24:26,2018-04-04 15:24:27,0.358s,PASSED
+Statement - out.println(actualList),Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:27,0.000s,PASSED
+Statement - execFlag1 = true,Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:27,0.000s,PASSED
+"Statement - For ([j = 0, j < actualList.size(), (j++)])",Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:27,0.017s,PASSED
+Statement - If (execFlag1),Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:27,0.001s,PASSED
+Statement - editfield = com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.clearText(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(StorePage/storeName)),Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:27,0.053s,PASSED
+Statement - If (editfield),Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:27,0.001s,PASSED
+"Statement - inputFields = driver.findElements(org.openqa.selenium.By.xpath(""//form[@name='store_submit']/table/tbody/tr//input""))",Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:27,0.021s,PASSED
+Statement - inputFieldsResults = new java.util.ArrayList(),Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:27,0.001s,PASSED
+Statement - index = 3,Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:27,0.000s,PASSED
+"Statement - For ([i = 0, i < inputFields.size(), (i++)])",Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:27,0.386s,PASSED
+Statement - s = inputFieldsResults[1],Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:27,0.001s,PASSED
+Statement - isEditable = false,Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:27,0.001s,PASSED
+"Statement - For ([j = 2, j < inputFieldsResults.size(), (j++)])",Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:27,0.006s,PASSED
+Statement - If (!(isEditable)),Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:27,0.000s,PASSED
+"Statement - attr = com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.getAttribute(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(StorePage/storebrandName), ""disabled"")",Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:27,0.037s,PASSED
+Statement - If (attr),Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:27,0.001s,PASSED
+"Statement - attr = com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.getAttribute(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(StorePage/storeCountryName), ""disabled"")",Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:27,0.034s,PASSED
+Statement - If (attr),Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:27,0.001s,PASSED
+Statement - assert TCflag == true,Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:27,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 65.0.3325.181,,2018-04-04 15:24:27,2018-04-04 15:24:28,1.118s,PASSED

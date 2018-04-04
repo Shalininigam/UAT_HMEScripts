@@ -1,0 +1,48 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+RegressionSuite,IE 11,,2018-04-04 15:43:23,2018-04-04 15:43:48,25.383s,PASSED
+,,,,,,
+Test Cases/HME-StoreDetailsPage-09,IE 11,To verify that public admin is able to view store details page,2018-04-04 15:43:23,2018-04-04 15:43:48,24.819s,PASSED
+Start listener action : sampleBeforeTestCase,IE 11,,2018-04-04 15:43:23,2018-04-04 15:43:32,8.720s,PASSED
+Statement - TCflag = true,IE 11,,2018-04-04 15:43:32,2018-04-04 15:43:32,0.001s,PASSED
+projectSpecific.Reusability.login,IE 11,User login to Application,2018-04-04 15:43:32,2018-04-04 15:43:38,5.501s,PASSED
+"Statement - str = com.kms.katalon.core.testdata.TestDataFactory.findTestData(AdminCredentials).getValue(""StoreDetails"", 1)",IE 11,,2018-04-04 15:43:38,2018-04-04 15:43:38,0.026s,PASSED
+uiaction.CommonUIActions.click,IE 11,,2018-04-04 15:43:38,2018-04-04 15:43:41,3.463s,PASSED
+verifyElementPresent,IE 11,,2018-04-04 15:43:41,2018-04-04 15:43:41,0.110s,PASSED
+Statement - driver = com.kms.katalon.core.webui.driver.DriverFactory.getWebDriver(),IE 11,,2018-04-04 15:43:41,2018-04-04 15:43:41,0.004s,PASSED
+"Statement - wes = driver.findElements(org.openqa.selenium.By.xpath(""//div[@class='ctable']/table//tr/th""))",IE 11,,2018-04-04 15:43:41,2018-04-04 15:43:41,0.065s,PASSED
+"Statement - ar = ["" "", ""Brand"", ""Store"", ""Store Address"", ""City, State"", ""Leaderboard Groups"", ""System Name"", ""System Version"", ""System Status""]",IE 11,,2018-04-04 15:43:41,2018-04-04 15:43:41,0.000s,PASSED
+Statement - count = 1,IE 11,,2018-04-04 15:43:41,2018-04-04 15:43:41,0.001s,PASSED
+"Statement - For ([i = 1, i < wes.size(), (i++)])",IE 11,,2018-04-04 15:43:41,2018-04-04 15:43:42,0.501s,PASSED
+Statement - If (count == wes.size()),IE 11,,2018-04-04 15:43:42,2018-04-04 15:43:42,0.083s,PASSED
+uiaction.CommonUIActions.click,IE 11,,2018-04-04 15:43:42,2018-04-04 15:43:44,2.180s,PASSED
+verifyElementPresent,IE 11,,2018-04-04 15:43:44,2018-04-04 15:43:44,0.220s,PASSED
+verifyElementPresent,IE 11,,2018-04-04 15:43:44,2018-04-04 15:43:44,0.121s,PASSED
+"Statement - attr = com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.getAttribute(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(StorePage/defaultstoredetsails), ""aria-selected"")",IE 11,,2018-04-04 15:43:44,2018-04-04 15:43:45,0.189s,PASSED
+Statement - If (attr),IE 11,,2018-04-04 15:43:45,2018-04-04 15:43:45,0.006s,PASSED
+"Statement - storeArray = str.split("","")",IE 11,,2018-04-04 15:43:45,2018-04-04 15:43:45,0.001s,PASSED
+Statement - storeList = new java.util.ArrayList(java.util.Arrays.asList(storeArray)),IE 11,,2018-04-04 15:43:45,2018-04-04 15:43:45,0.004s,PASSED
+Statement - storeList.unique(),IE 11,,2018-04-04 15:43:45,2018-04-04 15:43:45,0.001s,PASSED
+Statement - out.println(storeList),IE 11,,2018-04-04 15:43:45,2018-04-04 15:43:45,0.000s,PASSED
+"Statement - wes1 = driver.findElements(org.openqa.selenium.By.xpath(""//form[@name='store_submit']/table/tbody/tr/th""))",IE 11,,2018-04-04 15:43:45,2018-04-04 15:43:45,0.066s,PASSED
+Statement - actualList = new java.util.ArrayList(),IE 11,,2018-04-04 15:43:45,2018-04-04 15:43:45,0.000s,PASSED
+"Statement - For ([i = 0, i < wes1.size(), (i++)])",IE 11,,2018-04-04 15:43:45,2018-04-04 15:43:46,0.861s,PASSED
+Statement - out.println(actualList),IE 11,,2018-04-04 15:43:46,2018-04-04 15:43:46,0.000s,PASSED
+Statement - execFlag1 = true,IE 11,,2018-04-04 15:43:46,2018-04-04 15:43:46,0.000s,PASSED
+"Statement - For ([j = 0, j < actualList.size(), (j++)])",IE 11,,2018-04-04 15:43:46,2018-04-04 15:43:46,0.018s,PASSED
+Statement - If (execFlag1),IE 11,,2018-04-04 15:43:46,2018-04-04 15:43:46,0.000s,PASSED
+Statement - editfield = com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.clearText(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(StorePage/storeName)),IE 11,,2018-04-04 15:43:46,2018-04-04 15:43:46,0.224s,PASSED
+Statement - If (editfield),IE 11,,2018-04-04 15:43:46,2018-04-04 15:43:46,0.001s,PASSED
+"Statement - inputFields = driver.findElements(org.openqa.selenium.By.xpath(""//form[@name='store_submit']/table/tbody/tr//input""))",IE 11,,2018-04-04 15:43:46,2018-04-04 15:43:46,0.064s,PASSED
+Statement - inputFieldsResults = new java.util.ArrayList(),IE 11,,2018-04-04 15:43:46,2018-04-04 15:43:46,0.001s,PASSED
+Statement - index = 3,IE 11,,2018-04-04 15:43:46,2018-04-04 15:43:46,0.000s,PASSED
+"Statement - For ([i = 0, i < inputFields.size(), (i++)])",IE 11,,2018-04-04 15:43:46,2018-04-04 15:43:47,1.355s,PASSED
+Statement - s = inputFieldsResults[1],IE 11,,2018-04-04 15:43:47,2018-04-04 15:43:47,0.002s,PASSED
+Statement - isEditable = false,IE 11,,2018-04-04 15:43:47,2018-04-04 15:43:47,0.000s,PASSED
+"Statement - For ([j = 2, j < inputFieldsResults.size(), (j++)])",IE 11,,2018-04-04 15:43:47,2018-04-04 15:43:47,0.004s,PASSED
+Statement - If (!(isEditable)),IE 11,,2018-04-04 15:43:47,2018-04-04 15:43:47,0.001s,PASSED
+"Statement - attr = com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.getAttribute(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(StorePage/storebrandName), ""disabled"")",IE 11,,2018-04-04 15:43:47,2018-04-04 15:43:47,0.089s,PASSED
+Statement - If (attr),IE 11,,2018-04-04 15:43:47,2018-04-04 15:43:47,0.000s,PASSED
+"Statement - attr = com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.getAttribute(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(StorePage/storeCountryName), ""disabled"")",IE 11,,2018-04-04 15:43:47,2018-04-04 15:43:47,0.093s,PASSED
+Statement - If (attr),IE 11,,2018-04-04 15:43:47,2018-04-04 15:43:47,0.001s,PASSED
+Statement - assert TCflag == true,IE 11,,2018-04-04 15:43:47,2018-04-04 15:43:47,0.000s,PASSED
+Start listener action : sampleAfterTestCase,IE 11,,2018-04-04 15:43:47,2018-04-04 15:43:48,0.549s,PASSED

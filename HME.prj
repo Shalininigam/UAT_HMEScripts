@@ -4,5 +4,5 @@
    <name>HME</name>
    <tag></tag>
    <UUID>31fc0d6f-1b1e-42e0-b897-4add08ed5536</UUID>
-   <pageLoadTimeout>30</pageLoadTimeout>
+   <pageLoadTimeout>0</pageLoadTimeout>
 </Project>

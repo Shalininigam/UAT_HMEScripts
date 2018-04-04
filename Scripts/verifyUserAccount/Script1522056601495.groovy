@@ -24,18 +24,22 @@ import internal.GlobalVariable as GlobalVariable
 
 
 'User login to Application'
+
+WebUI.navigateToUrl(GlobalVariable.AppURL)
+WebUI.maximizeWindow()
+
 CustomKeywords.'projectSpecific.Reusability.login'(findTestData('AdminCredentials').getValue('Username', 1),
-findTestData('AdminCredentials').getValue('Password', 1))
+		findTestData('AdminCredentials').getValue('Password', 1))
 WebUI.delay(5)
-	
+
 'Click on Users'
 CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/Users'))
-	
+
 'Search for Users'
 CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('UsersPage/Userssearch'),findTestData('AdminCredentials').getValue('EmailAddress', 1) )
 CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('UsersPage/User_searchimage'))
 WebUI.delay(5)
-	
+
 'Click on View/Edit User'
 CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('UsersPage/viewEditUsers'))
 
@@ -46,10 +50,15 @@ String s2=CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('User
 
 boolean execFlag = WebUI.verifyMatch(s1, s2, false)
 if(execFlag)
-System.out.println("TestCase Passed")
-else
-System.out.println("TestCase Failed")
-	
-	
-	
+{
+	System.out.println("TestCase Passed")
+	WebUI.takeScreenshot()
+}
+else{
+	System.out.println("TestCase Failed")
+	WebUI.takeScreenshot()
+}
+
+
+
 

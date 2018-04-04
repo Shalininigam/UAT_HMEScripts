@@ -1,0 +1,48 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+RegressionSuite,Firefox 58.0,,2018-04-04 15:12:10,2018-04-04 15:13:01,51.234s,PASSED
+,,,,,,
+Test Cases/HME-StoreDetailsPage-09,Firefox 58.0,To verify that public admin is able to view store details page,2018-04-04 15:12:10,2018-04-04 15:13:01,50.699s,PASSED
+Start listener action : sampleBeforeTestCase,Firefox 58.0,,2018-04-04 15:12:11,2018-04-04 15:12:50,39.072s,PASSED
+Statement - TCflag = true,Firefox 58.0,,2018-04-04 15:12:50,2018-04-04 15:12:50,0.001s,PASSED
+projectSpecific.Reusability.login,Firefox 58.0,User login to Application,2018-04-04 15:12:50,2018-04-04 15:12:56,5.944s,PASSED
+"Statement - str = com.kms.katalon.core.testdata.TestDataFactory.findTestData(AdminCredentials).getValue(""StoreDetails"", 1)",Firefox 58.0,,2018-04-04 15:12:56,2018-04-04 15:12:56,0.032s,PASSED
+uiaction.CommonUIActions.click,Firefox 58.0,,2018-04-04 15:12:56,2018-04-04 15:12:57,1.396s,PASSED
+verifyElementPresent,Firefox 58.0,,2018-04-04 15:12:57,2018-04-04 15:12:57,0.019s,PASSED
+Statement - driver = com.kms.katalon.core.webui.driver.DriverFactory.getWebDriver(),Firefox 58.0,,2018-04-04 15:12:57,2018-04-04 15:12:57,0.004s,PASSED
+"Statement - wes = driver.findElements(org.openqa.selenium.By.xpath(""//div[@class='ctable']/table//tr/th""))",Firefox 58.0,,2018-04-04 15:12:57,2018-04-04 15:12:57,0.034s,PASSED
+"Statement - ar = ["" "", ""Brand"", ""Store"", ""Store Address"", ""City, State"", ""Leaderboard Groups"", ""System Name"", ""System Version"", ""System Status""]",Firefox 58.0,,2018-04-04 15:12:57,2018-04-04 15:12:57,0.000s,PASSED
+Statement - count = 1,Firefox 58.0,,2018-04-04 15:12:57,2018-04-04 15:12:57,0.001s,PASSED
+"Statement - For ([i = 1, i < wes.size(), (i++)])",Firefox 58.0,,2018-04-04 15:12:57,2018-04-04 15:12:57,0.139s,PASSED
+Statement - If (count == wes.size()),Firefox 58.0,,2018-04-04 15:12:57,2018-04-04 15:12:57,0.087s,PASSED
+uiaction.CommonUIActions.click,Firefox 58.0,,2018-04-04 15:12:57,2018-04-04 15:12:59,2.013s,PASSED
+verifyElementPresent,Firefox 58.0,,2018-04-04 15:12:59,2018-04-04 15:12:59,0.012s,PASSED
+verifyElementPresent,Firefox 58.0,,2018-04-04 15:12:59,2018-04-04 15:13:00,0.024s,PASSED
+"Statement - attr = com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.getAttribute(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(StorePage/defaultstoredetsails), ""aria-selected"")",Firefox 58.0,,2018-04-04 15:13:00,2018-04-04 15:13:00,0.063s,PASSED
+Statement - If (attr),Firefox 58.0,,2018-04-04 15:13:00,2018-04-04 15:13:00,0.006s,PASSED
+"Statement - storeArray = str.split("","")",Firefox 58.0,,2018-04-04 15:13:00,2018-04-04 15:13:00,0.001s,PASSED
+Statement - storeList = new java.util.ArrayList(java.util.Arrays.asList(storeArray)),Firefox 58.0,,2018-04-04 15:13:00,2018-04-04 15:13:00,0.007s,PASSED
+Statement - storeList.unique(),Firefox 58.0,,2018-04-04 15:13:00,2018-04-04 15:13:00,0.001s,PASSED
+Statement - out.println(storeList),Firefox 58.0,,2018-04-04 15:13:00,2018-04-04 15:13:00,0.001s,PASSED
+"Statement - wes1 = driver.findElements(org.openqa.selenium.By.xpath(""//form[@name='store_submit']/table/tbody/tr/th""))",Firefox 58.0,,2018-04-04 15:13:00,2018-04-04 15:13:00,0.009s,PASSED
+Statement - actualList = new java.util.ArrayList(),Firefox 58.0,,2018-04-04 15:13:00,2018-04-04 15:13:00,0.001s,PASSED
+"Statement - For ([i = 0, i < wes1.size(), (i++)])",Firefox 58.0,,2018-04-04 15:13:00,2018-04-04 15:13:00,0.154s,PASSED
+Statement - out.println(actualList),Firefox 58.0,,2018-04-04 15:13:00,2018-04-04 15:13:00,0.000s,PASSED
+Statement - execFlag1 = true,Firefox 58.0,,2018-04-04 15:13:00,2018-04-04 15:13:00,0.001s,PASSED
+"Statement - For ([j = 0, j < actualList.size(), (j++)])",Firefox 58.0,,2018-04-04 15:13:00,2018-04-04 15:13:00,0.014s,PASSED
+Statement - If (execFlag1),Firefox 58.0,,2018-04-04 15:13:00,2018-04-04 15:13:00,0.001s,PASSED
+Statement - editfield = com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.clearText(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(StorePage/storeName)),Firefox 58.0,,2018-04-04 15:13:00,2018-04-04 15:13:00,0.034s,PASSED
+Statement - If (editfield),Firefox 58.0,,2018-04-04 15:13:00,2018-04-04 15:13:00,0.001s,PASSED
+"Statement - inputFields = driver.findElements(org.openqa.selenium.By.xpath(""//form[@name='store_submit']/table/tbody/tr//input""))",Firefox 58.0,,2018-04-04 15:13:00,2018-04-04 15:13:00,0.010s,PASSED
+Statement - inputFieldsResults = new java.util.ArrayList(),Firefox 58.0,,2018-04-04 15:13:00,2018-04-04 15:13:00,0.000s,PASSED
+Statement - index = 3,Firefox 58.0,,2018-04-04 15:13:00,2018-04-04 15:13:00,0.000s,PASSED
+"Statement - For ([i = 0, i < inputFields.size(), (i++)])",Firefox 58.0,,2018-04-04 15:13:00,2018-04-04 15:13:01,0.775s,PASSED
+Statement - s = inputFieldsResults[1],Firefox 58.0,,2018-04-04 15:13:01,2018-04-04 15:13:01,0.002s,PASSED
+Statement - isEditable = false,Firefox 58.0,,2018-04-04 15:13:01,2018-04-04 15:13:01,0.000s,PASSED
+"Statement - For ([j = 2, j < inputFieldsResults.size(), (j++)])",Firefox 58.0,,2018-04-04 15:13:01,2018-04-04 15:13:01,0.004s,PASSED
+Statement - If (!(isEditable)),Firefox 58.0,,2018-04-04 15:13:01,2018-04-04 15:13:01,0.000s,PASSED
+"Statement - attr = com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.getAttribute(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(StorePage/storebrandName), ""disabled"")",Firefox 58.0,,2018-04-04 15:13:01,2018-04-04 15:13:01,0.023s,PASSED
+Statement - If (attr),Firefox 58.0,,2018-04-04 15:13:01,2018-04-04 15:13:01,0.001s,PASSED
+"Statement - attr = com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.getAttribute(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(StorePage/storeCountryName), ""disabled"")",Firefox 58.0,,2018-04-04 15:13:01,2018-04-04 15:13:01,0.021s,PASSED
+Statement - If (attr),Firefox 58.0,,2018-04-04 15:13:01,2018-04-04 15:13:01,0.000s,PASSED
+Statement - assert TCflag == true,Firefox 58.0,,2018-04-04 15:13:01,2018-04-04 15:13:01,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Firefox 58.0,,2018-04-04 15:13:01,2018-04-04 15:13:01,0.536s,PASSED

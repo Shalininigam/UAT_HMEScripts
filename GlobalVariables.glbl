@@ -7,4 +7,9 @@
       <initValue>'http://uatadmin.hme.com/hmecloud/?pg=Login'</initValue>
       <name>AppURL</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://uat.hmedtcloud.com/?pg=Login'</initValue>
+      <name>Superuser_url</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
