@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ReportCollectionEntity>
    <description></description>
-   <name>20180406_211819</name>
+   <name>20180411_130544</name>
    <tag></tag>
-   <displayName>20180406_211819</displayName>
+   <displayName>20180411_130544</displayName>
    <reportItemDescriptions>
       <ReportItemDescription>
-         <reportLocation>Reports/RegressionSuite/20180406_211819</reportLocation>
+         <reportLocation>Reports/RegressionSuite/20180411_130544</reportLocation>
          <runConfigDescription>
             <groupName>Web Desktop</groupName>
             <runConfigurationId>Chrome</runConfigurationId>
