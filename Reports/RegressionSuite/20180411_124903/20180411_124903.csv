@@ -1,0 +1,16 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+RegressionSuite,Chrome 65.0.3325.181,,2018-04-11 12:49:04,2018-04-11 12:49:41,36.785s,PASSED
+,,,,,,
+Test Cases/HME-StoreDetailsPage-09,Chrome 65.0.3325.181,To verify that public admin is able to view store details page,2018-04-11 12:49:05,2018-04-11 12:49:24,18.815s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 65.0.3325.181,,2018-04-11 12:49:05,2018-04-11 12:49:10,4.879s,PASSED
+Statement - TCflag = true,Chrome 65.0.3325.181,,2018-04-11 12:49:10,2018-04-11 12:49:10,0.000s,PASSED
+Statement - Try,Chrome 65.0.3325.181,,2018-04-11 12:49:10,2018-04-11 12:49:23,12.974s,PASSED
+Statement - assert TCflag == true,Chrome 65.0.3325.181,,2018-04-11 12:49:23,2018-04-11 12:49:23,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 65.0.3325.181,,2018-04-11 12:49:23,2018-04-11 12:49:24,0.689s,PASSED
+,,,,,,
+Test Cases/DummyTest,Chrome 65.0.3325.181,,2018-04-11 12:49:24,2018-04-11 12:49:41,17.478s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 65.0.3325.181,,2018-04-11 12:49:24,2018-04-11 12:49:28,4.361s,PASSED
+navigateToUrl,Chrome 65.0.3325.181,,2018-04-11 12:49:28,2018-04-11 12:49:33,4.876s,PASSED
+projectSpecific.Reusability.login,Chrome 65.0.3325.181,,2018-04-11 12:49:33,2018-04-11 12:49:35,2.350s,PASSED
+delay,Chrome 65.0.3325.181,,2018-04-11 12:49:35,2018-04-11 12:49:40,5.006s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 65.0.3325.181,,2018-04-11 12:49:40,2018-04-11 12:49:41,0.739s,PASSED
