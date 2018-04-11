@@ -12,4 +12,9 @@
       <initValue>'https://uat.hmedtcloud.com/?pg=Login'</initValue>
       <name>Superuser_url</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://devcloudadmin.hme.com/?pg=Login'</initValue>
+      <name>AdminDevUrl</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

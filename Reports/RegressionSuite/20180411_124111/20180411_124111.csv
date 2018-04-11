@@ -1,0 +1,9 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+RegressionSuite,Chrome 65.0.3325.181,,2018-04-11 12:41:15,2018-04-11 12:41:45,30.091s,PASSED
+,,,,,,
+Test Cases/HME-StoreDetailsPage-09,Chrome 65.0.3325.181,To verify that public admin is able to view store details page,2018-04-11 12:41:15,2018-04-11 12:41:45,29.506s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 65.0.3325.181,,2018-04-11 12:41:15,2018-04-11 12:41:22,6.584s,PASSED
+Statement - TCflag = true,Chrome 65.0.3325.181,,2018-04-11 12:41:22,2018-04-11 12:41:22,0.001s,PASSED
+Statement - Try,Chrome 65.0.3325.181,,2018-04-11 12:41:22,2018-04-11 12:41:44,21.661s,PASSED
+Statement - assert TCflag == true,Chrome 65.0.3325.181,,2018-04-11 12:41:44,2018-04-11 12:41:44,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 65.0.3325.181,,2018-04-11 12:41:44,2018-04-11 12:41:45,1.016s,PASSED

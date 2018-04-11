@@ -1,0 +1,53 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+RegressionSuite,Chrome 65.0.3325.181,,2018-04-06 19:28:34,2018-04-06 19:28:55,20.952s,PASSED
+,,,,,,
+Test Cases/HME-StoreDetailsPage-09,Chrome 65.0.3325.181,To verify that public admin is able to view store details page,2018-04-06 19:28:35,2018-04-06 19:28:55,20.524s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 65.0.3325.181,,2018-04-06 19:28:35,2018-04-06 19:28:40,5.752s,PASSED
+Statement - TCflag = true,Chrome 65.0.3325.181,,2018-04-06 19:28:41,2018-04-06 19:28:41,0.001s,PASSED
+navigateToUrl,Chrome 65.0.3325.181,User login to Application,2018-04-06 19:28:41,2018-04-06 19:28:44,3.411s,PASSED
+projectSpecific.Reusability.login,Chrome 65.0.3325.181,,2018-04-06 19:28:44,2018-04-06 19:28:50,6.272s,PASSED
+"Statement - str = com.kms.katalon.core.testdata.TestDataFactory.findTestData(AdminCredentials).getValue(""StoreDetails"", 1)",Chrome 65.0.3325.181,,2018-04-06 19:28:50,2018-04-06 19:28:50,0.047s,PASSED
+"Statement - storedetail_label = com.kms.katalon.core.testdata.TestDataFactory.findTestData(AdminCredentials).getValue(""Store_labels"", 1)",Chrome 65.0.3325.181,,2018-04-06 19:28:50,2018-04-06 19:28:50,0.020s,PASSED
+uiaction.CommonUIActions.click,Chrome 65.0.3325.181,,2018-04-06 19:28:50,2018-04-06 19:28:52,1.334s,PASSED
+verifyElementPresent,Chrome 65.0.3325.181,,2018-04-06 19:28:52,2018-04-06 19:28:52,0.042s,PASSED
+Statement - driver = com.kms.katalon.core.webui.driver.DriverFactory.getWebDriver(),Chrome 65.0.3325.181,,2018-04-06 19:28:52,2018-04-06 19:28:52,0.007s,PASSED
+"Statement - wes = driver.findElements(org.openqa.selenium.By.xpath(com.kms.katalon.core.testdata.TestDataFactory.findTestData(OR_file).getValue(2, 1)))",Chrome 65.0.3325.181,,2018-04-06 19:28:52,2018-04-06 19:28:52,0.053s,PASSED
+"Statement - storeArraylabels = storedetail_label.split("",,"")",Chrome 65.0.3325.181,,2018-04-06 19:28:52,2018-04-06 19:28:52,0.002s,PASSED
+Statement - storeListlabels = new java.util.ArrayList(java.util.Arrays.asList(storeArraylabels)),Chrome 65.0.3325.181,,2018-04-06 19:28:52,2018-04-06 19:28:52,0.007s,PASSED
+Statement - storeListlabels.unique(),Chrome 65.0.3325.181,,2018-04-06 19:28:52,2018-04-06 19:28:52,0.001s,PASSED
+Statement - out.println(storeListlabels),Chrome 65.0.3325.181,,2018-04-06 19:28:52,2018-04-06 19:28:52,0.006s,PASSED
+Statement - count = 1,Chrome 65.0.3325.181,,2018-04-06 19:28:52,2018-04-06 19:28:52,0.000s,PASSED
+"Statement - For ([i = 1, i < wes.size(), (i++)])",Chrome 65.0.3325.181,,2018-04-06 19:28:52,2018-04-06 19:28:52,0.159s,PASSED
+Statement - If (count == wes.size()),Chrome 65.0.3325.181,,2018-04-06 19:28:52,2018-04-06 19:28:53,0.461s,PASSED
+uiaction.CommonUIActions.click,Chrome 65.0.3325.181,,2018-04-06 19:28:53,2018-04-06 19:28:54,1.172s,PASSED
+verifyElementPresent,Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.056s,PASSED
+verifyElementPresent,Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.026s,PASSED
+"Statement - attr = com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.getAttribute(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(StorePage/defaultstoredetsails), ""aria-selected"")",Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.053s,PASSED
+Statement - If (attr),Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.002s,PASSED
+"Statement - storeArray = str.split("","")",Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.000s,PASSED
+Statement - storeList = new java.util.ArrayList(java.util.Arrays.asList(storeArray)),Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.000s,PASSED
+Statement - storeList.unique(),Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.001s,PASSED
+Statement - out.println(storeList),Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.000s,PASSED
+"Statement - wes1 = driver.findElements(org.openqa.selenium.By.xpath(com.kms.katalon.core.testdata.TestDataFactory.findTestData(OR_file).getValue(2, 2)))",Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.053s,PASSED
+Statement - actualList = new java.util.ArrayList(),Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.000s,PASSED
+"Statement - For ([i = 0, i < wes1.size(), (i++)])",Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.304s,PASSED
+Statement - out.println(actualList),Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.001s,PASSED
+Statement - execFlag1 = true,Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.000s,PASSED
+"Statement - For ([j = 0, j < actualList.size(), (j++)])",Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.015s,PASSED
+Statement - If (execFlag1),Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.001s,PASSED
+Statement - editfield = com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.clearText(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(StorePage/storeName)),Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.047s,PASSED
+Statement - If (editfield),Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.000s,PASSED
+"Statement - inputFields = driver.findElements(org.openqa.selenium.By.xpath(com.kms.katalon.core.testdata.TestDataFactory.findTestData(OR_file).getValue(2, 3)))",Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.030s,PASSED
+Statement - inputFieldsResults = new java.util.ArrayList(),Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.001s,PASSED
+Statement - index = 3,Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:54,0.000s,PASSED
+"Statement - For ([i = 0, i < inputFields.size(), (i++)])",Chrome 65.0.3325.181,,2018-04-06 19:28:54,2018-04-06 19:28:55,0.238s,PASSED
+Statement - s = inputFieldsResults[1],Chrome 65.0.3325.181,,2018-04-06 19:28:55,2018-04-06 19:28:55,0.000s,PASSED
+Statement - isEditable = false,Chrome 65.0.3325.181,,2018-04-06 19:28:55,2018-04-06 19:28:55,0.000s,PASSED
+"Statement - For ([j = 2, j < inputFieldsResults.size(), (j++)])",Chrome 65.0.3325.181,,2018-04-06 19:28:55,2018-04-06 19:28:55,0.006s,PASSED
+Statement - If (!(isEditable)),Chrome 65.0.3325.181,,2018-04-06 19:28:55,2018-04-06 19:28:55,0.001s,PASSED
+"Statement - attr = com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.getAttribute(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(StorePage/storebrandName), ""disabled"")",Chrome 65.0.3325.181,,2018-04-06 19:28:55,2018-04-06 19:28:55,0.024s,PASSED
+Statement - If (attr),Chrome 65.0.3325.181,,2018-04-06 19:28:55,2018-04-06 19:28:55,0.000s,PASSED
+"Statement - attr = com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.getAttribute(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(StorePage/storeCountryName), ""disabled"")",Chrome 65.0.3325.181,,2018-04-06 19:28:55,2018-04-06 19:28:55,0.023s,PASSED
+Statement - If (attr),Chrome 65.0.3325.181,,2018-04-06 19:28:55,2018-04-06 19:28:55,0.000s,PASSED
+Statement - assert TCflag == true,Chrome 65.0.3325.181,,2018-04-06 19:28:55,2018-04-06 19:28:55,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 65.0.3325.181,,2018-04-06 19:28:55,2018-04-06 19:28:55,0.644s,PASSED

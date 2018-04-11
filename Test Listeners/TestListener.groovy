@@ -30,11 +30,9 @@ class TestListener {
 	@BeforeTestCase
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
 		WebUI.openBrowser('')
-		WebUI.navigateToUrl(GlobalVariable.Superuser_url)
 		WebUI.maximizeWindow()
 		
-		/*WebUI.navigateToUrl(GlobalVariable.AppURL)
-		WebUI.maximizeWindow()*/
+		
 	}
 
 	/**

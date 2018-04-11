@@ -6,6 +6,9 @@
    <elementGuidId>3a729e14-756e-45f7-8017-8f5cdb65e75d</elementGuidId>
    <selectorCollection>
       <entry>
+         <key>CSS</key>
+      </entry>
+      <entry>
          <key>XPATH</key>
          <value>//*[@id=&quot;Content&quot;]/div/div/form/table/tbody/tr[1]/td/input
 
@@ -14,6 +17,7 @@
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

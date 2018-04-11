@@ -26,10 +26,8 @@ import internal.GlobalVariable as GlobalVariable
 'User login to Application'
 
 WebUI.navigateToUrl(GlobalVariable.AppURL)
-WebUI.maximizeWindow()
 
-CustomKeywords.'projectSpecific.Reusability.login'(findTestData('AdminCredentials').getValue('Username', 1),
-		findTestData('AdminCredentials').getValue('Password', 1))
+CustomKeywords.'projectSpecific.Reusability.login'(findTestData('AdminCredentials').getValue('Username', 1),findTestData('AdminCredentials').getValue('Password', 1))
 WebUI.delay(5)
 
 'Click on Users'

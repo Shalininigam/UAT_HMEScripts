@@ -22,10 +22,9 @@ import MobileBuiltInKeywords as Mobile
 import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 
-public class Reusability {
+public class Reusability{
 	@Keyword
 	def login(String  username,String password){
-				
 		WebUI.setText(findTestObject('LoginPage/Username'), username)
 		WebUI.setText(findTestObject('LoginPage/Password'), password)
 		WebUI.click(findTestObject('LoginPage/Login'))

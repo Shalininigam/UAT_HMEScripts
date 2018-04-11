@@ -29,12 +29,16 @@ import org.openqa.selenium.By as By
 
 boolean TCflag=true
 
+try{
+
 'User login to Application'
+WebUI.navigateToUrl(GlobalVariable.Superuser_url)
 
-CustomKeywords.'projectSpecific.Reusability.login'(findTestData('AdminCredentials').getValue('Username', 2),
-		findTestData('AdminCredentials').getValue('Password', 1))
+CustomKeywords.'projectSpecific.Reusability.login'(findTestData('AdminCredentials').getValue('Username', 2),findTestData('AdminCredentials').getValue('Password', 1))
 
-String str =findTestData('AdminCredentials').getValue('StoreDetails', 1)
+String storeDetails =findTestData('AdminCredentials').getValue('StoreDetails', 1)
+
+String storedetail_label =findTestData('AdminCredentials').getValue('Store_labels', 1)
 
 CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/Stores'))
 
@@ -42,20 +46,25 @@ WebUI.verifyElementPresent(findTestObject('HomePage/Verify_store'), 5)
 
 WebDriver driver = DriverFactory.getWebDriver()
 
-List<WebElement> wes = driver.findElements(By.xpath("//div[@class='ctable']/table//tr/th"))
+List<WebElement> storeHeaders = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 1)))
 
-def ar=[" ","Brand","Store","Store Address","City, State","Leaderboard Groups","System Name","System Version","System Status"] as String[];
-def int count=1;
-for(int i=1;i<wes.size();i++){
+String[] storeArraylabels=storedetail_label.split(',,')
 
-	boolean execFlag = WebUI.verifyMatch(wes.get(i).getText(), ar[i], false)
+def storeListlabels=new ArrayList(Arrays.asList(storeArraylabels))
+storeListlabels.unique()
+System.out.println(storeListlabels)
+
+def int count=1
+for(int i=1;i<storeHeaders.size();i++){
+
+	boolean execFlag = WebUI.verifyMatch(storeHeaders.get(i).getText().trim(), storeListlabels[i].toString().trim(), false)
 	if(execFlag)
 	{
 		count++;
 	}
 }
 
-if(count==wes.size()){
+if(count==storeHeaders.size()){
 	WebUI.takeScreenshot()
 
 }
@@ -76,9 +85,9 @@ WebUI.verifyElementPresent(findTestObject('StorePage/storedetailslabel'), 5)
 
 WebUI.verifyElementPresent(findTestObject('StorePage/zoomlabel'), 5)
 
-String attr=WebUI.getAttribute(findTestObject('StorePage/defaultstoredetsails'), "aria-selected")
+String defaultareaselected=WebUI.getAttribute(findTestObject('StorePage/defaultstoredetsails'), "aria-selected")
 
-if(attr)
+if(defaultareaselected)
 {
 	System.out.println("Store Details is set by default")
 }
@@ -98,19 +107,19 @@ else{
  Address Line 4:, City : New York, Region : NY, Zip : 10058, Country : United States, Phone : 1234512345
  Fax:*/
 
-String[] storeArray=str.split(',')
+String[] storeArray=storeDetails.split(',')
 
 def storeList=new ArrayList(Arrays.asList(storeArray))
 storeList.unique()
 System.out.println(storeList)
 
-List<WebElement> wes1 = driver.findElements(By.xpath("//form[@name='store_submit']/table/tbody/tr/th"))
+List<WebElement> storeElements = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 2)))
 
 List<String> actualList=new ArrayList<String>();
 
-for(int i=0;i<wes1.size();i++){
+for(int i=0;i<storeElements.size();i++){
 
-	actualList.add(i,wes1.get(i).getText())
+	actualList.add(i,storeElements.get(i).getText())
 }
 System.out.println(actualList)
 
@@ -158,7 +167,7 @@ if(editfield){
 // step 5:To verify that user will not be able to edit other than store name field
 /*All the other fields in the tab will be non editable*/
 
-List<WebElement> inputFields = driver.findElements(By.xpath("//form[@name='store_submit']/table/tbody/tr//input"))
+List<WebElement> inputFields = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 3)))
 List<String> inputFieldsResults =new ArrayList<String>();
 int index=3 
 
@@ -195,9 +204,9 @@ if(!isEditable){
 }
 
 
- attr=WebUI.getAttribute(findTestObject('StorePage/storebrandName'), "disabled")
+ attrDisabled=WebUI.getAttribute(findTestObject('StorePage/storebrandName'), "disabled")
 
-if(attr)
+if(attrDisabled)
 {
 	System.out.println("Store brand is disabled")
 }
@@ -209,10 +218,9 @@ else{
 
 }
 
+attrDisabled=WebUI.getAttribute(findTestObject('StorePage/storeCountryName'), "disabled")
 
-attr=WebUI.getAttribute(findTestObject('StorePage/storeCountryName'), "disabled")
-
-if(attr)
+if(attrDisabled)
 {
 	System.out.println("Store countryName is disabled")
 }
@@ -223,7 +231,17 @@ else{
 	System.out.println("Store countryName is not disabled")
 
 }
+}catch(Exception e){
+
+e.printStackTrace()
+println "Exception occured"
+if(TCflag)
+		TCflag=false
+
+}
 
 assert TCflag==true
+
+
 
 
