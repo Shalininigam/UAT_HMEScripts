@@ -34,11 +34,11 @@ try{
 'User login to Application'
 WebUI.navigateToUrl(GlobalVariable.Superuser_url)
 
-CustomKeywords.'projectSpecific.Reusability.login'(findTestData('AdminCredentials').getValue('Username', 2),findTestData('AdminCredentials').getValue('Password', 1))
+CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","Username2"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","Password"))
 
-String storeDetails =findTestData('AdminCredentials').getValue('StoreDetails', 1)
+String storeDetails = CustomKeywords.'projectSpecific.Reusability.getTestData'("StorePage","StoreDetails")
 
-String storedetail_label =findTestData('AdminCredentials').getValue('Store_labels', 1)
+String storedetail_label = CustomKeywords.'projectSpecific.Reusability.getTestData'("StorePage","Store_labels")
 
 CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/Stores'))
 

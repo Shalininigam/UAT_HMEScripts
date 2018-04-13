@@ -27,19 +27,19 @@ import org.openqa.selenium.By.ByXPath
 
 boolean TCflag=true
 try{
-	WebUI.navigateToUrl(GlobalVariable.AdminDevUrl)
+	WebUI.navigateToUrl(GlobalVariable.AppURL)
 
-	CustomKeywords.'projectSpecific.Reusability.login'(findTestData('AdminCredentials').getValue('Username', 1),findTestData('AdminCredentials').getValue('Password', 1))
+	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","Username1"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","Password"))
 	WebUI.delay(5)
 
-	String reportHeaders =findTestData('AdminCredentials').getValue('ReportsCoulmnHeader', 1)
+	String reportHeaders =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","ReportsCoulmnHeader")
 
 	'Click on Users'
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/Users'))
 
 	'Search for Users'
-	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('UsersPage/Userssearch'),findTestData('AdminCredentials')
-			.getValue('ReportUserName', 1) )
+	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('UsersPage/Userssearch'),CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","ReportUserName"))
+		
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('UsersPage/User_searchimage'))
 	WebUI.delay(5)
 
@@ -75,7 +75,8 @@ try{
 	if(flag){
 		System.out.println("All Store checkboxes are checked")
 
-	}else{
+	}
+	else{
 		if(TCflag)
 			TCflag=false
 		System.out.println("Store checkboxes are unchecked")
@@ -95,12 +96,11 @@ try{
 
 	'verify week is displayed in TimeSelection dropdown'
 
-	WebUI.verifyElementText(findTestObject('ReportsPage/weekTimeOption'),findTestData('AdminCredentials').getValue('weekTimeSelection', 1))
+	WebUI.verifyElementText(findTestObject('ReportsPage/weekTimeOption'),CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","weekTimeSelection"))
+		
+    'verify week is displayed in criteria week selection'
+	WebUI.verifyElementText(findTestObject('ReportsPage/criteriaTimeMeasure'),CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","weekTimeSelection"))
 	
-	'verify week is displayed in criteria week selection'
-
-	WebUI.verifyElementText(findTestObject('ReportsPage/criteriaTimeMeasure'),findTestData('AdminCredentials').getValue('weekTimeSelection', 1))
-
 	//Step 3: To verify that user is able to select From and To date by using calendar controls
 	WebUI.delay(4)
 
@@ -110,7 +110,7 @@ try{
 
 	String monthText=WebUI.getText(findTestObject('ReportsPage/monthText'))
 
-	String monthTextValue=findTestData('AdminCredentials').getValue('Month', 1)
+	String monthTextValue=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","Month")
 
 	if(!monthTextValue.equals(monthText))
 	{
@@ -123,8 +123,8 @@ try{
 
 	}
 
-
-	String startDate="//td//a[text()='"+findTestData('AdminCredentials').getValue('StartDate', 1)+"']"
+	String data = CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","StartDate")
+	String startDate="//td//a[text()='"+data+"']"
 	println startDate
 	WebElement startdateEle=driver.findElement(By.xpath(startDate))
 	startdateEle.click()
@@ -135,7 +135,7 @@ try{
 
 	monthText=WebUI.getText(findTestObject('ReportsPage/monthText'))
 
-	monthTextValue=findTestData('AdminCredentials').getValue('Month', 1)
+	monthTextValue=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","Month")
 
 	if(!monthTextValue.equals(monthText))
 	{
@@ -149,17 +149,16 @@ try{
 
 	}
 
-	String toDate="//td//a[text()='"+findTestData('AdminCredentials').getValue('EndDate', 1)+"']"
+	String toDate="//td//a[text()='"+CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","EndDate")+"']"
 	
 	WebElement toDateEle=driver.findElement(By.xpath(toDate))
 	toDateEle.click()
 
 	WebUI.delay(4)
 
-
 	String dateAttr =WebUI.getAttribute(findTestObject('ReportsPage/fromDate'),"value")
 	
-	String fromDateValue =findTestData('AdminCredentials').getValue('fromDate', 1)
+	String fromDateValue =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","fromDate")
 	if(!dateAttr.equals(fromDateValue))
 	{
 		if(TCflag)
@@ -170,8 +169,7 @@ try{
 
 	dateAttr =WebUI.getAttribute(findTestObject('ReportsPage/toDate'),"value")
 	
-
-	String toDateValue =findTestData('AdminCredentials').getValue('toDate', 1)
+	String toDateValue =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","toDate")
 	if(!dateAttr.equals(toDateValue))
 	{
 		if(TCflag)
@@ -181,15 +179,25 @@ try{
 	}
 
 	'verify include text as None'
-	WebUI.verifyElementText(findTestObject('ReportsPage/includeText'),findTestData('AdminCredentials').getValue('includeText', 1))
+	WebUI.verifyElementText(findTestObject('ReportsPage/includeText'),CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","includeText"))
 
 	'verify format text'
-	WebUI.verifyElementText(findTestObject('ReportsPage/formatText'),findTestData('AdminCredentials').getValue('formatText', 1))
+	WebUI.verifyElementText(findTestObject('ReportsPage/formatText'),CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","formatText"))
 
 	//Step4 : To save this report as template
-
+	try{
+		
+	String templateHeading=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","templateHeading")
+	String existingTemplatexpath= "//td[text()='"+templateHeading+"']/../td[2]"
+	WebElement existingTemplatedeleteLink = driver.findElement(By.xpath(existingTemplatexpath));
+	if(existingTemplatedeleteLink.isDisplayed()==true)
+		 driver.findElement(By.xpath(existingTemplatexpath)).click();
+	}
+		 catch (Exception e) {
+			   e.printStackTrace()
+		 }
+	
 	WebUI.click(findTestObject('ReportsPage/saveTemplateChkBox'))
-
 
 	WebUI.verifyElementChecked(findTestObject('ReportsPage/saveTemplateChkBox'), 10)
 	WebUI.click(findTestObject('ReportsPage/templateName'))
@@ -197,11 +205,11 @@ try{
 	//Step5: To verify that user is able to enter template name
 
 	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportsPage/templateName'),
-			findTestData('AdminCredentials').getValue('templateHeading', 1))
+			CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","templateHeading"))
 
 	String s1=WebUI.getAttribute(findTestObject('ReportsPage/templateName'),"value")
 
-	boolean execFlag = WebUI.verifyMatch(s1,findTestData('AdminCredentials').getValue('templateHeading', 1), false)
+	boolean execFlag = WebUI.verifyMatch(s1,CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","templateHeading"), false)
 	if(!execFlag)
 	{
 		if(TCflag)
@@ -210,21 +218,23 @@ try{
 	}
 	//Step6 : To Generate report
 	'click GenerateReport button'
-
 	WebUI.click(findTestObject('ReportsPage/generateReport'))
 
 	WebUI.delay(15)
 
 	'verify  SummaryReports heading'
-	WebUI.verifyElementText(findTestObject('SummarizedReportPage/summaryReport'),findTestData('AdminCredentials').getValue('summaryHeading', 1).trim())
-
+	String summHeading =CustomKeywords.'projectSpecific.Reusability.getTestData'("SummarizedReportPage","summaryHeading")
+	WebUI.verifyElementText(findTestObject('SummarizedReportPage/summaryReport'),summHeading)
+	
 	//Step 7 : To verify the Start time and End time displayed in Report
 
 	'verify startTime in SummaryReports page'
-	WebUI.verifyElementText(findTestObject('SummarizedReportPage/startDateText'),findTestData('AdminCredentials').getValue('reportstartTime', 1).trim())
-
+	String startTime =CustomKeywords.'projectSpecific.Reusability.getTestData'("SummarizedReportPage","reportstartTime")
+	WebUI.verifyElementText(findTestObject('SummarizedReportPage/startDateText'),startTime)
+		
 	'verify endTime in SummaryReports endtime'
-	WebUI.verifyElementText(findTestObject('SummarizedReportPage/endDateText'),findTestData('AdminCredentials').getValue('reportendTime', 1).trim())
+	String endTime =CustomKeywords.'projectSpecific.Reusability.getTestData'("SummarizedReportPage","reportendTime")
+	WebUI.verifyElementText(findTestObject('SummarizedReportPage/endDateText'),endTime)
 
 	//Step 8 : To verify the print time
 	'verify printdate SummaryReports date'
@@ -242,7 +252,8 @@ try{
 	if(date1.contains(todayDate))
 		println "matched"
 
-	WebUI.verifyElementText(findTestObject('SummarizedReportPage/firstWeekDateRange'),findTestData('AdminCredentials').getValue('firstDateRange', 1).trim())
+	String firstDateRange =CustomKeywords.'projectSpecific.Reusability.getTestData'("SummarizedReportPage","firstDateRange")
+	WebUI.verifyElementText(findTestObject('SummarizedReportPage/firstWeekDateRange'),firstDateRange)
 
 	//Step10 : To verify the store names displayed under Store column
 	
@@ -251,7 +262,8 @@ try{
 	boolean contains = true;
 	for(int i=0;i<storeNames.size();i++)
 	{
-		if(storeNames[i].getText().contains(storeNameString))
+		String val = storeNames[i].getText()
+		if(!val.contains(storeNameString))
 		{
 			contains = false;
 			break;
@@ -265,7 +277,6 @@ try{
 			println "Mcd store name is not listed"
 
 	}
-
 
 	//Step 11 'To verify the column headers displayed in the Average Time(min:sec) grid'
 	/* The below column headers will be shown in the grid:
@@ -335,10 +346,8 @@ try{
 		}
 		
 	}
-	
-	
-	//String  totalWeek= driver.findElement(By.xpath("(//div[@class='clear']/table/tbody/tr["+totalweekrownumber+"]/td[1])[1]")).getText()
-	String totalWeekValue=findTestData('AdminCredentials').getValue('Total Week', 1).trim()
+		
+	String totalWeekValue=CustomKeywords.'projectSpecific.Reusability.getTestData'("SummarizedReportPage","TotalWeek")
 	if(totalWeek.trim().equals(totalWeekValue))
 	{
 		System.out.println("Total week is displayed in last row")
@@ -349,17 +358,20 @@ try{
 	}
 	//Step 13: To verify the second week data
 	WebUI.delay(5)
-	WebUI.verifyElementText(findTestObject('SummarizedReportPage/secondWeekDateRange'),findTestData('AdminCredentials').getValue('secondDateRange', 1).trim())
+	String secondDateRange =CustomKeywords.'projectSpecific.Reusability.getTestData'("SummarizedReportPage","secondDateRange")
+	WebUI.verifyElementText(findTestObject('SummarizedReportPage/secondWeekDateRange'),secondDateRange)
 
 	//Step 14 'To verify that user is able to view weekly report for a single store'
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('SummarizedReportPage/storeFirst'))
-
-	WebUI.verifyElementText(findTestObject('SummarizedReportPage/summerizedReportforSingleStore'),findTestData('AdminCredentials').getValue('summaryHeading', 1))
+	
+	String summheadingforSingleStore =CustomKeywords.'projectSpecific.Reusability.getTestData'("SummarizedReportPage","summaryHeading")
+	WebUI.verifyElementText(findTestObject('SummarizedReportPage/summerizedReportforSingleStore'),summheadingforSingleStore)
 
 	// Step 15: To verify the headers in weekly report for a selected store
-	/*"Store: Store 1, Store Desc:,Start Time: Mar 1, 2018 OPEN,Stop Time : Mar 7, 2018 CLOSE,Print Date: Current date,Print Time: Current time"*/
-	String header1 = findTestData('AdminCredentials').getValue('WeekReportHeader1', 1)
+	//"Store: Store 1, Store Desc:,Start Time: Mar 1, 2018 OPEN,Stop Time : Mar 7, 2018 CLOSE,Print Date: Current date,Print Time: Current time"
+		
+	String header1 =CustomKeywords.'projectSpecific.Reusability.getTestData'("SummarizedReportPage","WeekReportHeader1")
 	String[] weekReportHeader1=header1.split(',')
 
 	def weekReportHeaderList1=new ArrayList(Arrays.asList(weekReportHeader1))
@@ -399,16 +411,13 @@ try{
 
 	}
 
-
-}catch(Exception e){
+}
+catch(Exception e){
 	e.printStackTrace()
 	println "Exception of element not found"
 	if(TCflag)
 		TCflag=false
-		
-
 }
-
 
 assert TCflag==true
 
