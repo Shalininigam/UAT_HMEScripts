@@ -410,7 +410,62 @@ try{
 		System.out.println("Failed to verify the week report labels")
 
 	}
+	
+	//Step 16: To verfiy the column headers displayed in Average Time(min:sec) Grid
+	String avgTimeHeader =CustomKeywords.'projectSpecific.Reusability.getTestData'("SummarizedReportPage","averageTimeHeader")
+	
+	def avgTimeHeaderExpectedList=new ArrayList(Arrays.asList(avgTimeHeader))
+	avgTimeHeaderExpectedList.unique()
+	System.out.println(avgTimeHeaderExpectedList)
 
+	List<WebElement> avgTimeHeaderList = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 8)))
+
+	List<String> actualList2=new ArrayList<String>();
+
+	for(int i=0;i<avgTimeHeaderList.size();i++){
+
+		actualList2.add(i,avgTimeHeaderList.get(i).getText())
+	}
+	System.out.println(actualList2)
+
+	boolean execFlag3=true
+
+	for(int j=0;j<actualList2.size();j++){
+		execFlag3=	WebUI.verifyMatch(avgTimeHeaderExpectedList.get(j).toString().trim(), actualList2.get(j).toString().trim(), false)
+
+		if(!execFlag3)
+		{
+			System.out.println("Average Time headers are not verified ");
+			break;
+
+		}
+	}
+	if(execFlag3)
+	{
+		System.out.println("Average Time headers are verified")
+	}
+	else{
+		if(TCflag)
+			TCflag=false
+		System.out.println("Failed to verify the table header labels")
+
+	}
+
+	//Step 17: To verify the rows displayed under Week column 
+	String row1 =CustomKeywords.'projectSpecific.Reusability.getTestData'("SummarizedReportPage","row1belowWeekHeader")
+	WebUI.verifyElementText(findTestObject('SummarizedReportPage/row1BelowWeekHeader'),row1)
+	
+	String row2 =CustomKeywords.'projectSpecific.Reusability.getTestData'("SummarizedReportPage","row2belowWeekHeader")
+	WebUI.verifyElementText(findTestObject('SummarizedReportPage/row2BelowWeekHeader'),row2)
+
+	//Step 18: To verify the weekly report in CSV format
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('SummarizedReportPage/downloadBtn'))
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('SummarizedReportPage/csvLink'))
+	
+	//Step 19: To verify the CSV file (Pending) from here till 34 steps is pending
+
+	
+	
 }
 catch(Exception e){
 	e.printStackTrace()

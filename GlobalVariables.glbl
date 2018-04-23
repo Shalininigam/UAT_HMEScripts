@@ -17,4 +17,9 @@
       <initValue>'http://devcloudadmin.hme.com/?pg=Login'</initValue>
       <name>AdminDevUrl</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://hme-dev-public-cloud-app.azurewebsites.net/'</initValue>
+      <name>devPublicCloudUrl</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

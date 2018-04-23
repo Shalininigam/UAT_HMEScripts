@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that public admin is able to create a group</description>
+   <name>HME-CreateGroup-04</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ba1211ba-6202-4f1f-b174-1c70088a8b68</testCaseGuid>
+</TestCaseEntity>
