@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
-   <description></description>
+   <description>To verify that public admin is able to create a parent group</description>
    <name>HME-CreateGroup-06</name>
    <tag></tag>
    <comment></comment>

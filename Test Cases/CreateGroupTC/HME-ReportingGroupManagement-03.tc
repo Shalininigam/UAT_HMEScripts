@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that public admin is able to view Reporting Group Management screen</description>
+   <name>HME-ReportingGroupManagement-03</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8e9f2d74-fdb2-4de2-9986-4feb66740420</testCaseGuid>
+</TestCaseEntity>

@@ -135,7 +135,7 @@ try{
 	{
 		StoresCBList.get(i).click()
 	}
-
+		
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/moveToButton'))
 
 	String StoreInGroupList=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","StoresInGroupList")
@@ -175,18 +175,17 @@ try{
 
 	//Step 8: To verify the Group Hierarchy in Reporting Group Management screen
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/expandCollapseLink'))
-	WebUI.verifyElementPresent(findTestObject('ReportingGroupManagement/childItemHMEtest'),10)
+	WebUI.verifyElementPresent(findTestObject('ReportingGroupManagement/childItemInTree'),10)
 
-	//Step 9: // Store list page doesn't link with reports
+	//Step 9: To verify that store list page shows the group names correctly
+	// Store list page doesn't link with reports
 
-	//Step 13: To verfiy that user is able to collapse the parent group
+	// To delete the group
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/expandCollapseLink'))
-
-	//Step 14: To verify that store list page shows the group names correctly
-	// Store list page doesn't link with reports
+	
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/group11inGroupHierarchy'))
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/addNewGroup'))
+	//CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/addNewGroup'))
 	WebUI.delay(10)
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/secondSelectAllCB'))
@@ -200,9 +199,6 @@ try{
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/confirmToDelBtn'))
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/logoutLink'))
-
-
-
 
 }
 catch(Exception e){

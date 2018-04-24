@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that public admin is able to view Manage report groups button</description>
+   <name>HME-StoreListPage-01</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>830d93a5-80b8-48bc-86f2-31776f92dfdf</testCaseGuid>
+</TestCaseEntity>
