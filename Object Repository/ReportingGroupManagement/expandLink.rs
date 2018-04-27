@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>group11inGroupHierarchy</name>
+   <name>expandLink</name>
    <tag></tag>
-   <elementGuidId>ac51c6d1-a6f2-4166-b43d-94b3a4408cac</elementGuidId>
+   <elementGuidId>619a79b4-d838-4b2e-908e-3b65e7be0c19</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//span[text()='AutomationGroup11']</value>
+         <value>//span[@title='AutomationGroup1']//preceding-sibling::span</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

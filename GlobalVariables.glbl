@@ -18,8 +18,23 @@
       <name>AdminDevUrl</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
+      <description>First Build URL</description>
       <initValue>'https://hme-dev-public-cloud-app.azurewebsites.net/'</initValue>
       <name>devPublicCloudUrl</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>delay time</description>
+      <initValue>5</initValue>
+      <name>MIN_DELAY</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>10</initValue>
+      <name>MED_DELAY</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>15</initValue>
+      <name>LONG_DELAY</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

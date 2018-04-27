@@ -6,12 +6,11 @@
    <elementGuidId>a5d33cf3-c5a9-42c1-bc31-d74fc097e520</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//span[@title='AutomationGroup11']//preceding-sibling::span</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//span[@class='rc-tree-switcher rc-tree-switcher_close']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

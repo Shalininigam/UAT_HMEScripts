@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>group11inGroupHierarchy</name>
+   <name>groupdummy2</name>
    <tag></tag>
-   <elementGuidId>ac51c6d1-a6f2-4166-b43d-94b3a4408cac</elementGuidId>
+   <elementGuidId>e2e614f3-b612-4e78-ab85-aa5dc4070ee7</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//span[text()='AutomationGroup11']</value>
+         <value>//span[text()='dummyAutomationGroup2']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

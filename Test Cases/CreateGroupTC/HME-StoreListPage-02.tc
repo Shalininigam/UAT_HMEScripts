@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that Manage Report Groups button is shown based on user's authorization</description>
+   <name>HME-StoreListPage-02</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f7f03a36-81f6-4473-a34a-9ed9d56f19af</testCaseGuid>
+</TestCaseEntity>

@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//span[text()='Group 1']</value>
+         <value>//span[text()='AutomationGroup1']</value>
       </entry>
       <entry>
          <key>BASIC</key>

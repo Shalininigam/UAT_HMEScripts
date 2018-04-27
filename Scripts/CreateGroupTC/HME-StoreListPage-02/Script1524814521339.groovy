@@ -19,42 +19,31 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-import org.openqa.selenium.By as By
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.WebElement
-import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
-
-
 boolean TCflag=true
-
 try{
-
 	WebUI.navigateToUrl(GlobalVariable.devPublicCloudUrl)
 
-	'User login to Application'
-
-	WebDriver driver = DriverFactory.getWebDriver()
-
-	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
-
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/welcomeLink'))
-
+	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","otherUser"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","otherUserPwd"))
+		
 	WebUI.delay(GlobalVariable.MED_DELAY)
 	
-    'Click on Stores Link'
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/welcomeLink'))
+	
+	WebUI.delay(GlobalVariable.MED_DELAY)
+	//Step 1: To verify that admin is able to view Store list page
+	'Click on Stores Link'
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
 
 	WebUI.verifyElementPresent(findTestObject('StorePage/StoreListHeading'), 5)
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
-
-	WebUI.verifyElementPresent(findTestObject('StorePage/ManageLeaderGroupsButton'),5)
-
+	//Step 2: To verify that Manage report groups button is not shown to the user
+	//Manage Report Groups button will not be shown  in store list page
+	
+	WebUI.verifyElementNotPresent(findTestObject('StorePage/ManageLeaderGroupsButton'),5)
 	'To verify that Manage report groups button is visible to the user'
-	WebUI.verifyElementPresent(findTestObject('StorePage/ManageReportGroupsButtton'),5)
-
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/logoutLink'))
-
+	WebUI.verifyElementNotPresent(findTestObject('StorePage/ManageReportGroupsButtton'),5)
+	
 }
 catch(Exception e){
 	e.printStackTrace()

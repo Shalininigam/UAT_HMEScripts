@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>group11inGroupHierarchy</name>
+   <name>groupCreatedMsg</name>
    <tag></tag>
-   <elementGuidId>ac51c6d1-a6f2-4166-b43d-94b3a4408cac</elementGuidId>
+   <elementGuidId>057d9767-1cc7-4131-acad-59c492d33c92</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//span[text()='AutomationGroup11']</value>
+         <value>//div[@class='appr']/h4</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -4,7 +4,7 @@
    <name>RegressionSuite</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-04-24T11:27:31</lastRun>
+   <lastRun>2018-04-27T15:20:59</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -12,15 +12,39 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>9d0b627b-a75b-4186-b869-581fc87ea0f0</testSuiteGuid>
    <testCaseLink>
-      <guid>657b6533-5efb-4521-9c9d-4c24abd8670c</guid>
+      <guid>9fa8ea67-b7c4-4f2d-924e-490c57585eb2</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/CreateGroupTC/HME-StoreListPage-01</testCaseId>
+      <testCaseId>Test Cases/CreateGroupTC/HME-CreateGroup-04</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>d14b0de9-213c-441b-a57a-94190d3834e6</guid>
+      <guid>c8f9098c-717b-4120-ae50-d800bb05253c</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/CreateGroupTC/HME-CreateGroup-06</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>6db545c9-1e29-42a3-960b-5c93dc6f0fdb</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/CreateGroupTC/HME-EditGroup-05</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>fdd361cf-410f-49f8-a8ed-68b8fba5bc32</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CreateGroupTC/HME-ReportingGroupManagement-03</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>97b87414-9ee9-4eb5-b336-4bd0dfdf27e2</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/CreateGroupTC/HME-StoreDetailsPage-09</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>b753ca3c-676a-4caa-8b34-43ba9f046a31</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/CreateGroupTC/HME-StoreListPage-01</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

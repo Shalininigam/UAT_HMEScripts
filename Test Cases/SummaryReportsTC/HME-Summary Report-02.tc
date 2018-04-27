@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>To verify that public admin is able to generate weekly summary report for selected groups/stores for selected duration</description>
-   <name>HME-Summary Report-02</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>c8724e8c-fe5e-4656-9853-b47dae48c722</testCaseGuid>
-</TestCaseEntity>

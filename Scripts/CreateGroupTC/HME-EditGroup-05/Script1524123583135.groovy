@@ -30,11 +30,8 @@ try{
 	WebUI.navigateToUrl(GlobalVariable.devPublicCloudUrl)
 
 	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
-	WebUI.delay(5)
-
-
-
-	//Pre-requisities
+	WebUI.delay(GlobalVariable.MIN_DELAY)
+	
 	'Click on Add New Group button'
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/addNewGroup'))
 
@@ -48,10 +45,11 @@ try{
 
 	'click on save button'
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/saveBtn'))
-	WebUI.delay(10)
-	WebUI.back()
-	WebUI.delay(10)
-
+	WebUI.delay(GlobalVariable.MED_DELAY)
+	CustomKeywords.'uiaction.CommonUIActions.back'()
+	WebUI.delay(GlobalVariable.MIN_DELAY)
+	CustomKeywords.'uiaction.CommonUIActions.back'()
+	WebUI.delay(GlobalVariable.MIN_DELAY)
 	//Step 1: To verify that clicking on Group name will navigate the user to Reporting Group Details screen
 
 	WebDriver driver = DriverFactory.getWebDriver()
@@ -66,7 +64,7 @@ try{
 	}
 	System.out.println(actualgroupList)
 
-	WebUI.delay(10)
+	WebUI.delay(GlobalVariable.MED_DELAY)
 
 	String groupName=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","GroupName")
 
@@ -74,39 +72,67 @@ try{
 	{
 
 		CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/group11inGroupHierarchy'))
-		println "Group 11 is available in group hierarchy"
+		println "Automation Group 11 is available in group hierarchy"
 
 	}
 	else{
 
 		println "Required group is not available in group hierarchy"
+		WebUI.takeScreenshot()
 	}
 
 	'Verify Reporting group details screen is displayed'
 	WebUI.verifyElementPresent(findTestObject('ReportingGroupManagement/reportingGroupDetails'), 10)
-	
-	WebUI.delay(5)
+
+	WebUI.delay(GlobalVariable.MIN_DELAY)
 
 	//Step 2: To verify the Group name and Group description pre-populated in the screen
 
 	'Verify Group Name and Group description'
-	String groupNameAttr =WebUI.getAttribute(findTestObject('ReportingGroupManagement/groupNameTxt'),"value")
-	WebUI.verifyMatch(groupNameAttr, CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","GroupName"), false)
 
-	WebUI.delay(5)
-	String groupDescAttr =WebUI.getAttribute(findTestObject('ReportingGroupManagement/groupDescTxt'),"value")
-	WebUI.delay(5)
-	WebUI.verifyMatch(groupDescAttr, CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","GroupDesc"), false)
+	CustomKeywords.'uiaction.CommonUIActions.verifyMatch'(findTestObject('ReportingGroupManagement/groupNameTxt'), CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","GroupName"))
+	WebUI.delay(GlobalVariable.MIN_DELAY)
+
+	CustomKeywords.'uiaction.CommonUIActions.verifyMatch'(findTestObject('ReportingGroupManagement/groupDescTxt'), CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","GroupDesc"))
 
 	//Step 3: To verify that available groups/stores are shown properly under Available Group/Stores in Group list box
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/cancelBtn'))
+	WebUI.delay(GlobalVariable.MIN_DELAY)
 
-	String StoreList=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","availableStoreList")
-	String[] groupList=StoreList.split(',')
-	ArrayList<String> listOfStores=new ArrayList<String>(Arrays.asList(groupList))
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/addNewGroup'))
+
+	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupNameTxt'), CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","dummyGroupName1"))
+	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupDescTxt'), CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","GroupDesc"))
+
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/saveBtn'))
+	WebUI.delay(GlobalVariable.MED_DELAY)
+
+	CustomKeywords.'uiaction.CommonUIActions.back'()
+	WebUI.delay(GlobalVariable.MIN_DELAY)
+	CustomKeywords.'uiaction.CommonUIActions.back'()
+
+	WebUI.delay(GlobalVariable.MIN_DELAY)
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/addNewGroup'))
+	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupNameTxt'), CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","dummyGroupName2"))
+	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupDescTxt'), CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","GroupDesc"))
+
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/saveBtn'))
+	WebUI.delay(GlobalVariable.MED_DELAY)
+
+	CustomKeywords.'uiaction.CommonUIActions.back'()
+	WebUI.delay(GlobalVariable.MIN_DELAY)
+	CustomKeywords.'uiaction.CommonUIActions.back'()
+
+	WebUI.delay(GlobalVariable.MIN_DELAY)
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/groupdummy1'))
+
+	//To verify groups or Stores in Available Stores/groups list box
+
+	String StoreList=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","dummyGroupName2")
+	ArrayList<String> listOfStores=new ArrayList<String>(Arrays.asList(StoreList))
 	System.out.println(listOfStores)
 
-	WebUI.delay(10)
-
+	WebUI.delay(GlobalVariable.MED_DELAY)
 
 	List<WebElement> availableStoreList = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 10)))
 
@@ -125,25 +151,50 @@ try{
 	}else{
 
 		println "Actual list does not contain the required stores or groups"
+		WebUI.takeScreenshot()
 	}
+
+	//Delete created dummy groups
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/deleteBtn'))
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/confirmToDelBtn'))
+	CustomKeywords.'uiaction.CommonUIActions.back'()
+	WebUI.delay(GlobalVariable.MIN_DELAY)
+	CustomKeywords.'uiaction.CommonUIActions.back'()
+
+	WebUI.delay(GlobalVariable.MIN_DELAY)
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/groupdummy2'))
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/deleteBtn'))
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/confirmToDelBtn'))
+	CustomKeywords.'uiaction.CommonUIActions.back'()
+	WebUI.delay(GlobalVariable.MIN_DELAY)
+	CustomKeywords.'uiaction.CommonUIActions.back'()
+
+	WebUI.delay(GlobalVariable.MIN_DELAY)
+
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/group11inGroupHierarchy'))
 
 	//Step 4,5&6: To move the Groups/Stores from Available Groups/Stores to Groups/Stores in Group list box - Step 1
+	WebUI.delay(GlobalVariable.MED_DELAY)
 
 	List<WebElement> StoresCBList = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 12)))
+	List<WebElement> storesLabel = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 10)))
+	ArrayList<String> groupStoresList=new ArrayList<String>()
 	System.out.println(StoresCBList.size())
-	for(int i=0;i<StoresCBList.size()-18;i++)
-	{
+
+	WebUI.delay(GlobalVariable.MIN_DELAY)
+
+	for(int i=0;i<3;i++){
+
+		groupStoresList[i]=storesLabel.get(i).getText()
 		StoresCBList.get(i).click()
 	}
-		
+	System.out.println(groupStoresList)
+
+	WebUI.delay(GlobalVariable.MED_DELAY)
+
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/moveToButton'))
 
-	String StoreInGroupList=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","StoresInGroupList")
-	String[] groupList1=StoreInGroupList.split(',')
-	ArrayList<String> listOfStoresinGroupListbox=new ArrayList<String>(Arrays.asList(groupList1))
-	System.out.println(listOfStoresinGroupListbox)
-
-	WebUI.delay(10)
+	WebUI.delay(GlobalVariable.MIN_DELAY)
 
 	List<WebElement> secondStoreListBox = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 11)))
 
@@ -156,43 +207,66 @@ try{
 	}
 	System.out.println(actualList1)
 
-	WebUI.delay(10)
+	WebUI.delay(GlobalVariable.MED_DELAY)
 
-	if(actualList1.containsAll(listOfStoresinGroupListbox)){
-		println "Selected stores are displayed in Group/Stores in Group listbox"
+	if(actualList1.containsAll(groupStoresList)){
+		println "Moved stores are displayed in Group/Stores in Group listbox"
 
 	}else{
 
-		println "Selected stores are not displayed in Group/Stores in Group listbox"
+		println "Moved stores are not displayed in Group/Stores in Group listbox"
+		WebUI.takeScreenshot()
 	}
 
 	//Step 7: To Save the changes
 	'click on save button'
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/saveBtn'))
-	WebUI.delay(10)
-	WebUI.back()
-	WebUI.delay(10)
+	WebUI.delay(GlobalVariable.MED_DELAY)
+	CustomKeywords.'uiaction.CommonUIActions.back'()
+
+	WebUI.delay(GlobalVariable.MIN_DELAY)
+	CustomKeywords.'uiaction.CommonUIActions.back'()
+	WebUI.delay(GlobalVariable.MIN_DELAY)
 
 	//Step 8: To verify the Group Hierarchy in Reporting Group Management screen
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/expandCollapseLink'))
-	WebUI.verifyElementPresent(findTestObject('ReportingGroupManagement/childItemInTree'),10)
+	List<String> subGroupList=new ArrayList<String>();
+	for(int i=1;i<=3;i++)
+	{
+	
+	String groupXpath="(//span[@title='"+groupName+"']/following-sibling::ul/li/span[3]/span[2])["+i+"]"
+	println groupXpath
+	String childgroup=driver.findElement(By.xpath(groupXpath)).getText()
+	println childgroup
+	subGroupList[i-1]=childgroup
+	}
+	println subGroupList
+	
+	if(subGroupList.containsAll(groupStoresList))
+	{
+		println "Parent group have all the associated stores and groups"
+	}
+	else{
+		println "Parent group doesn't have associated stores and groups "
+		WebUI.takeScreenshot()
+	}
 
 	//Step 9: To verify that store list page shows the group names correctly
-	// Store list page doesn't link with reports
+	// Store list page doesn't link with report managament screen
 
-	// To delete the group
-
+	// To delete created dummy groups
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/expandCollapseLink'))
-	
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/group11inGroupHierarchy'))
-	//CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/addNewGroup'))
-	WebUI.delay(10)
+
+	WebUI.delay(GlobalVariable.MED_DELAY)
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/secondSelectAllCB'))
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/moveBackToAvailableStores'))
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/saveBtn'))
-	WebUI.delay(10)
-	WebUI.back()
+	WebUI.delay(GlobalVariable.MED_DELAY)
+	CustomKeywords.'uiaction.CommonUIActions.back'()
+	WebUI.delay(GlobalVariable.MIN_DELAY)
+	CustomKeywords.'uiaction.CommonUIActions.back'()
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/group11inGroupHierarchy'))
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/deleteBtn'))

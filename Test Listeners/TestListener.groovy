@@ -31,6 +31,7 @@ class TestListener {
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
 		WebUI.openBrowser('')
 		WebUI.maximizeWindow()
+		CustomKeywords.'uiaction.CommonUIActions.deleteAllCookies'()
 		
 		
 	}

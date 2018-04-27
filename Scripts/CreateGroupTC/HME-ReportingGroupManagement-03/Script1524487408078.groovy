@@ -39,8 +39,9 @@ try{
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/welcomeLink'))
 
-	WebUI.delay(10)
+	WebUI.delay(GlobalVariable.MED_DELAY)
 
+	'Click on Stores Link'
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
 
 	WebUI.verifyElementPresent(findTestObject('StorePage/StoreListHeading'), 5)
@@ -48,12 +49,12 @@ try{
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
 
 	WebUI.verifyElementPresent(findTestObject('StorePage/ManageLeaderGroupsButton'),5)
-
+	'To verify that Manage report groups button is visible to the user'
 	WebUI.verifyElementPresent(findTestObject('StorePage/ManageReportGroupsButtton'),5)
 
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
-
+	'To navigate to Reporting Group Management screen'
 	WebUI.verifyElementPresent(findTestObject('ReportingGroupManagement/addNewGroup'),5)
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/addNewGroup'))
@@ -69,9 +70,11 @@ try{
 
 	'click on save button'
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/saveBtn'))
-	WebUI.delay(10)
+	WebUI.delay(GlobalVariable.MED_DELAY)
 	WebUI.back()
-	WebUI.delay(10)
+	WebUI.delay(GlobalVariable.MIN_DELAY)
+	WebUI.back()
+	WebUI.delay(GlobalVariable.MIN_DELAY)
 	int index=0;
 	String groupName=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","groupNameTC3")
 	List<WebElement> groupHierarchyList = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 13)))
@@ -86,7 +89,7 @@ try{
 
 	}
 
-	WebUI.delay(10)
+	WebUI.delay(GlobalVariable.MED_DELAY)
 
 	if(index !=0)
 	{
@@ -96,7 +99,7 @@ try{
 
 		System.out.println(xpath);
 		driver.findElement(By.xpath(xpath)).click();
-		WebUI.delay(10)
+		WebUI.delay(GlobalVariable.MED_DELAY)
 		CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/deleteBtn'))
 
 		CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/confirmToDelBtn'))
@@ -106,6 +109,7 @@ try{
 	else{
 
 		println "Required group is not available in group hierarchy"
+		WebUI.takeScreenshot()
 
 		if(TCflag)
 			TCflag=false
