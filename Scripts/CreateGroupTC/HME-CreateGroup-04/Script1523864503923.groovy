@@ -31,9 +31,9 @@ try{
 	WebUI.navigateToUrl(GlobalVariable.devPublicCloudUrl)
 
 	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
-		
+
 	WebUI.delay(GlobalVariable.MED_DELAY)
-	
+
 	//Step 1: To navigate to Reporting group details screen
 
 	'Click on Add New Group button'
@@ -49,6 +49,8 @@ try{
 	{
 		System.out.println("Group Name text box is marked with asterisk symbol")
 	}else{
+		if(TCflag)
+			TCflag=false
 		System.out.println("Group Name text box is not marked with asterisk symbol")
 		WebUI.takeScreenshot()
 	}
@@ -58,20 +60,20 @@ try{
 	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupDescTxt'), CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","GroupDesc"))
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/saveBtn'))
 	WebUI.delay(GlobalVariable.MED_DELAY)
-	
+
 	CustomKeywords.'uiaction.CommonUIActions.back'()
 	WebUI.delay(GlobalVariable.MIN_DELAY)
-		
+
 	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupNameTxt'), CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","dummyGroupName2"))
 	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupDescTxt'), CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","GroupDesc"))
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/saveBtn'))
-	
+
 	WebUI.delay(GlobalVariable.MED_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.back'()
-	
+
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.back'()
-	
+
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/groupdummy1'))
 
@@ -99,30 +101,32 @@ try{
 		println "Actual list contains the required stores or groups"
 
 	}else{
+		if(TCflag)
+			TCflag=false
 		println "Actual list does not contain the required stores or groups"
 		WebUI.takeScreenshot()
 	}
-	
+
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/deleteBtn'))
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/confirmToDelBtn'))
 	CustomKeywords.'uiaction.CommonUIActions.back'()
-	
+
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.back'()
-	
+
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/groupdummy2'))
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/deleteBtn'))
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/confirmToDelBtn'))
 	CustomKeywords.'uiaction.CommonUIActions.back'()
-	
+
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.back'()
 
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/addNewGroup'))
 	WebUI.delay(GlobalVariable.MIN_DELAY)
-	
+
 	//Step 4:To verify that vertical scroll box is shown in Available Groups/Stores list box
 	//Out of scope(Locator is not available)
 
@@ -140,6 +144,8 @@ try{
 	{
 		println "No Groups/Stores is displayed in Groups/Stores in Group list box"
 	}else{
+		if(TCflag)
+			TCflag=false
 		println "Groups/Stores is displayed in Groups/Stores in Group list box"
 		WebUI.takeScreenshot()
 	}
@@ -188,7 +194,7 @@ try{
 		WebUI.takeScreenshot()
 	}
 
-	
+
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 	//Step 8: To verfiy that user is able to unselect Groups/Stores in Availlable/Stores list box
 
@@ -208,8 +214,8 @@ try{
 	ArrayList<String> groupStoresList=new ArrayList<String>()
 
 	System.out.println(StoresCBList1.size())
-
-	for(int i=0;i<3;i++){
+	int  size =StoresCBList1.size()
+	for(int i=0;i<StoresCBList1.size();i++){
 
 		groupStoresList[i]=storesLabel.get(i).getText()
 		StoresCBList1.get(i).click()
@@ -238,6 +244,8 @@ try{
 		println "Selected stores are displayed in Group/Stores in Group listbox"
 
 	}else{
+		if(TCflag)
+			TCflag=false
 
 		println "Selected stores are not displayed in Group/Stores in Group listbox"
 		WebUI.takeScreenshot()
@@ -246,16 +254,16 @@ try{
 	//Step 10 : To Save the changes
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/saveBtn'))
-	WebUI.verifyElementPresent(findTestObject('ReportingGroupManagement/saveStatusMsg'), 10)
-		
+	WebUI.verifyElementPresent(findTestObject('ReportingGroupManagement/groupCreatedMsg'), 10)
+
 	WebUI.delay(GlobalVariable.MED_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.back'()
-	
+
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.back'()
-	
+
 	WebUI.delay(GlobalVariable.MIN_DELAY)
-	
+
 	//Step 11: To verify the Group Hierarchy in Reporting Group Management screen
 	List<WebElement> groupHierarchyList = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 13)))
 	List<String> actualgroupList=new ArrayList<String>();
@@ -276,6 +284,8 @@ try{
 
 	}
 	else{
+		if(TCflag)
+			TCflag=false
 
 		println "Required group is not available in tree structure"
 		WebUI.takeScreenshot()
@@ -284,22 +294,24 @@ try{
 	//Step 12: To verfiy that user is able to expand the parent group & verify Child Items
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/expandCollapseLink'))
 	List<String> subGroupList=new ArrayList<String>();
-	for(int i=1;i<=3;i++)
+	for(int i=1;i<=size;i++)
 	{
-	
-	String groupXpath="(//span[@title='"+groupName+"']/following-sibling::ul/li/span[3]/span[2])["+i+"]"
-	println groupXpath
-	String childgroup=driver.findElement(By.xpath(groupXpath)).getText()
-	println childgroup
-	subGroupList[i-1]=childgroup
+
+		String groupXpath="(//span[@title='"+groupName+"']/following-sibling::ul/li/span[3]/span[2])["+i+"]"
+		println groupXpath
+		String childgroup=driver.findElement(By.xpath(groupXpath)).getText()
+		println childgroup
+		subGroupList[i-1]=childgroup
 	}
 	println subGroupList
-	
+
 	if(subGroupList.containsAll(groupStoresList))
 	{
 		println "Parent group have all the associated stores and groups"
 	}
 	else{
+		if(TCflag)
+			TCflag=false
 		println "Parent group doesn't have associated stores and groups "
 		WebUI.takeScreenshot()
 	}
@@ -308,19 +320,19 @@ try{
 
 	//Step 14: To verify that store list page shows the group names correctly
 	// Store list page doesn't link with Report Management group page(once development is done, will script for this step)
-	
+
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/group11inGroupHierarchy'))
 	WebUI.delay(GlobalVariable.MED_DELAY)
-	
+
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/secondSelectAllCB'))
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/moveBackToAvailableStores'))
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/saveBtn'))
 	WebUI.delay(GlobalVariable.MED_DELAY)
-		
+
 	CustomKeywords.'uiaction.CommonUIActions.back'()
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.back'()
-		
+
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/group11inGroupHierarchy'))
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/deleteBtn'))

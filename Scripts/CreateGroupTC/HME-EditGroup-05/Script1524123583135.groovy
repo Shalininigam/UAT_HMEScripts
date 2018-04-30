@@ -31,7 +31,7 @@ try{
 
 	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
 	WebUI.delay(GlobalVariable.MIN_DELAY)
-	
+
 	'Click on Add New Group button'
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/addNewGroup'))
 
@@ -56,7 +56,7 @@ try{
 
 	List<WebElement> groupHierarchyList = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 13)))
 	List<String> actualgroupList=new ArrayList<String>();
-
+	
 	for(int i=0;i<groupHierarchyList.size();i++){
 
 		actualgroupList.add(i,groupHierarchyList.get(i).getText())
@@ -76,6 +76,8 @@ try{
 
 	}
 	else{
+		if(TCflag)
+			TCflag=false
 
 		println "Required group is not available in group hierarchy"
 		WebUI.takeScreenshot()
@@ -149,6 +151,8 @@ try{
 		println "Actual list contains the required stores or groups"
 
 	}else{
+		if(TCflag)
+			TCflag=false
 
 		println "Actual list does not contain the required stores or groups"
 		WebUI.takeScreenshot()
@@ -180,15 +184,16 @@ try{
 	List<WebElement> storesLabel = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 10)))
 	ArrayList<String> groupStoresList=new ArrayList<String>()
 	System.out.println(StoresCBList.size())
+	
+	WebUI.delay(GlobalVariable.MED_DELAY)
 
-	WebUI.delay(GlobalVariable.MIN_DELAY)
-
-	for(int i=0;i<3;i++){
+	for(int i=0;i<StoresCBList.size();i++){
 
 		groupStoresList[i]=storesLabel.get(i).getText()
 		StoresCBList.get(i).click()
 	}
 	System.out.println(groupStoresList)
+	int  size =groupStoresList.size()
 
 	WebUI.delay(GlobalVariable.MED_DELAY)
 
@@ -214,6 +219,9 @@ try{
 
 	}else{
 
+		if(TCflag)
+			TCflag=false
+
 		println "Moved stores are not displayed in Group/Stores in Group listbox"
 		WebUI.takeScreenshot()
 	}
@@ -231,22 +239,24 @@ try{
 	//Step 8: To verify the Group Hierarchy in Reporting Group Management screen
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/expandCollapseLink'))
 	List<String> subGroupList=new ArrayList<String>();
-	for(int i=1;i<=3;i++)
+	for(int i=1;i<=size;i++)
 	{
-	
-	String groupXpath="(//span[@title='"+groupName+"']/following-sibling::ul/li/span[3]/span[2])["+i+"]"
-	println groupXpath
-	String childgroup=driver.findElement(By.xpath(groupXpath)).getText()
-	println childgroup
-	subGroupList[i-1]=childgroup
+		
+		String groupXpath="(//span[@title='"+groupName+"']/following-sibling::ul/li/span[3]/span[2])["+i+"]"
+		println groupXpath
+		String childgroup=driver.findElement(By.xpath(groupXpath)).getText()
+		println childgroup
+		subGroupList[i-1]=childgroup
 	}
 	println subGroupList
-	
+
 	if(subGroupList.containsAll(groupStoresList))
 	{
 		println "Parent group have all the associated stores and groups"
 	}
 	else{
+		if(TCflag)
+			TCflag=false
 		println "Parent group doesn't have associated stores and groups "
 		WebUI.takeScreenshot()
 	}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that Group names are unique</description>
+   <name>HME-CreateGroup-08</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b3d8ae5e-cded-43a3-a018-52cbf3ef5cff</testCaseGuid>
+</TestCaseEntity>

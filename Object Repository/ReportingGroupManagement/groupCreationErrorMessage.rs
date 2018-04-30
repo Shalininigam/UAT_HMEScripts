@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>expandCollapseLink</name>
+   <name>groupCreationErrorMessage</name>
    <tag></tag>
-   <elementGuidId>a5d33cf3-c5a9-42c1-bc31-d74fc097e520</elementGuidId>
+   <elementGuidId>bcb5a737-d34c-40d0-bc25-4d955747a819</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//span[@title='AutomationGroup']//preceding-sibling::span</value>
+         <value>//div[@class='alert alert-danger'] 
+</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -92,6 +92,9 @@ try{
 
 	}else{
 
+		if(TCflag)
+			TCflag=false
+
 		println "Groups & Stores are not displayed in Available Groups/Stores listbox"
 		WebUI.takeScreenshot()
 	}
@@ -114,7 +117,7 @@ try{
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/addNewGroup'))
-	
+
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 
 	//Step 3: To verify that no groups/stores are shown under Groups/Stores in Group list box
@@ -131,6 +134,8 @@ try{
 	{
 		println "No Groups/Stores is displayed in Groups/Stores in Group list box"
 	}else{
+		if(TCflag)
+			TCflag=false
 		println "Groups/Stores is displayed in Groups/Stores in Group list box"
 		WebUI.takeScreenshot()
 	}
@@ -152,10 +157,11 @@ try{
 	List<WebElement> storesLabel = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 10)))
 	ArrayList<String> groupStoresList=new ArrayList<String>()
 	System.out.println(StoresCBList.size())
+	int  size =StoresCBList.size()
 
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 
-	for(int i=0;i<3;i++){
+	for(int i=0;i<size;i++){
 
 		groupStoresList[i]=storesLabel.get(i).getText()
 		StoresCBList.get(i).click()
@@ -166,13 +172,13 @@ try{
 
 	WebUI.delay(GlobalVariable.MED_DELAY)
 
-	String storeXpath="//li[text()='"+CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","storeName")+"']"
+	/*String storeXpath="//li[text()='"+CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","storeName")+"']"
 	println storeXpath
 	groupStoresList[3]=driver.findElement(By.xpath(storeXpath)).getText()
 
 	storeXpath=storeXpath+"/label/input"
 	driver.findElement(By.xpath(storeXpath)).click()
-	WebUI.delay(GlobalVariable.MIN_DELAY)
+	WebUI.delay(GlobalVariable.MIN_DELAY)*/
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/moveToButton'))
 
@@ -196,6 +202,8 @@ try{
 
 	}else{
 
+		if(TCflag)
+			TCflag=false
 		println "Selected stores are not displayed in Group/Stores in Group listbox"
 		WebUI.takeScreenshot()
 	}
@@ -210,7 +218,7 @@ try{
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 	//Step 8: To verify the Group Hierarchy in Reporting Group Management screen
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/expandLink'))
-	
+
 	//Step 9&10: To verfiy that user is able to collapse the parent group
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/expandLink'))
 

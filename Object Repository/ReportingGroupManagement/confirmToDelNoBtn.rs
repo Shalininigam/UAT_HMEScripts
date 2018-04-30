@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>expandCollapseLink</name>
+   <name>confirmToDelNoBtn</name>
    <tag></tag>
-   <elementGuidId>a5d33cf3-c5a9-42c1-bc31-d74fc097e520</elementGuidId>
+   <elementGuidId>05b6087a-5304-404c-af10-d5573e47f135</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//span[@title='AutomationGroup']//preceding-sibling::span</value>
+         <value>//button[text()='No']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
