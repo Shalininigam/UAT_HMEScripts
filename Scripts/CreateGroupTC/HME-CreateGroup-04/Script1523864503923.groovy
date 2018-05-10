@@ -33,13 +33,13 @@ try{
 	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
 
 	WebUI.delay(GlobalVariable.MED_DELAY)
-	
+
 	//Pre-Condition : To redirect to Group hirerchy page
 	'Click on Stores Link'
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
-	
+
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
-	
+
 	//Step 1: To navigate to Reporting group details screen
 
 	'Click on Add New Group button'
@@ -218,6 +218,7 @@ try{
 	List<WebElement> StoresCBList1 = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 12)))
 	List<WebElement> storesLabel = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 10)))
 	ArrayList<String> groupStoresList=new ArrayList<String>()
+	ArrayList<String> groupStoresList1=new ArrayList<String>()
 
 	System.out.println(StoresCBList1.size())
 	int  size =StoresCBList1.size()
@@ -225,6 +226,13 @@ try{
 
 		groupStoresList[i]=storesLabel.get(i).getText()
 		StoresCBList1.get(i).click()
+
+	}
+
+	for(int i=0;i<StoresCBList1.size()-10;i++){
+
+		groupStoresList1[i]=storesLabel.get(i).getText()
+
 
 	}
 	System.out.println(groupStoresList)
@@ -310,8 +318,11 @@ try{
 		subGroupList[i-1]=childgroup
 	}
 	println subGroupList
+	println groupStoresList1
 
-	if(subGroupList.containsAll(groupStoresList))
+
+
+	if(subGroupList.containsAll(groupStoresList1))
 	{
 		println "Parent group have all the associated stores and groups"
 	}
@@ -321,17 +332,22 @@ try{
 		println "Parent group doesn't have associated stores and groups "
 		WebUI.takeScreenshot()
 	}
+
+
+
+
+
 	//Step 13: To verfiy that user is able to collapse the parent group
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/expandCollapseLink'))
 
 	//Step 14: To verify that store list page shows the group names correctly
-	
+
 	'Click on Stores Link'
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
-	
+
 	List<WebElement> storesList = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 16)))
-			
-	for(int i=1;i<storesList.size();i++)
+
+	for(int i=1;i<=storesList.size();i++)
 	{
 		String reportgroup= "(//div[@class='ctable']/table/tbody/tr[@class='tdata clear'])["+i+"]/td[7]"
 		String reportgroupTxt=driver.findElement(By.xpath(reportgroup)).getText()
@@ -342,17 +358,17 @@ try{
 		else{
 			if(!TCflag)
 			{
-			TCflag = false
-			println "Report group has not right group name"
-			WebUI.takeScreenshot()
-			break;
+				TCflag = false
+				println "Report group has not right group name"
+				WebUI.takeScreenshot()
+				break;
 			}
 		}
-		
+
 	}
-	
+
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
-	
+
 	//Deleting Created groups
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/group11inGroupHierarchy'))
 	WebUI.delay(GlobalVariable.MED_DELAY)

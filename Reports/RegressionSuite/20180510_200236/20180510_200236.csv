@@ -1,0 +1,105 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+RegressionSuite,Chrome 66.0.3359.139,,2018-05-10 20:02:39,2018-05-10 20:44:09,41m - 30.183s,FAILED
+,,,,,,
+Test Cases/CreateGroupTC/HME-CreateGroup-04,Chrome 66.0.3359.139,To verify that public admin is able to create a group,2018-05-10 20:02:40,2018-05-10 20:05:47,3m - 7.607s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.139,,2018-05-10 20:02:40,2018-05-10 20:02:44,4.332s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.139,,2018-05-10 20:02:44,2018-05-10 20:02:44,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.139,,2018-05-10 20:02:44,2018-05-10 20:05:46,3m - 2.237s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.139,,2018-05-10 20:05:46,2018-05-10 20:05:46,0.002s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.139,,2018-05-10 20:05:46,2018-05-10 20:05:47,0.704s,PASSED
+,,,,,,
+Test Cases/CreateGroupTC/HME-CreateGroup-06,Chrome 66.0.3359.139,To verify that public admin is able to create a parent group,2018-05-10 20:05:47,2018-05-10 20:09:07,3m - 19.895s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.139,,2018-05-10 20:05:47,2018-05-10 20:05:51,3.702s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.139,,2018-05-10 20:05:51,2018-05-10 20:05:51,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.139,,2018-05-10 20:05:51,2018-05-10 20:09:06,3m - 15.236s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.139,,2018-05-10 20:09:06,2018-05-10 20:09:06,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.139,,2018-05-10 20:09:06,2018-05-10 20:09:07,0.699s,PASSED
+,,,,,,
+Test Cases/CreateGroupTC/HME-EditGroup-05,Chrome 66.0.3359.139,To verify that public admin is able to view Manage report groups button,2018-05-10 20:09:07,2018-05-10 20:13:04,3m - 56.751s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.139,,2018-05-10 20:09:07,2018-05-10 20:09:11,4.270s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.139,,2018-05-10 20:09:12,2018-05-10 20:09:12,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.139,,2018-05-10 20:09:12,2018-05-10 20:13:03,3m - 51.596s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.139,,2018-05-10 20:13:03,2018-05-10 20:13:03,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.139,,2018-05-10 20:13:03,2018-05-10 20:13:04,0.671s,PASSED
+,,,,,,
+Test Cases/CreateGroupTC/HME-ReportingGroupManagement-03,Chrome 66.0.3359.139,To verify that public admin is able to view Reporting Group Management screen,2018-05-10 20:13:04,2018-05-10 20:14:20,1m - 16.676s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.139,,2018-05-10 20:13:04,2018-05-10 20:13:07,3.600s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.139,,2018-05-10 20:13:08,2018-05-10 20:13:08,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.139,,2018-05-10 20:13:08,2018-05-10 20:14:20,1m - 12.267s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.139,,2018-05-10 20:14:20,2018-05-10 20:14:20,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.139,,2018-05-10 20:14:20,2018-05-10 20:14:20,0.653s,PASSED
+,,,,,,
+Test Cases/CreateGroupTC/HME-StoreDetailsPage-09,Chrome 66.0.3359.139,To verify that public admin is able to view store details page,2018-05-10 20:14:20,2018-05-10 20:16:17,1m - 56.711s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.139,,2018-05-10 20:14:20,2018-05-10 20:14:24,3.560s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.139,,2018-05-10 20:14:24,2018-05-10 20:14:24,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.139,,2018-05-10 20:14:24,2018-05-10 20:16:16,1m - 52.265s,FAILED
+Statement - assert TCflag == true,Chrome 66.0.3359.139,,2018-05-10 20:16:16,2018-05-10 20:16:16,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.139,,2018-05-10 20:16:16,2018-05-10 20:16:17,0.697s,PASSED
+,,,,,,
+Test Cases/CreateGroupTC/HME-StoreListPage-01,Chrome 66.0.3359.139,To verify that public admin is able to view Manage report groups button,2018-05-10 20:16:17,2018-05-10 20:16:47,30.253s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.139,,2018-05-10 20:16:17,2018-05-10 20:16:21,3.599s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.139,,2018-05-10 20:16:21,2018-05-10 20:16:21,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.139,,2018-05-10 20:16:21,2018-05-10 20:16:47,25.897s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.139,,2018-05-10 20:16:47,2018-05-10 20:16:47,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.139,,2018-05-10 20:16:47,2018-05-10 20:16:47,0.652s,PASSED
+,,,,,,
+Test Cases/CreateGroupTC/HME-StoreListPage-02,Chrome 66.0.3359.139,To verify that Manage Report Groups button is shown based on user's authorization,2018-05-10 20:16:47,2018-05-10 20:17:19,31.822s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.139,,2018-05-10 20:16:47,2018-05-10 20:16:51,3.453s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.139,,2018-05-10 20:16:51,2018-05-10 20:16:51,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.139,,2018-05-10 20:16:51,2018-05-10 20:17:19,27.624s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.139,,2018-05-10 20:17:19,2018-05-10 20:17:19,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.139,,2018-05-10 20:17:19,2018-05-10 20:17:19,0.664s,PASSED
+,,,,,,
+Test Cases/CreateGroupTC/HME-CreateGroup-08,Chrome 66.0.3359.139,To verify that Group names are unique,2018-05-10 20:17:19,2018-05-10 20:21:26,4m - 6.957s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.139,,2018-05-10 20:17:19,2018-05-10 20:17:23,3.608s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.139,,2018-05-10 20:17:23,2018-05-10 20:17:23,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.139,,2018-05-10 20:17:23,2018-05-10 20:21:26,4m - 2.481s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.139,,2018-05-10 20:21:26,2018-05-10 20:21:26,0.654s,PASSED
+,,,,,,
+Test Cases/CreateGroupTC/HME-DeleteGroup-07,Chrome 66.0.3359.139,To verify that public admin is able to delete a group,2018-05-10 20:21:26,2018-05-10 20:25:58,4m - 31.774s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.139,,2018-05-10 20:21:26,2018-05-10 20:21:30,3.634s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.139,,2018-05-10 20:21:30,2018-05-10 20:21:30,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.139,,2018-05-10 20:21:30,2018-05-10 20:25:57,4m - 27.208s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.139,,2018-05-10 20:25:57,2018-05-10 20:25:58,0.652s,PASSED
+,,,,,,
+Test Cases/GoalStatisticsTC/HME-Goal Statistics Report-01,Chrome 66.0.3359.139,To verify that public admin is able to view Goal Statistics Reports screen,2018-05-10 20:25:58,2018-05-10 20:28:58,3m - 0.417s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.139,,2018-05-10 20:25:58,2018-05-10 20:26:02,3.495s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.139,,2018-05-10 20:26:02,2018-05-10 20:26:02,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.139,,2018-05-10 20:26:02,2018-05-10 20:28:58,2m - 56.063s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.139,,2018-05-10 20:28:58,2018-05-10 20:28:58,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.139,,2018-05-10 20:28:58,2018-05-10 20:28:58,0.663s,PASSED
+,,,,,,
+Test Cases/SummaryReportsTC/HME-Summary Report-01,Chrome 66.0.3359.139,To verify that public admin is able to view Summary Reports screen,2018-05-10 20:28:58,2018-05-10 20:31:35,2m - 36.361s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.139,,2018-05-10 20:28:58,2018-05-10 20:29:02,3.583s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.139,,2018-05-10 20:29:02,2018-05-10 20:29:02,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.139,,2018-05-10 20:29:02,2018-05-10 20:31:34,2m - 31.933s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.139,,2018-05-10 20:31:34,2018-05-10 20:31:34,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.139,,2018-05-10 20:31:34,2018-05-10 20:31:35,0.650s,PASSED
+,,,,,,
+Test Cases/SummaryReportsTC/HME-Summary Report-07,Chrome 66.0.3359.139,To verify that public admin is able to generate weekly summary report for selected groups/stores for maximum of 2 months,2018-05-10 20:31:35,2018-05-10 20:34:38,3m - 3.645s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.139,,2018-05-10 20:31:35,2018-05-10 20:31:38,3.634s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.139,,2018-05-10 20:31:39,2018-05-10 20:31:39,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.139,,2018-05-10 20:31:39,2018-05-10 20:34:38,2m - 59.149s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.139,,2018-05-10 20:34:38,2018-05-10 20:34:38,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.139,,2018-05-10 20:34:38,2018-05-10 20:34:38,0.648s,PASSED
+,,,,,,
+Test Cases/SummaryReportsTC/HME-Summary Report-08,Chrome 66.0.3359.139,To verify that public admin is able to generate day summary report for selected groups/stores for maximum of 1 month,2018-05-10 20:34:38,2018-05-10 20:37:45,3m - 7.023s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.139,,2018-05-10 20:34:38,2018-05-10 20:34:42,3.523s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.139,,2018-05-10 20:34:42,2018-05-10 20:34:42,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.139,,2018-05-10 20:34:42,2018-05-10 20:37:45,3m - 2.619s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.139,,2018-05-10 20:37:45,2018-05-10 20:37:45,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.139,,2018-05-10 20:37:45,2018-05-10 20:37:45,0.692s,PASSED
+,,,,,,
+Test Cases/SummaryReportsTC/HME-Summary Report-09,Chrome 66.0.3359.139,To verify that public admin is able to generate daypart summary report for selected groups/stores for maximum of 2 weeks,2018-05-10 20:37:45,2018-05-10 20:40:50,3m - 4.679s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.139,,2018-05-10 20:37:46,2018-05-10 20:37:49,3.554s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.139,,2018-05-10 20:37:49,2018-05-10 20:37:49,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.139,,2018-05-10 20:37:49,2018-05-10 20:40:50,3m - 0.261s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.139,,2018-05-10 20:40:50,2018-05-10 20:40:50,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.139,,2018-05-10 20:40:50,2018-05-10 20:40:50,0.652s,PASSED
+,,,,,,
+Test Cases/SummaryReportsTC/HME-Summary Report-10,Chrome 66.0.3359.139,To verify that public admin is able to generate raw data summary report for selected groups/stores for maximum of 1 day,2018-05-10 20:40:50,2018-05-10 20:44:09,3m - 19.094s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.139,,2018-05-10 20:40:50,2018-05-10 20:40:54,3.556s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.139,,2018-05-10 20:40:54,2018-05-10 20:40:54,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.139,,2018-05-10 20:40:54,2018-05-10 20:44:09,3m - 14.703s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.139,,2018-05-10 20:44:09,2018-05-10 20:44:09,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.139,,2018-05-10 20:44:09,2018-05-10 20:44:09,0.646s,PASSED

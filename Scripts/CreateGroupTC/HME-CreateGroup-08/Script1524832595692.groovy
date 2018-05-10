@@ -35,7 +35,7 @@ try {
 WebUI.navigateToUrl(GlobalVariable.devPublicCloudUrl)
 
 CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
-WebUI.delay(GlobalVariable.MIN_DELAY)
+WebUI.delay(GlobalVariable.MED_DELAY)
 WebDriver driver = DriverFactory.getWebDriver()
 
 //Pre-Condition : To redirect to Group hirerchy page

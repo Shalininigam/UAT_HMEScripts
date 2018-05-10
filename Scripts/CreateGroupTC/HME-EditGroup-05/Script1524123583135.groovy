@@ -31,11 +31,11 @@ try{
 
 	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
 	WebUI.delay(GlobalVariable.MIN_DELAY)
-	
+
 	//Pre-Condition : To redirect to Group hirerchy page
 	'Click on Stores Link'
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
-	
+
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
 
 	'Click on Add New Group button'
@@ -62,7 +62,7 @@ try{
 
 	List<WebElement> groupHierarchyList = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 13)))
 	List<String> actualgroupList=new ArrayList<String>();
-	
+
 	for(int i=0;i<groupHierarchyList.size();i++){
 
 		actualgroupList.add(i,groupHierarchyList.get(i).getText())
@@ -189,8 +189,9 @@ try{
 	List<WebElement> StoresCBList = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 12)))
 	List<WebElement> storesLabel = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 10)))
 	ArrayList<String> groupStoresList=new ArrayList<String>()
+	ArrayList<String> groupStoresList1=new ArrayList<String>()
 	System.out.println(StoresCBList.size())
-	
+
 	WebUI.delay(GlobalVariable.MED_DELAY)
 
 	for(int i=0;i<StoresCBList.size();i++){
@@ -198,8 +199,16 @@ try{
 		groupStoresList[i]=storesLabel.get(i).getText()
 		StoresCBList.get(i).click()
 	}
+
 	System.out.println(groupStoresList)
 	int  size =groupStoresList.size()
+
+	for(int i=0;i<StoresCBList.size()-10;i++){
+
+		groupStoresList1[i]=storesLabel.get(i).getText()
+
+
+	}
 
 	WebUI.delay(GlobalVariable.MED_DELAY)
 
@@ -247,7 +256,7 @@ try{
 	List<String> subGroupList=new ArrayList<String>();
 	for(int i=1;i<=size;i++)
 	{
-		
+
 		String groupXpath="(//span[@title='"+groupName+"']/following-sibling::ul/li/span[3]/span[2])["+i+"]"
 		println groupXpath
 		String childgroup=driver.findElement(By.xpath(groupXpath)).getText()
@@ -256,7 +265,11 @@ try{
 	}
 	println subGroupList
 
-	if(subGroupList.containsAll(groupStoresList))
+	println groupStoresList1
+
+
+
+	if(subGroupList.containsAll(groupStoresList1))
 	{
 		println "Parent group have all the associated stores and groups"
 	}
@@ -268,12 +281,12 @@ try{
 	}
 
 	//Step 9: To verify that store list page shows the group names correctly
-	
+
 	'Click on Stores Link'
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
-	
+
 	List<WebElement> storesList = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 16)))
-			
+
 	for(int i=1;i<storesList.size();i++)
 	{
 		String reportgroup= "(//div[@class='ctable']/table/tbody/tr[@class='tdata clear'])["+i+"]/td[7]"
@@ -285,15 +298,15 @@ try{
 		else{
 			if(!TCflag)
 			{
-			TCflag = false
-			println "Report group has not right group name"
-			WebUI.takeScreenshot()
-			break;
+				TCflag = false
+				println "Report group has not right group name"
+				WebUI.takeScreenshot()
+				break;
 			}
 		}
-		
+
 	}
-	
+
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
 
 	// To delete created dummy groups
