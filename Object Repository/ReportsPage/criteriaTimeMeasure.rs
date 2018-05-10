@@ -6,12 +6,11 @@
    <elementGuidId>09a8a541-e91c-4789-b196-ba8009a5b530</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[text()='Week']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//span[@class='crit_Time_Measure']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

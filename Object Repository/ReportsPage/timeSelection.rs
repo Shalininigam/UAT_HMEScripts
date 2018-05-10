@@ -6,12 +6,11 @@
    <elementGuidId>6b1da0a3-55b5-4e66-b926-379ac8946938</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//select[@name='timeMeasure']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//select[@id='menu_report']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

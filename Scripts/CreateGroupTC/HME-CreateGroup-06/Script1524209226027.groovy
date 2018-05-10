@@ -32,6 +32,12 @@ try{
 
 	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
 	WebUI.delay(GlobalVariable.MIN_DELAY)
+	
+	//Pre-Condition : To redirect to Group hirerchy page
+	'Click on Stores Link'
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
+	
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
 
 	//Step 1: To navigate to Reporting group details screen
 	'Click on Add New Group button'
@@ -40,7 +46,7 @@ try{
 	'Verify Reporting group details screen is displayed'
 	WebUI.verifyElementPresent(findTestObject('ReportingGroupManagement/reportingGroupDetails'), 10)
 
-	//For step2 Need to create 2 groups before and then verify since test data may change in future
+	//Creating 2 groups
 	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupNameTxt'), CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","dummyGroupName1"))
 	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupDescTxt'), CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","GroupDesc"))
 
@@ -50,7 +56,7 @@ try{
 	CustomKeywords.'uiaction.CommonUIActions.back'()
 
 	WebUI.delay(GlobalVariable.MIN_DELAY)
-	//CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/addNewGroup'))
+	
 	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupNameTxt'), CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","dummyGroupName2"))
 	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupDescTxt'), CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","GroupDesc"))
 
@@ -68,7 +74,7 @@ try{
 	//Step 2: To verify that available groups/stores are shown properly under Available Group/Stores list box
 
 	String StoreList=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","dummyGroupName2")
-	//String[] groupList=StoreList.split(',')
+	
 	ArrayList<String> listOfStores=new ArrayList<String>(Arrays.asList(StoreList))
 	System.out.println(listOfStores)
 
@@ -99,7 +105,8 @@ try{
 		WebUI.takeScreenshot()
 	}
 
-	//Delete both the dummy groups
+	//Deleting groups which are created as precondtion for step 2
+	
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/deleteBtn'))
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/confirmToDelBtn'))
 	CustomKeywords.'uiaction.CommonUIActions.back'()
@@ -222,7 +229,36 @@ try{
 	//Step 9&10: To verfiy that user is able to collapse the parent group
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/expandLink'))
 
-	//Step 12: To verify that store list page shows the group names correctly (Pending)
+	//Step 12: To verify that store list page shows the group names correctly
+	
+	'Click on Stores Link'
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
+	
+	List<WebElement> storesList = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 16)))
+			
+	for(int i=1;i<storesList.size();i++)
+	{
+		String reportgroup= "(//div[@class='ctable']/table/tbody/tr[@class='tdata clear'])["+i+"]/td[7]"
+		String reportgroupTxt=driver.findElement(By.xpath(reportgroup)).getText()
+		if(reportgroupTxt=="AutomationGroup1")
+		{
+			println "Report group has right group name"
+		}
+		else{
+			if(!TCflag)
+			{
+			TCflag = false
+			println "Report group has not right group name"
+			WebUI.takeScreenshot()
+			break;
+			}
+		}
+		
+	}
+	
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
+
+	
 
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 

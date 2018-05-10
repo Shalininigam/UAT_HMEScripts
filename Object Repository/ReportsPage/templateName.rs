@@ -6,12 +6,11 @@
    <elementGuidId>495d44e9-8f71-42c4-87aa-1f9e242d573e</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//input[@name='templateName']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//input[@name='ReportTemplate_Name']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

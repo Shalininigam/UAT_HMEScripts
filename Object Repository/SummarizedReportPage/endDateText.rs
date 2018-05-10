@@ -6,12 +6,11 @@
    <elementGuidId>9ba393f7-e0e0-4b76-85d7-51810b25251e</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//span[@class='report-end-time-value']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//h2[text()='END: ']/span[@class='lightCap']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

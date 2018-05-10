@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that public admin is able to view Summary Reports screen</description>
+   <name>HME-Summary Report-01</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f1d88388-dfb4-4d50-a7c3-0d6f6eb7e22b</testCaseGuid>
+</TestCaseEntity>

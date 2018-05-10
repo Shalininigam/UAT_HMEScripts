@@ -31,6 +31,12 @@ try{
 
 	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
 	WebUI.delay(GlobalVariable.MIN_DELAY)
+	
+	//Pre-Condition : To redirect to Group hirerchy page
+	'Click on Stores Link'
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
+	
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
 
 	'Click on Add New Group button'
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/addNewGroup'))
@@ -72,7 +78,7 @@ try{
 	{
 
 		CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/group11inGroupHierarchy'))
-		println "Automation Group 11 is available in group hierarchy"
+		println "Automation Group is available in group hierarchy"
 
 	}
 	else{
@@ -262,7 +268,33 @@ try{
 	}
 
 	//Step 9: To verify that store list page shows the group names correctly
-	// Store list page doesn't link with report managament screen
+	
+	'Click on Stores Link'
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
+	
+	List<WebElement> storesList = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 16)))
+			
+	for(int i=1;i<storesList.size();i++)
+	{
+		String reportgroup= "(//div[@class='ctable']/table/tbody/tr[@class='tdata clear'])["+i+"]/td[7]"
+		String reportgroupTxt=driver.findElement(By.xpath(reportgroup)).getText()
+		if(reportgroupTxt=="AutomationGroup")
+		{
+			println "Report group has right group name"
+		}
+		else{
+			if(!TCflag)
+			{
+			TCflag = false
+			println "Report group has not right group name"
+			WebUI.takeScreenshot()
+			break;
+			}
+		}
+		
+	}
+	
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
 
 	// To delete created dummy groups
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/expandCollapseLink'))

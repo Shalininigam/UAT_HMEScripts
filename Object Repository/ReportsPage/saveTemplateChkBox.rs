@@ -6,12 +6,11 @@
    <elementGuidId>1f171eed-4fd1-4a4b-8f9b-20b614386ba8</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//input[@name='saveAsTemplate']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//input[@name='ReportTemplate_Save']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

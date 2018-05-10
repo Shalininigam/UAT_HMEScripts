@@ -6,12 +6,11 @@
    <elementGuidId>1e72b21a-77df-4dbf-a857-542f8fd23c4b</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>(//span[text()='View/Edit'])[1]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//a[text()='View/Edit']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

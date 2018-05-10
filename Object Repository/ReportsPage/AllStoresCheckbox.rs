@@ -6,12 +6,11 @@
    <elementGuidId>53ab8ce2-6ea5-44b6-8fdd-f9cfca15a7a1</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//input[@id='includeTime']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//input[@id='allStores']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

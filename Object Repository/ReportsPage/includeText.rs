@@ -6,12 +6,11 @@
    <elementGuidId>c6a7e324-c908-49b6-8fb4-293be16424d5</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>(//div[@class='container criteria']/div[@class='col-md-12'])[2]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//span[@class='crit_Includes']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

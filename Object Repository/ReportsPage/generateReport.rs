@@ -6,12 +6,11 @@
    <elementGuidId>c24b815d-2f2e-4c08-b4c9-4f6a7d7bf805</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[text()='Generate Report']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//input[@value='Generate Report']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

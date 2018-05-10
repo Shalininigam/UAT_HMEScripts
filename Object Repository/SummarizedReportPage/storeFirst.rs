@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='clear']/table/tbody/tr[3]/td[1]</value>
+         <value>(//table[@class='summaryreport-table']/tbody/tr[3]/td)[2]</value>
       </entry>
       <entry>
          <key>BASIC</key>

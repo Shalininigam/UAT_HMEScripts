@@ -38,6 +38,12 @@ CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecif
 WebUI.delay(GlobalVariable.MIN_DELAY)
 WebDriver driver = DriverFactory.getWebDriver()
 
+//Pre-Condition : To redirect to Group hirerchy page
+'Click on Stores Link'
+CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
+
+CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
+
 // To enter Group Name and Group description (to create group and delete it and later check whether will be able to create
 
 'Click on Add New Group button'
@@ -337,8 +343,6 @@ if(!exists)
 		WebUI.takeScreenshot()
 		}
 }
-
-  
 
 //logout of the url
 

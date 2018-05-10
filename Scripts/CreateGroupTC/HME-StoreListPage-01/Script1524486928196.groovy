@@ -53,7 +53,7 @@ try{
 	'To verify that Manage report groups button is visible to the user'
 	WebUI.verifyElementPresent(findTestObject('StorePage/ManageReportGroupsButtton'),5)
 
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/logoutLink'))
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/engdevLogout'))
 
 }
 catch(Exception e){

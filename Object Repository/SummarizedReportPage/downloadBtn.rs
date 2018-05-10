@@ -6,12 +6,11 @@
    <elementGuidId>8c9d92a8-49b0-4dee-87e6-33d0d1dacc54</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[text()='Download']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@class='downloadBtn']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

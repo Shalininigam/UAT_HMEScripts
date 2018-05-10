@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>(//div[@class='headSubMulti'])[2]/h2</value>
+         <value>(//div[@class='row summaryreport-table-section']/div/div/div/span)[2] </value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

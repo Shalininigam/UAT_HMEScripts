@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that public admin is able to view Goal Statistics Reports screen</description>
+   <name>HME-Goal Statistics Report-01</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>3431f792-cbc5-4313-bc82-69b657a92dcf</testCaseGuid>
+</TestCaseEntity>

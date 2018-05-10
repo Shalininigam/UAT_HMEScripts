@@ -6,12 +6,11 @@
    <elementGuidId>8a11aca6-39f4-4b7b-a822-7aa308144ba9</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//span[@class='report-print-time-value']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//span[contains(text(),&quot;PRINT DATE&quot;)]</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

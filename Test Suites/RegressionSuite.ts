@@ -4,7 +4,7 @@
    <name>RegressionSuite</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-04-30T14:52:11</lastRun>
+   <lastRun>2018-05-10T17:29:52</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -64,5 +64,41 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CreateGroupTC/HME-DeleteGroup-07</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>e6b28de2-053f-4928-88e4-6d94456d7fbd</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/GoalStatisticsTC/HME-Goal Statistics Report-01</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>879f1dec-feab-4b89-84d4-e54274bcc2ae</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/SummaryReportsTC/HME-Summary Report-01</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>c5041b18-2809-4f07-9349-e14ede6f7933</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/SummaryReportsTC/HME-Summary Report-07</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>3704fea9-f7db-4ff6-8613-2aa37d137077</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/SummaryReportsTC/HME-Summary Report-08</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>2eba0ba0-ece0-4dee-ab66-67e5e2a32950</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/SummaryReportsTC/HME-Summary Report-09</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>adc40e7e-5f97-40f1-821a-d3cac56f9397</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/SummaryReportsTC/HME-Summary Report-10</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

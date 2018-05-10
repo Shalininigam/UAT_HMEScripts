@@ -6,12 +6,11 @@
    <elementGuidId>7ab74531-1f5f-46da-a1e6-f8686a02b831</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>(//div[@class='rdtDays']/table/thead/tr/th[2])[1]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//span[@class='ui-datepicker-month']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

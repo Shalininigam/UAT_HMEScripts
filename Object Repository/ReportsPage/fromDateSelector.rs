@@ -6,12 +6,11 @@
    <elementGuidId>74e8d75d-9004-423a-a775-99b01e602f00</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>(//div[@class='calendar-icon'])[1]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//input[@class='menu_from fleft hasDatepicker']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -6,12 +6,11 @@
    <elementGuidId>338293dd-8370-4944-9bd6-ca58529402b1</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//header[text()='Summary Reports']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//h2[text()='Summary Reports']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

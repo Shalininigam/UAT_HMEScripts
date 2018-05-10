@@ -6,12 +6,11 @@
    <elementGuidId>9c2da3d7-4106-4b91-bbfa-0b046a6a77c3</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>(//td[@class='timeMeasureColumn show-table-cell'])[1]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//table[@class='table-layout daypart noBord']/tbody/tr[3]/td[1]/a</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

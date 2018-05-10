@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
-   <description>//div[@id=&quot;header&quot;]/h1</description>
-   <name>summerizedReportforSingleStore</name>
+   <description></description>
+   <name>selectedDate2</name>
    <tag></tag>
-   <elementGuidId>53a63c5b-8a04-468d-a009-c628e9d74713</elementGuidId>
+   <elementGuidId>da0de311-b95d-45fe-a318-cf67cae6b6e7</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id=&quot;header&quot;]/h1</value>
+         <value>(//div[@class='calendar']/div/input)[2]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

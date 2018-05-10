@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that public admin is able to generate raw data summary report for selected groups/stores for maximum of 1 day</description>
+   <name>HME-Summary Report-10</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f2e95812-00e3-4873-96bd-c7717fc05947</testCaseGuid>
+</TestCaseEntity>

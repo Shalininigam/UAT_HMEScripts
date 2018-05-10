@@ -6,12 +6,11 @@
    <elementGuidId>511e4f22-b61d-49c9-a3c9-cbcb8850f3d0</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[@class='row summaryreport-table-section']/div/div/div/span </value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>(//div[@class='headSubMulti'])[1]/h2</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

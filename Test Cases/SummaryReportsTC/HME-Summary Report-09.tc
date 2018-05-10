@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that public admin is able to generate daypart summary report for selected groups/stores for maximum of 2 weeks</description>
+   <name>HME-Summary Report-09</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>259a98c4-28cc-4cbf-97d1-a053a6294b33</testCaseGuid>
+</TestCaseEntity>

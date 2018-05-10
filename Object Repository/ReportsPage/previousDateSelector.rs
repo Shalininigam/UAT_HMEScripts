@@ -6,12 +6,11 @@
    <elementGuidId>88102e08-7fdd-4055-add4-d3e0957239d1</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>(//div[@class='rdtDays']/table/thead/tr/th[1])[1]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//a[@class='ui-datepicker-prev ui-corner-all']//span[text()='Prev']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -6,12 +6,11 @@
    <elementGuidId>b987cd34-9c41-4922-9d3f-41a5ce9d5357</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//span[@class='report-start-time-value']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//h2[text()='START: ']/span[@class='lightCap']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
