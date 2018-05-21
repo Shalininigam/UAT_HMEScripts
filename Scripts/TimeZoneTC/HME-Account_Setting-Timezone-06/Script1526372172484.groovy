@@ -207,6 +207,8 @@ try{
 		System.out.println("Print Time is not displayed the current local time ")
 		WebUI.takeScreenshot()
 	}
+	
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/logoutLink'))
 
 }
 catch(Exception e){
