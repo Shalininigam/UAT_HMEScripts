@@ -116,16 +116,16 @@ try{
 	'Select time'
 	WebUI.click(findTestObject('ReportsPage/timeSelection'))
 
-	'Click on week option'
+	'Click on dayPart option'
 	WebUI.click(findTestObject('ReportsPage/daypartTimeOption'))
 
 	WebUI.click(findTestObject('ReportsPage/summaryReportHeading'))
 
-	'verify week is displayed in TimeSelection dropdown'
+	'verify dayPart is displayed in TimeSelection dropdown'
 
 	WebUI.verifyElementText(findTestObject('ReportsPage/daypartTimeOption'),CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","daypartTimeSelection"))
 
-	'verify week is displayed in criteria week selection'
+	'verify dayPart is displayed in criteria week selection'
 	WebUI.verifyElementText(findTestObject('ReportsPage/criteriaTimeMeasureFordaypart'),CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","criteriaDaypartTimeSelection"))
 
 	//Step 3: To verify that user will not be able to generate weekly summary report for more than 2 Weeks - Step 1

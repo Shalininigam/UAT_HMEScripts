@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that time zone is displayed in CST in Daypart summary report</description>
+   <name>HME-Account_Setting-Timezone-05</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a8c87771-21fb-47c3-a7aa-2714b8f4cc6a</testCaseGuid>
+</TestCaseEntity>

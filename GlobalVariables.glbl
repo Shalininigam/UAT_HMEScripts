@@ -9,8 +9,8 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://devcloudadmin.hme.com/?pg=Login'</initValue>
-      <name>AdminDevUrl</name>
+      <initValue>'https://hme-dev-public-cloud-app.azurewebsites.net/admin'</initValue>
+      <name>SuperAdminUrl</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>First Build URL</description>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that public admin is able to view masquerade feature</description>
+   <name>HME-Masquerade-01</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a8dfcee8-2a5d-4197-9820-79d941901e07</testCaseGuid>
+</TestCaseEntity>

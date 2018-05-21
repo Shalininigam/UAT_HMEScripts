@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that time zone is displayed in EST in Daypart summary report</description>
+   <name>HME-Browser-Timezone-02</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>fd197d1a-59ea-4059-b6b7-993e4ecac7ec</testCaseGuid>
+</TestCaseEntity>

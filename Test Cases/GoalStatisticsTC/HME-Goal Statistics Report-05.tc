@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that public admin is able to generate Daypart goal statistics report with advanced options for selected groups/stores for selected duration.</description>
+   <name>HME-Goal Statistics Report-05</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a9a6569d-1823-4559-8251-dd33b71858a3</testCaseGuid>
+</TestCaseEntity>

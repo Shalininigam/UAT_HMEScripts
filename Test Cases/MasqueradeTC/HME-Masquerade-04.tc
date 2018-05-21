@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that public admin can only edit the user information as store admin</description>
+   <name>HME-Masquerade-04</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>47cced92-0bf6-4220-943e-c18e98ab9282</testCaseGuid>
+</TestCaseEntity>

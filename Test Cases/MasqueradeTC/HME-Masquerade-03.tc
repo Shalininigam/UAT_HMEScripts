@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that public admin can view the stores as store admin</description>
+   <name>HME-Masquerade-03</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ef3ae1f0-c145-4fd0-9c01-52bf6f2d383a</testCaseGuid>
+</TestCaseEntity>

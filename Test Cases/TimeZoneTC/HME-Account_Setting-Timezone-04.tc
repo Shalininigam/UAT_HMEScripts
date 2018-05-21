@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that time zone is displayed in CST in Day summary report</description>
+   <name>HME-Account_Setting-Timezone-04</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>fdca7217-efef-406f-8c82-93432d5d9e49</testCaseGuid>
+</TestCaseEntity>
