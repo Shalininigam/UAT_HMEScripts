@@ -1,0 +1,16 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+RegressionSuite,Chrome 66.0.3359.181,,2018-05-21 12:11:30,2018-05-21 12:14:09,2m - 38.865s,FAILED
+,,,,,,
+Test Cases/TimeZoneTC/HME-Account_Setting-Timezone-06,Chrome 66.0.3359.181,To verify that time zone is displayed in CST in weekly summary report,2018-05-21 12:11:31,2018-05-21 12:13:10,1m - 39.614s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-21 12:11:31,2018-05-21 12:11:37,5.803s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-21 12:11:37,2018-05-21 12:11:37,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-21 12:11:37,2018-05-21 12:13:10,1m - 32.785s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-21 12:13:10,2018-05-21 12:13:10,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-21 12:13:10,2018-05-21 12:13:10,0.711s,PASSED
+,,,,,,
+Test Cases/MasqueradeTC/HME-Masquerade-01,Chrome 66.0.3359.181,To verify that public admin is able to view masquerade feature,2018-05-21 12:13:10,2018-05-21 12:14:09,58.656s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-21 12:13:10,2018-05-21 12:13:14,3.558s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-21 12:13:14,2018-05-21 12:13:14,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-21 12:13:14,2018-05-21 12:14:08,54.266s,FAILED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-21 12:14:08,2018-05-21 12:14:08,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-21 12:14:08,2018-05-21 12:14:09,0.663s,PASSED
