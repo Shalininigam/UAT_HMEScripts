@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="RegressionSuite" time="32" tests="1" failures="0" errors="0">
+   <testsuite name="RegressionSuite" tests="1" failures="0" errors="0" time="32" timestamp="2018-05-21 12:09:32" hostname="shalinin - NIBC2129.nousinfo.com" id="Test Suites/RegressionSuite">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="C:\\Users\\shalinin\\Katalon Studio\\HME_Scripts\\Reports\\RegressionSuite\\20180521_120929"/>
+         <property name="logFiles" value="C:\\Users\\shalinin\\Katalon Studio\\HME_Scripts\\Reports\\RegressionSuite\\20180521_120929\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="shalinin - NIBC2129.nousinfo.com"/>
+         <property name="os" value="Windows 7 64bit"/>
+         <property name="katalonVersion" value="5.3.1.1"/>
+         <property name="browser" value="Chrome 66.0.3359.181"/>
+         <property name="hostAddress" value="192.168.24.72"/>
+         <property name="sessionId" value="492e15c5225ef21abbfd4171f70a3903"/>
+         <property name="seleniumVersion" value="3.7.1"/>
+         <property name="proxyInformation" value="ProxyInformation{proxyOption=NO_PROXY, proxyServerType=HTTP, password=, proxyServerAddress=, proxyServerPort=0}"/>
+         <property name="platform" value="Windows 7"/>
+      </properties>
+      <testcase name="Test Cases/MasqueradeTC/HME-Masquerade-01" classname="Test Cases/MasqueradeTC/HME-Masquerade-01" status="PASSED">
+         <system-out><![CDATA[2018-05-21 12:09:32 - [TEST_CASE][PASSED] - Test Cases/MasqueradeTC/HME-Masquerade-01: Browser is closed
+
+2018-05-21 12:09:32 - [TEST_STEP][PASSED] - Start listener action : sampleBeforeTestCase: uiaction.CommonUIActions.deleteAllCookies is PASSED
+
+2018-05-21 12:09:32 - [TEST_STEP][PASSED] - openBrowser: Browser is opened with url: ''
+
+2018-05-21 12:09:36 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+2018-05-21 12:09:36 - [TEST_STEP][PASSED] - maximizeWindow: Current window maximized
+
+2018-05-21 12:09:37 - [MESSAGE][PASSED] - Current window maximized
+
+2018-05-21 12:09:37 - [TEST_STEP][PASSED] - uiaction.CommonUIActions.deleteAllCookies: uiaction.CommonUIActions.deleteAllCookies is PASSED
+
+2018-05-21 12:09:37 - [MESSAGE][PASSED] - Delete all cookies successfully
+
+2018-05-21 12:09:37 - [MESSAGE][PASSED] - uiaction.CommonUIActions.deleteAllCookies is PASSED
+
+2018-05-21 12:09:38 - [TEST_STEP][PASSED] - Statement - TCflag = true: null
+
+2018-05-21 12:09:38 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-05-21 12:09:38 - [TEST_STEP][PASSED] - navigateToUrl: Navigate to 'https://hme-dev-public-cloud-app.azurewebsites.net/admin' successfully
+
+2018-05-21 12:09:40 - [MESSAGE][PASSED] - Navigate to 'https://hme-dev-public-cloud-app.azurewebsites.net/admin' successfully
+
+2018-05-21 12:09:40 - [TEST_STEP][PASSED] - projectSpecific.Reusability.login: projectSpecific.Reusability.login is PASSED
+
+2018-05-21 12:09:41 - [MESSAGE][PASSED] - projectSpecific.Reusability.getTestData is PASSED
+
+2018-05-21 12:09:41 - [MESSAGE][PASSED] - projectSpecific.Reusability.getTestData is PASSED
+
+2018-05-21 12:09:41 - [MESSAGE][PASSED] - Text 'nous-abhradipr@hme.com' is set on object 'Object Repository/LoginPage/Username'
+
+2018-05-21 12:09:41 - [MESSAGE][PASSED] - Text '6Qt*qmL88' is set on object 'Object Repository/LoginPage/Password'
+
+2018-05-21 12:09:42 - [MESSAGE][PASSED] - Object: 'Object Repository/LoginPage/Login' is clicked on
+
+2018-05-21 12:09:42 - [MESSAGE][PASSED] - projectSpecific.Reusability.login is PASSED
+
+2018-05-21 12:09:42 - [TEST_STEP][PASSED] - delay: Delayed 10 second(s)
+
+2018-05-21 12:09:52 - [MESSAGE][PASSED] - Delayed 10 second(s)
+
+2018-05-21 12:09:52 - [TEST_STEP][PASSED] - uiaction.CommonUIActions.click: uiaction.CommonUIActions.click is PASSED
+
+2018-05-21 12:09:53 - [MESSAGE][PASSED] - uiaction.CommonUIActions.click is PASSED
+
+2018-05-21 12:09:53 - [TEST_STEP][PASSED] - delay: Delayed 10 second(s)
+
+2018-05-21 12:10:03 - [MESSAGE][PASSED] - Delayed 10 second(s)
+
+2018-05-21 12:10:03 - [TEST_STEP][PASSED] - verifyElementPresent: Object 'Object Repository/UsersPage/users' is present
+
+2018-05-21 12:10:03 - [MESSAGE][PASSED] - Object 'Object Repository/UsersPage/users' is present
+
+2018-05-21 12:10:03 - [TEST_STEP][PASSED] - verifyElementPresent: Object 'Object Repository/UsersPage/viewEditButton' is present
+
+2018-05-21 12:10:03 - [MESSAGE][PASSED] - Object 'Object Repository/UsersPage/viewEditButton' is present
+
+2018-05-21 12:10:03 - [TEST_STEP][PASSED] - Statement - driver = com.kms.katalon.core.webui.driver.DriverFactory.getWebDriver(): null
+
+2018-05-21 12:10:03 - [TEST_STEP][PASSED] - Statement - userList = driver.findElements(org.openqa.selenium.By.xpath(com.kms.katalon.core.testdata.TestDataFactory.findTestData(OR_file).getValue(2, 19))): Reading excel file with source file 'C:\Users\shalinin\Katalon Studio\HME_Scripts\Data Files\HME_OR.xlsx' and sheet name 'Sheet1'
+
+2018-05-21 12:10:03 - [TEST_STEP][PASSED] - Statement - size1 = userList.size(): null
+
+2018-05-21 12:10:03 - [TEST_STEP][PASSED] - Statement - If (size1 <= 0): null
+
+2018-05-21 12:10:03 - [TEST_STEP][PASSED] - Statement - Else: null
+
+2018-05-21 12:10:03 - [TEST_STEP][PASSED] - Statement - out.println("User List is displayed"): null
+
+2018-05-21 12:10:03 - [TEST_STEP][PASSED] - Statement - viewEditButtonList = driver.findElements(org.openqa.selenium.By.xpath(com.kms.katalon.core.testdata.TestDataFactory.findTestData(OR_file).getValue(2, 20))): Reading excel file with source file 'C:\Users\shalinin\Katalon Studio\HME_Scripts\Data Files\HME_OR.xlsx' and sheet name 'Sheet1'
+
+2018-05-21 12:10:03 - [TEST_STEP][PASSED] - Statement - size2 = viewEditButtonList.size(): null
+
+2018-05-21 12:10:03 - [TEST_STEP][PASSED] - Statement - If (size2 <= 0): null
+
+2018-05-21 12:10:03 - [TEST_STEP][PASSED] - Statement - Else: null
+
+2018-05-21 12:10:03 - [TEST_STEP][PASSED] - Statement - out.println("View/Edit Button is displayed"): null
+
+2018-05-21 12:10:03 - [TEST_STEP][PASSED] - Statement - assert TCflag == true: null
+
+2018-05-21 12:10:03 - [TEST_STEP][PASSED] - Start listener action : sampleAfterTestCase: Browser is closed
+
+2018-05-21 12:10:03 - [TEST_STEP][PASSED] - Statement - println(testCaseContext.getTestCaseId()): null
+
+2018-05-21 12:10:03 - [TEST_STEP][PASSED] - Statement - println(testCaseContext.getTestCaseStatus()): null
+
+2018-05-21 12:10:03 - [TEST_STEP][PASSED] - closeBrowser: Browser is closed
+
+2018-05-21 12:10:04 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2018-05-21 12:09:32 - [TEST_SUITE][PASSED] - RegressionSuite: Browser is closed]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>
