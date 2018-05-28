@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that public admin is able to generate week summary report for maximum of 2 months with 250 stores by using Advanced options</description>
+   <name>HME-Summary Report-13</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>bccbca52-2d3a-4d7a-b3a4-29243b252254</testCaseGuid>
+</TestCaseEntity>

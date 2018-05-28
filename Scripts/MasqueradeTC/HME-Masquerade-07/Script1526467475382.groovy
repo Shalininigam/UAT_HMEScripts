@@ -27,20 +27,21 @@ import org.openqa.selenium.By.ByXPath
 
 boolean TCflag=true
 try{
-	
-	//Step 1: To verify that public admin is able to login as store admin
+
+	//Step1: To verify that public admin is able to login as store admin
 	WebUI.navigateToUrl(GlobalVariable.SuperAdminUrl)
 
-	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
+	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","publicadmin"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","Password"))
 
-	WebUI.delay(GlobalVariable.MED_DELAY)
-	
-	//Step 2: To verify that logged in user name is displayed correctly
-	WebUI.verifyElementPresent(findTestObject('HomePage/loggedinUser'),10)
-	
-	String loggedInUser=CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('HomePage/loggedinUser'))
+	WebUI.delay(GlobalVariable.LONG_DELAY)
+
+	//Step2:To verify that logged in user name is displayed correctly
+
+	WebUI.verifyElementPresent(findTestObject('Object Repository/HomePage/loggedinUser'),10)
+
+	String loggedInUser=CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('Object Repository/HomePage/loggedinUser'))
 	loggedInUser=loggedInUser.trim()
-	
+
 	String loggedinText =CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","loggedinText")
 
 	if(loggedInUser.equals(loggedinText))
@@ -48,74 +49,71 @@ try{
 	else
 	{
 		if(TCflag)
-		TCflag=false
+			TCflag=false
 		System.out.println("Could not verify logged in user Text")
 	}
-	
-	//Step 3 : To verify that store admin name is displayed
-	String  welcomeUser=CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('HomePage/welcomeUserText'))
+
+	//Step3: To verify that store admin name is displayed
+	String  welcomeUser=CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('Object Repository/HomePage/welcomeUserText'))
 	welcomeUser=welcomeUser.trim()
 	String welcomeText =CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","welcomeText")
-	
+
 	if(welcomeUser.equals(welcomeText))
-	System.out.println("Welcome user Text is displayed")
-else
-{
-	if(TCflag)
-	TCflag=false
-	System.out.println("Welcome user Text is not displayed")
-}
+		System.out.println("Welcome user Text is displayed")
+	else
+	{
+		if(TCflag)
+			TCflag=false
+		System.out.println("Welcome user Text is not displayed")
+	}
+	//Step4: To navigate to stores page
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
 
-//Step 4: To navigate to stores page
-CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
+	WebUI.verifyElementPresent(findTestObject('StorePage/storeListHeading2'), 5)
 
-WebUI.verifyElementPresent(findTestObject('StorePage/StoreListHeading'), 5)
-
-//Step 5: To verify that public admin is able to view store details
-
-WebUI.verifyElementPresent(findTestObject('StorePage/storeList'),5)
-
-CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/adminView_Details'))
-
-WebUI.verifyElementPresent(findTestObject('StorePage/storedetailslabel'), 5)
-
-WebUI.verifyElementPresent(findTestObject('StorePage/zoomlabel'), 5)
-
-String storeDetails = CustomKeywords.'projectSpecific.Reusability.getTestData'("StorePage","StoreDetails")
-
-String storedetail_label = CustomKeywords.'projectSpecific.Reusability.getTestData'("StorePage","Store_labels")
+	WebUI.verifyElementPresent(findTestObject('Object Repository/StorePage/storeList'),5)
 
 
-String defaultareaselected=WebUI.getAttribute(findTestObject('StorePage/defaultstoredetsails'), "aria-selected")
+	//Step 5: To verify that public admin is able to view store details
 
-if(defaultareaselected)
-{
-	System.out.println("Store Details is set by default")
-}
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('Object Repository/StorePage/adminView_Details'))
 
-else{
-	if(TCflag)
-		TCflag=false
-	System.out.println("Store Details is not set by default")
-	WebUI.takeScreenshot()
+	WebUI.verifyElementPresent(findTestObject('StorePage/storedetailslabel'), 5)
 
-}
+	WebUI.verifyElementPresent(findTestObject('StorePage/zoomlabel'), 5)
+
+	String storedetail_label = CustomKeywords.'projectSpecific.Reusability.getTestData'("StorePage","admin_Store_Labels")
+
+	String defaultareaselected=WebUI.getAttribute(findTestObject('StorePage/defaultstoredetsails'), "aria-selected")
+
+	if(defaultareaselected)
+	{
+		System.out.println("Store Details is set by default")
+	}
+
+	else{
+		if(TCflag)
+			TCflag=false
+		System.out.println("Store Details is not set by default")
+		WebUI.takeScreenshot()
+
+	}
 
 
-WebDriver driver = DriverFactory.getWebDriver()
+	WebDriver driver = DriverFactory.getWebDriver()
 
-List<WebElement> storeHeaders = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 1)))
+	List<WebElement> storeHeaders = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 1)))
 
-	String[] storeArraylabels=storedetail_label.split(',,')
-
+	String[] storeArraylabels=storedetail_label.split(',')
 	def storeListlabels=new ArrayList(Arrays.asList(storeArraylabels))
 	storeListlabels.unique()
 	System.out.println(storeListlabels)
 
-	def int count=1
-	for(int i=1;i<storeHeaders.size();i++){
-
-		boolean execFlag = WebUI.verifyMatch(storeHeaders.get(i).getText().trim(), storeListlabels[i].toString().trim(), false)
+	def int count=0
+	for(int i=0;i<storeHeaders.size();i++){
+		String storeHeadingText = storeHeaders.get(i).getText().trim()
+		storeHeadingText=storeHeadingText.replace("*","")
+		boolean execFlag = WebUI.verifyMatch(storeHeadingText, storeListlabels[i].toString().trim(), false)
 		if(execFlag)
 		{
 			count++;
@@ -126,7 +124,7 @@ List<WebElement> storeHeaders = driver.findElements(By.xpath(findTestData('OR_fi
 		WebUI.takeScreenshot()
 
 	}
-	
+
 	else{
 		TCflag=false
 		WebUI.takeScreenshot()
@@ -134,13 +132,15 @@ List<WebElement> storeHeaders = driver.findElements(By.xpath(findTestData('OR_fi
 
 	// To verify the details in Store details tab
 
+	String storeDetails = CustomKeywords.'projectSpecific.Reusability.getTestData'("StorePage","admin_Store_Details")
+
 	String[] storeArray=storeDetails.split(',')
 
 	def storeList=new ArrayList(Arrays.asList(storeArray))
 	storeList.unique()
 	System.out.println(storeList)
 
-	List<WebElement> storeElements = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 2)))
+	List<WebElement> storeElements = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 21)))
 
 	List<String> actualList=new ArrayList<String>();
 
@@ -152,7 +152,8 @@ List<WebElement> storeHeaders = driver.findElements(By.xpath(findTestData('OR_fi
 
 	boolean execFlag1=true
 
-	for(int j=0;j<actualList.size();j++){
+	for(int j=0;j<actualList.size();j++)
+	{
 
 		execFlag1=	WebUI.verifyMatch(storeList.get(j).toString().trim(), actualList.get(j).toString().trim(), false)
 
@@ -169,49 +170,61 @@ List<WebElement> storeHeaders = driver.findElements(By.xpath(findTestData('OR_fi
 	{
 		System.out.println("Store details labels are verified")
 	}
-	else{
+	else
+	{
 		if(TCflag)
 			TCflag=false
 		System.out.println("Failed to verify the Store details labels")
 		WebUI.takeScreenshot()
 
+
 	}
 
-	//step 6: To verify that public admin will not be able to edit store details
-	/*Store Name will be editable field.*/
+	//Step6: To verify that public admin will not be able to edit store details
 
-	boolean editfield= WebUI.clearText(findTestObject('StorePage/storeName'))
+	String attrDisabled=WebUI.getAttribute(findTestObject('StorePage/brandSelect'), "disabled")
 
-	if(editfield){
 
-		System.out.println("The store name is editable field")
+	if(attrDisabled){
+
+		System.out.println("Brand name is not editable field")
 
 	}else{
 		if(TCflag)
 			TCflag=false
-		System.out.println("The store name is not editable field")
+		System.out.println("Brand name is editable field")
 		WebUI.takeScreenshot()
 
 	}
 
-	//To verify that user will not be able to edit other than store name field
-	/*All the other fields in the tab will be non editable*/
 
-	List<WebElement> inputFields = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 3)))
+
+
+
+	//To check other fields in the tab will be non editable
+
+	List<WebElement> inputFields = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 22)))
 	List<String> inputFieldsResults =new ArrayList<String>();
-	int index=3
 
 	for(int i=0;i<inputFields.size();i++){
-		String xpathval="//form[@name='store_submit']/table/tbody/tr["+index+"]//input"
+		if(i!=1)
+		{
+			String attr = inputFields[i].getAttribute("disabled")
 
-		LinkToSearch = WebUI.modifyObjectProperty(findTestObject('StorePage/storeInputValue'), 'xpath','equals',xpathval, true)
+			
+			if(attr)
 
-		String attr1=WebUI.getAttribute(LinkToSearch, "disabled")
-		if(attr1)
-			inputFieldsResults[i]="editable"
+				inputFieldsResults[i]="disabled"
+			else
+				inputFieldsResults[i]="enabled"
+		}
 		else
-			inputFieldsResults[i]="noneditable"
+			inputFieldsResults[i]="disabled"
+		WebUI.delay(3)
+
 	}
+
+
 
 	String s= inputFieldsResults[1]
 	boolean isEditable=false
@@ -235,55 +248,132 @@ List<WebElement> storeHeaders = driver.findElements(By.xpath(findTestData('OR_fi
 	}
 
 
-	attrDisabled=WebUI.getAttribute(findTestObject('StorePage/storebrandName'), "disabled")
+	attrDisabled=WebUI.getAttribute(findTestObject('StorePage/store_City'), "disabled")
 
 	if(attrDisabled)
 	{
-		System.out.println("Store brand is disabled")
+		System.out.println("Store City is disabled")
 	}
 
 	else{
 		if(TCflag)
 			TCflag=false
-		System.out.println("Store brand is not disabled")
+		System.out.println("Store City is not disabled")
 		WebUI.takeScreenshot()
 
 	}
 
-	attrDisabled=WebUI.getAttribute(findTestObject('StorePage/storeCountryName'), "disabled")
+	attrDisabled=WebUI.getAttribute(findTestObject('StorePage/store_Region'), "disabled")
 
 	if(attrDisabled)
 	{
-		System.out.println("Store countryName is disabled")
+		System.out.println("Store Region is disabled")
 	}
 
 	else{
 		if(TCflag)
 			TCflag=false
-		System.out.println("Store countryName is not disabled")
+		System.out.println("Store Region is not disabled")
 		WebUI.takeScreenshot()
 
 	}
-	
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/logoutLink'))
-		
-	//Step 7: To verify that public admin will be able to view only the stores based on user has access to view
-	
-	WebUI.navigateToUrl(GlobalVariable.devPublicCloudUrl)
-	
-	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","otherUser"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","otherUserPwd"))
-	
+
+	attrDisabled=WebUI.getAttribute(findTestObject('StorePage/store_Country'), "disabled")
+
+	if(attrDisabled)
+	{
+		System.out.println("Store Country is disabled")
+	}
+
+	else{
+		if(TCflag)
+			TCflag=false
+		System.out.println("Store Country is not disabled")
+		WebUI.takeScreenshot()
+
+	}
+
+
+	//timezone is enabled
+	attrDisabled=WebUI.verifyElementClickable(findTestObject('StorePage/store_timeZone'))
+
+	if(attrDisabled)
+	{
+		System.out.println("Store timeZone is enabled")
+	}
+
+	else{
+		if(TCflag)
+			TCflag=false
+		System.out.println("Store timeZone is  disabled")
+		WebUI.takeScreenshot()
+
+	}
+
+	//Step7:To verify that public admin will be able to view only the stores based on user has access to view
+
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/storeDialogClose'))
+
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/UsersLink'))
+
+	String searchUserText= CustomKeywords.'projectSpecific.Reusability.getTestData'("UsersPage","userSearchText1")
+
+
+	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('UsersPage/searchTextBox'),searchUserText)
+
+
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('UsersPage/searchButton'))
+
+
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('UsersPage/viewUserLink1'))
+
 	WebUI.delay(GlobalVariable.MED_DELAY)
 
-	//Step 8: To navigate to stores page
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('UsersPage/userstoresLink'))
+
+	WebUI.delay(GlobalVariable.MED_DELAY)
+
+
+	List<WebElement> userStoreList = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 23)))
+
+	int userstoreListSize= userStoreList.size()
+
+
+	//Step8: To navigate to stores page
+
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
-	
+
+	WebUI.delay(GlobalVariable.MED_DELAY)
+	List<WebElement> adminStoreList = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 23)))
+
+	int adminstoreListSize= adminStoreList.size()
+
+
+	if (userstoreListSize != adminstoreListSize||adminstoreListSize==0)
+
+	{
+		System.out.println( searchUserText+ " User can see only stores related to him or No Stores are found")
+	}
+
+	else{
+		if(TCflag)
+			TCflag=false
+		System.out.println( searchUserText+" User can see stores which are not related to him")
+		WebUI.takeScreenshot()
+
+	}
+
+CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/Admin_SignOut'))
+
+
+
 }catch(Exception e){
-e.printStackTrace()
-println "Exception of element not found"
-if(TCflag)
-	TCflag=false
+	e.printStackTrace()
+	println "Exception of element not found"
+	if(TCflag)
+		TCflag=false
 }
 
 assert TCflag==true
+
 

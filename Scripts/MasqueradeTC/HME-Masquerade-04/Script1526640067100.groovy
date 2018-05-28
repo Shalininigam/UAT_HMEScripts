@@ -197,9 +197,7 @@ try{
 
 	}
 
-
-
-
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/Admin_SignOut'))
 
 
 }catch(Exception e){

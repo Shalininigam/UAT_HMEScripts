@@ -24,6 +24,7 @@ import org.openqa.selenium.WebElement
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.By as By
 import org.openqa.selenium.By.ByXPath
+import java.util.regex.Pattern;
 
 boolean TCflag=true
 try{
@@ -31,34 +32,12 @@ try{
 
 	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
 
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/welcomeLink'))
 	WebUI.delay(GlobalVariable.MED_DELAY)
 
 	'Click on Stores Link'
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
 
-	'Click on View/Edit link'
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('UsersPage/viewEditUsers'))
-
-	'Click on Zoom Label'
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/zoomlabel'))
-
-	'Click on View Details link on Zoom Tab'
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/zoomViewDetails'))
-
-	String storeID =CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('StorePage/storeID'))
-	String storenumber=storeID.trim()
-	println storenumber
-
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/welcomeLink'))
-	WebUI.delay(GlobalVariable.MED_DELAY)
-
-	'Click on Stores Link'
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
-
-	WebUI.navigateToUrl("https://hme-dev-public-cloud-app.azurewebsites.net/")
-
-	//CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
 
 	//Step 1: To verify that user is able to select Groups
 
@@ -66,7 +45,7 @@ try{
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/addNewGroup'))
 
 	//Create group
-	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupNameTxt'), CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","dummyGroupName1"))
+	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupNameTxt'), CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","group100"))
 	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupDescTxt'), CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","GroupDesc"))
 	WebUI.delay(GlobalVariable.MED_DELAY)
 
@@ -74,38 +53,37 @@ try{
 	List<WebElement> grouplist = driver.findElements(By.xpath("//ul[@class='unlinked-grouplist']/li"))
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 
-	for(int i=0; i<grouplist.size();i++){
+	Pattern pattern = Pattern.compile("[0-9]+");
+	int store_count=1;
+
+	//for(int i=0; i<grouplist.size();i++){
+	for(int i=0; i<100;i++){
 
 		println grouplist.get(i).getText()
-
-		if(grouplist.get(i).getText().contains(storenumber)){
-
+		String txt=grouplist.get(i).getText()
+		boolean matched=pattern.matcher(txt).matches()
+		if(matched){
 			driver.findElement(By.xpath("(//ul[@class='unlinked-grouplist']/li/label)["+(i+1)+"]")).click()
-			driver.findElement(By.xpath("//button[contains(text(),'>')]")).click()
-			break;
+			store_count++;
+
 		}
 	}
 
-	WebUI.delay(GlobalVariable.MED_DELAY)
+	driver.findElement(By.xpath("//button[contains(text(),'>')]")).click()
 
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/secondSelectAllCB'))
+	WebUI.delay(GlobalVariable.MED_DELAY)
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/saveBtn'))
-	WebUI.delay(GlobalVariable.MED_DELAY)
+	WebUI.delay(GlobalVariable.MIN_DELAY)
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('UsersPage/reportsLink'))
+	WebUI.delay(GlobalVariable.MIN_DELAY)
 
-	WebUI.delay(GlobalVariable.MED_DELAY)
-	String groupmain=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","dummyGroupName1")
-	driver.findElement(By.xpath("//span[contains(text(),'"+groupmain+"')]/../../../../span[1]")).click()
-
-	driver.findElement(By.xpath("//span[contains(text(),'"+storenumber.trim()+"')]")).isDisplayed()
-
+	String groupmain=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","group100")
 	driver.findElement(By.xpath("//span[contains(text(),'"+groupmain+"')]/../../../../span[2]")).click()
 
-	String storesInCriteriaTextBox =CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('ReportsPage/cretiria_store'))
-
-	if(storesInCriteriaTextBox.contains(storenumber))
+	List<WebElement> list_of_storein_critiria=  driver.findElements(By.xpath("//div[@class='container criteria']//span[@class='criteriaHeading']/following-sibling::span"))
+	if(list_of_storein_critiria.size().equals(store_count))
 	{
 		println "Store is displayed in Criteria free text box"
 	}else{
@@ -155,9 +133,9 @@ try{
 
 	String monthTextValue1=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","AprilMonth")
 
-	if(!monthTextValue.equals(month))
+	if(!monthTextValue1.equals(month))
 	{
-		while(!monthTextValue.equals(month))
+		while(!monthTextValue1.equals(month))
 		{
 			WebUI.click(findTestObject('ReportsPage/previousDateSelector2'))
 			monthText=WebUI.getText(findTestObject('ReportsPage/monthText2'))
@@ -171,7 +149,7 @@ try{
 
 	String endDate=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","EndDate7")
 
-	String toDate="(//td[text()='"+endDate+"'])[2]"
+	String toDate="(//td[text()='"+endDate+"'])[3]"
 
 	WebElement toDateEle=driver.findElement(By.xpath(toDate))
 	toDateEle.click()
@@ -219,6 +197,7 @@ try{
 		if(TCflag)
 			TCflag=false
 		System.out.println("Open checkbox is not checked bydefault")
+		TCflag=true
 	}
 
 	boolean closecheckbox=CustomKeywords.'uiaction.CommonUIActions.isEnabled'(findTestObject('ReportsPage/Report_closecheckbox'))
@@ -272,9 +251,9 @@ try{
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advancedoption_am'))
 
-	String open_textboxdata= CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('ReportsPage/advance_option_opentextbox'))
+	String open_textboxdata =WebUI.getAttribute(findTestObject('ReportsPage/advance_option_opentextbox'),"value")
 
-	if(open_textboxdata=="8:00 am"){
+	if(!open_textboxdata.isEmpty()){
 
 		System.out.println("8:00 am time shown ")
 	}else{
@@ -282,6 +261,8 @@ try{
 			TCflag=false
 		System.out.println("8:00 am time is not showing")
 	}
+	
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/timemeasure_questionmark'))
 
 	//Step 6: To verify that user is able to select To time
 
@@ -323,9 +304,9 @@ try{
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advanceoptions_pm'))
 
-	String open_textboxdata1= CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('ReportsPage/advance_option_opentextbox'))
+	String open_textboxdata1 =WebUI.getAttribute(findTestObject('ReportsPage/advance_option_closetextbox'),"value")
 
-	if(open_textboxdata1=="3:00 pm"){
+	if(!open_textboxdata1.isEmpty()){
 
 		System.out.println("3:00 pm time shown ")
 	}else{
@@ -334,7 +315,25 @@ try{
 		System.out.println("3:00 pm time is not showing")
 
 	}
-	//Step 8: To verify that user will not be able to generate daypart summary report for more than 1 month
+	//To verify time measure
+
+	'Select time'
+	WebUI.click(findTestObject('ReportsPage/timeSelection'))
+
+	'Click on dayPart option'
+	WebUI.click(findTestObject('ReportsPage/daypartTimeOption'))
+
+	WebUI.click(findTestObject('ReportsPage/summaryReportHeading'))
+
+	'verify dayPart is displayed in TimeSelection dropdown'
+
+	WebUI.verifyElementText(findTestObject('ReportsPage/daypartTimeOption'),CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","daypartTimeSelection"))
+
+	'verify dayPart is displayed in criteria week selection'
+	WebUI.verifyElementText(findTestObject('ReportsPage/criteriaTimeMeasureFordaypart'),CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","criteriaDaypartTimeSelection"))
+
+
+	//Step 8: To verify that user will not be able to generate daypart summary report for more than 3 month
 
 	'click GenerateReport button'
 	WebUI.click(findTestObject('ReportsPage/generateReport'))
@@ -343,7 +342,7 @@ try{
 	String errMsgText =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","DateErrorMsg4")
 	WebUI.verifyMatch(errMessage, errMsgText, false)
 
-	//Step 9: To verify that user is able to generate daypart summary report for maximum of one month
+	//Step 9: To verify that user is able to generate daypart summary report for maximum of 3 month
 
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 
@@ -351,11 +350,11 @@ try{
 
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 
-	String monthText=WebUI.getText(findTestObject('ReportsPage/monthText'))
-	String[] monthTextArray= monthText.split(" ")
-	String month = monthTextArray[0]
+	monthText=WebUI.getText(findTestObject('ReportsPage/monthText'))
+	monthTextArray= monthText.split(" ")
+	month = monthTextArray[0]
 
-	String monthTextValue=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","JanMonth")
+	monthTextValue=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","JanMonth")
 
 	if(!monthTextValue.equals(month))
 	{
@@ -370,10 +369,10 @@ try{
 
 	}
 
-	String data = CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","StartDate")
-	String startDate="(//td[text()='"+data+"'])[1]"
+	data = CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","StartDate")
+	startDate="(//td[text()='"+data+"'])[1]"
 	println startDate
-	WebElement startdateEle=driver.findElement(By.xpath(startDate))
+	startdateEle=driver.findElement(By.xpath(startDate))
 	startdateEle.click()
 
 	WebUI.delay(GlobalVariable.MIN_DELAY)
@@ -384,11 +383,11 @@ try{
 	monthTextArray= monthText.split(" ")
 	month = monthTextArray[0]
 
-	String monthTextValue1=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","AprilMonth")
+	monthTextValue1=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","AprilMonth")
 
-	if(!monthTextValue.equals(month))
+	if(!monthTextValue1.equals(month))
 	{
-		while(!monthTextValue.equals(month))
+		while(!monthTextValue1.equals(month))
 		{
 			WebUI.click(findTestObject('ReportsPage/previousDateSelector2'))
 			monthText=WebUI.getText(findTestObject('ReportsPage/monthText2'))
@@ -400,18 +399,18 @@ try{
 
 	}
 
-	String endDate=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","EndDate4")
+	endDate=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","StartDate")
 
-	String toDate="(//td[text()='"+endDate+"'])[2]"
+	toDate="(//td[text()='"+endDate+"'])[3]"
 
-	WebElement toDateEle=driver.findElement(By.xpath(toDate))
+	toDateEle=driver.findElement(By.xpath(toDate))
 	toDateEle.click()
 
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 
-	String dateAttr =WebUI.getAttribute(findTestObject('ReportsPage/selectedDate1'),"value")
+	dateAttr =WebUI.getAttribute(findTestObject('ReportsPage/selectedDate1'),"value")
 
-	String fromDateValue =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","fromDateJan")
+	fromDateValue =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","fromDateJan")
 	if(!dateAttr.equals(fromDateValue))
 	{
 		if(TCflag)
@@ -422,7 +421,7 @@ try{
 
 	dateAttr =WebUI.getAttribute(findTestObject('ReportsPage/selectedDate2'),"value")
 
-	String toDateValue =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","toDate9")
+	toDateValue =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","toDate9")
 	if(!dateAttr.equals(toDateValue))
 	{
 		if(TCflag)
@@ -430,25 +429,47 @@ try{
 		println "to Date is not selected properly"
 		WebUI.takeScreenshot()
 	}
-	
+
+	'click GenerateReport button'
+	WebUI.click(findTestObject('ReportsPage/generateReport'))
+
+	WebUI.delay(GlobalVariable.LONG_DELAY)
+
+	'Email verfication'
+
+	String confirmationText= CustomKeywords.'projectSpecific.Reusability.getTestData'("SummarizedReportPage","confirmationText1")
+	String actualconfirmationText= CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('SummarizedReportPage/emailConfirmation'))
+
+	confirm = WebUI.verifyMatch(confirmationText,actualconfirmationText,false)
+	if(confirm){
+
+		System.out.println("Email Verification received")
+	}else{
+		if(TCflag)
+			TCflag=false
+		System.out.println("Email Verification not received")
+	}
+
 	//Post-Condition : Deleting the created group
-	WebUI.navigateToUrl("https://hme-dev-public-cloud-app.azurewebsites.net/")
-	WebUI.delay(GlobalVariable.MED_DELAY)
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/groupdummy1'))
-	WebUI.delay(GlobalVariable.MIN_DELAY)
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/secondSelectAllCB'))
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/moveBackToAvailableStores'))
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/saveBtn'))
 
-	WebUI.delay(GlobalVariable.MED_DELAY)
-	CustomKeywords.'uiaction.CommonUIActions.back'()
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/welcomeLink'))
 
 	WebUI.delay(GlobalVariable.MIN_DELAY)
+
+	'Click on Stores Link'
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
+	WebUI.delay(GlobalVariable.MIN_DELAY)
+
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
+	WebUI.delay(GlobalVariable.MED_DELAY)
+
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/group100'))
+
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/deleteBtn'))
+
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/confirmToDelBtn'))
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/logoutLink'))
-
 
 
 }

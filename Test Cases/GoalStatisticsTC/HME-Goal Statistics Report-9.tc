@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
-   <description></description>
+   <description>To verify that public admin is able to save the template</description>
    <name>HME-Goal Statistics Report-9</name>
    <tag></tag>
    <comment></comment>

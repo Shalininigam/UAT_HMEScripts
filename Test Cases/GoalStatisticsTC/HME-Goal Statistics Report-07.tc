@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that public admin is able to generate daypart report by selecting seconds in format.</description>
+   <name>HME-Goal Statistics Report-07</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>822e52b8-b02a-47d6-b5ee-46304864d2cd</testCaseGuid>
+</TestCaseEntity>

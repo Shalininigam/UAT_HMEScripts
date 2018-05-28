@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>(//input[@class=&quot;rc-time-picker-input&quot;])[1]</value>
+         <value>//div[@class='timings']/span/input[@name='open']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

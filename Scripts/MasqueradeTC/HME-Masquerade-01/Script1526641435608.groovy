@@ -78,7 +78,7 @@ try{
 	else
 	System.out.println("View/Edit Button is displayed")
 	
-	
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/Admin_SignOut'))
 	
 }catch(Exception e){
 e.printStackTrace()

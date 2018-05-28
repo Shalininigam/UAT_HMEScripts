@@ -1,0 +1,101 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+RegressionSuite,Chrome 66.0.3359.181,,2018-05-21 13:59:17,2018-05-21 14:35:51,36m - 33.578s,FAILED
+,,,,,,
+Test Cases/TimeZoneTC/HME-Browser-Timezone-01,Chrome 66.0.3359.181,To verify that time zone is displayed in EST in Day summary report,2018-05-21 13:59:18,2018-05-21 14:01:23,2m - 5.005s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-21 13:59:18,2018-05-21 13:59:23,5.622s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-21 13:59:24,2018-05-21 13:59:24,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-21 13:59:24,2018-05-21 14:01:22,1m - 58.333s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-21 14:01:22,2018-05-21 14:01:22,0.003s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-21 14:01:22,2018-05-21 14:01:23,0.726s,PASSED
+,,,,,,
+Test Cases/TimeZoneTC/HME-Browser-Timezone-02,Chrome 66.0.3359.181,To verify that time zone is displayed in EST in Daypart summary report,2018-05-21 14:01:23,2018-05-21 14:02:57,1m - 34.818s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-21 14:01:23,2018-05-21 14:01:26,3.591s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-21 14:01:26,2018-05-21 14:01:26,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-21 14:01:26,2018-05-21 14:02:57,1m - 30.231s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-21 14:02:57,2018-05-21 14:02:57,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-21 14:02:57,2018-05-21 14:02:57,0.749s,PASSED
+,,,,,,
+Test Cases/TimeZoneTC/HME-Browser-Timezone-03,Chrome 66.0.3359.181,To verify that time zone is displayed in EST in Weekly summary report.,2018-05-21 14:02:57,2018-05-21 14:04:28,1m - 30.538s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-21 14:02:57,2018-05-21 14:03:01,3.602s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-21 14:03:01,2018-05-21 14:03:01,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-21 14:03:01,2018-05-21 14:04:27,1m - 25.834s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-21 14:04:27,2018-05-21 14:04:27,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-21 14:04:27,2018-05-21 14:04:28,0.887s,PASSED
+,,,,,,
+Test Cases/TimeZoneTC/HME-Account_Setting-Timezone-04,Chrome 66.0.3359.181,To verify that time zone is displayed in CST in Day summary report,2018-05-21 14:04:28,2018-05-21 14:07:34,3m - 6.289s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-21 14:04:28,2018-05-21 14:04:31,3.503s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-21 14:04:32,2018-05-21 14:04:32,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-21 14:04:32,2018-05-21 14:07:33,3m - 1.844s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-21 14:07:33,2018-05-21 14:07:33,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-21 14:07:33,2018-05-21 14:07:34,0.754s,PASSED
+,,,,,,
+Test Cases/TimeZoneTC/HME-Account_Setting-Timezone-05,Chrome 66.0.3359.181,To verify that time zone is displayed in CST in Daypart summary report,2018-05-21 14:07:34,2018-05-21 14:09:17,1m - 42.917s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-21 14:07:34,2018-05-21 14:07:38,3.432s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-21 14:07:38,2018-05-21 14:07:38,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-21 14:07:38,2018-05-21 14:09:16,1m - 38.590s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-21 14:09:16,2018-05-21 14:09:16,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-21 14:09:16,2018-05-21 14:09:17,0.705s,PASSED
+,,,,,,
+Test Cases/TimeZoneTC/HME-Account_Setting-Timezone-06,Chrome 66.0.3359.181,To verify that time zone is displayed in CST in weekly summary report,2018-05-21 14:09:17,2018-05-21 14:10:53,1m - 36.263s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-21 14:09:17,2018-05-21 14:09:21,3.502s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-21 14:09:21,2018-05-21 14:09:21,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-21 14:09:21,2018-05-21 14:10:53,1m - 31.793s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-21 14:10:53,2018-05-21 14:10:53,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-21 14:10:53,2018-05-21 14:10:53,0.809s,PASSED
+,,,,,,
+Test Cases/MasqueradeTC/HME-Masquerade-01,Chrome 66.0.3359.181,To verify that public admin is able to view masquerade feature,2018-05-21 14:10:53,2018-05-21 14:11:22,28.290s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-21 14:10:53,2018-05-21 14:10:57,3.402s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-21 14:10:57,2018-05-21 14:10:57,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-21 14:10:57,2018-05-21 14:11:21,24.105s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-21 14:11:21,2018-05-21 14:11:21,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-21 14:11:21,2018-05-21 14:11:22,0.675s,PASSED
+,,,,,,
+Test Cases/MasqueradeTC/HME-Masquerade-03,Chrome 66.0.3359.181,To verify that public admin can view the stores as store admin,2018-05-21 14:11:22,2018-05-21 14:13:07,1m - 45.169s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-21 14:11:22,2018-05-21 14:11:25,3.423s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-21 14:11:25,2018-05-21 14:11:25,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-21 14:11:25,2018-05-21 14:13:06,1m - 40.912s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-21 14:13:06,2018-05-21 14:13:06,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-21 14:13:06,2018-05-21 14:13:07,0.680s,PASSED
+,,,,,,
+Test Cases/MasqueradeTC/HME-Masquerade-04,Chrome 66.0.3359.181,To verify that public admin can only edit the user information as store admin,2018-05-21 14:13:07,2018-05-21 14:14:03,56.373s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-21 14:13:07,2018-05-21 14:13:10,3.546s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-21 14:13:11,2018-05-21 14:13:11,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-21 14:13:11,2018-05-21 14:14:03,51.946s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-21 14:14:03,2018-05-21 14:14:03,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-21 14:14:03,2018-05-21 14:14:03,0.729s,PASSED
+,,,,,,
+Test Cases/GoalStatisticsTC/HME-Goal Statistics Report-05,Chrome 66.0.3359.181,To verify that public admin is able to generate Daypart goal statistics report with advanced options for selected groups/stores for selected duration.,2018-05-21 14:14:03,2018-05-21 14:19:49,5m - 45.599s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-21 14:14:03,2018-05-21 14:14:07,3.487s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-21 14:14:07,2018-05-21 14:14:07,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-21 14:14:07,2018-05-21 14:19:48,5m - 41.194s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-21 14:19:48,2018-05-21 14:19:48,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-21 14:19:48,2018-05-21 14:19:49,0.693s,PASSED
+,,,,,,
+Test Cases/GoalStatisticsTC/HME-Goal Statistics Report-06,Chrome 66.0.3359.181,To verify that public admin is able generate day report by selecting system statistics.,2018-05-21 14:19:49,2018-05-21 14:24:30,4m - 41.572s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-21 14:19:49,2018-05-21 14:19:53,3.759s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-21 14:19:53,2018-05-21 14:19:53,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-21 14:19:53,2018-05-21 14:24:30,4m - 37.012s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-21 14:24:30,2018-05-21 14:24:30,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-21 14:24:30,2018-05-21 14:24:30,0.633s,PASSED
+,,,,,,
+Test Cases/GoalStatisticsTC/HME-Goal Statistics Report-9,Chrome 66.0.3359.181,,2018-05-21 14:24:30,2018-05-21 14:27:58,3m - 27.606s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-21 14:24:30,2018-05-21 14:24:34,3.439s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-21 14:24:34,2018-05-21 14:24:34,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-21 14:24:34,2018-05-21 14:27:57,3m - 23.295s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-21 14:27:57,2018-05-21 14:27:57,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-21 14:27:57,2018-05-21 14:27:58,0.658s,PASSED
+,,,,,,
+Test Cases/GoalStatisticsTC/HME-Goal Statistics Report-10,Chrome 66.0.3359.181,,2018-05-21 14:27:58,2018-05-21 14:31:38,3m - 40.405s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-21 14:27:58,2018-05-21 14:28:01,3.407s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-21 14:28:02,2018-05-21 14:28:02,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-21 14:28:02,2018-05-21 14:31:38,3m - 36.124s,PASSED
+Statement - Catch (Exception e),Chrome 66.0.3359.181,,2018-05-21 14:31:38,2018-05-21 14:31:38,0.008s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-21 14:31:38,2018-05-21 14:31:38,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-21 14:31:38,2018-05-21 14:31:38,0.653s,PASSED
+,,,,,,
+Test Cases/GoalStatisticsTC/HME-Goal Statistics Report-11,Chrome 66.0.3359.181,,2018-05-21 14:31:38,2018-05-21 14:35:51,4m - 12.331s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-21 14:31:38,2018-05-21 14:31:42,3.762s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-21 14:31:42,2018-05-21 14:31:42,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-21 14:31:42,2018-05-21 14:35:50,4m - 7.710s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-21 14:35:50,2018-05-21 14:35:50,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-21 14:35:50,2018-05-21 14:35:51,0.667s,PASSED

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that public admin is able to create weekly report by selecting only one store with longest times.</description>
+   <name>HME-Goal Statistics Report-08</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>fc29e08f-f6ca-4210-8f6b-f9ad51ad907f</testCaseGuid>
+</TestCaseEntity>
