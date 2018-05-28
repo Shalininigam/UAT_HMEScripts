@@ -350,8 +350,9 @@ try{
 	WebUI.delay(GlobalVariable.MED_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/deleteBtn'))
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/confirmToDelBtn'))
-
-
+	WebUI.delay(GlobalVariable.MIN_DELAY)
+	
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/logoutLink'))
 
 }catch(Exception e){
 	e.printStackTrace()

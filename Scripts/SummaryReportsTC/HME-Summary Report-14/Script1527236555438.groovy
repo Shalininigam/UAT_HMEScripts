@@ -33,7 +33,7 @@ try{
 	
 	WebUI.navigateToUrl(GlobalVariable.devPublicCloudUrl)
 
-	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudpassword"))
+	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
 
 	WebUI.delay(GlobalVariable.MED_DELAY)
 	WebUI.delay(GlobalVariable.MED_DELAY)
@@ -342,17 +342,20 @@ try{
 	// for deleting created group
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/welcomeLink'))
+	WebUI.delay(GlobalVariable.MIN_DELAY)
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
+	WebUI.delay(GlobalVariable.MIN_DELAY)
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
 
-	WebUI.delay(GlobalVariable.MIN_DELAY)
+	WebUI.delay(GlobalVariable.MED_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/Summarygrp'))
-	WebUI.delay(GlobalVariable.MIN_DELAY)
+	//WebUI.delay(GlobalVariable.MIN_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/deleteBtn'))
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/confirmToDelBtn'))
 
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/logoutLink'))
 
 
 }catch(Exception e){

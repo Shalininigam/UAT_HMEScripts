@@ -1,0 +1,37 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+RegressionSuite,Chrome 66.0.3359.181,,2018-05-28 17:43:03,2018-05-28 18:01:54,18m - 51.160s,FAILED
+,,,,,,
+Test Cases/MasqueradeTC/HME-Masquerade-07,Chrome 66.0.3359.181,To verify that public admin can view the stores based on user has access to the stores,2018-05-28 17:43:03,2018-05-28 17:44:51,1m - 47.853s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-28 17:43:03,2018-05-28 17:43:08,4.359s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-28 17:43:08,2018-05-28 17:43:08,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-28 17:43:08,2018-05-28 17:44:50,1m - 42.460s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-28 17:44:50,2018-05-28 17:44:50,0.002s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-28 17:44:50,2018-05-28 17:44:51,0.701s,PASSED
+,,,,,,
+Test Cases/GoalStatisticsTC/HME-Goal Statistics Report-07,Chrome 66.0.3359.181,To verify that public admin is able to generate daypart report by selecting seconds in format.,2018-05-28 17:44:51,2018-05-28 17:48:58,4m - 6.711s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-28 17:44:51,2018-05-28 17:44:55,3.872s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-28 17:44:55,2018-05-28 17:44:55,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-28 17:44:55,2018-05-28 17:48:57,4m - 1.887s,FAILED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-28 17:48:57,2018-05-28 17:48:57,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-28 17:48:57,2018-05-28 17:48:58,0.683s,PASSED
+,,,,,,
+Test Cases/GoalStatisticsTC/HME-Goal Statistics Report-08,Chrome 66.0.3359.181,To verify that public admin is able to create weekly report by selecting only one store with longest times.,2018-05-28 17:48:58,2018-05-28 17:52:26,3m - 28.587s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-28 17:48:58,2018-05-28 17:49:01,3.614s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-28 17:49:02,2018-05-28 17:49:02,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-28 17:49:02,2018-05-28 17:52:26,3m - 24.064s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-28 17:52:26,2018-05-28 17:52:26,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-28 17:52:26,2018-05-28 17:52:26,0.669s,PASSED
+,,,,,,
+Test Cases/SummaryReportsTC/HME-Summary Report-11,Chrome 66.0.3359.181,To verify that public admin is able to generate day summary report for maximum of 1 month with 250 stores by using Advanced options,2018-05-28 17:52:26,2018-05-28 17:56:32,4m - 5.675s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-28 17:52:26,2018-05-28 17:52:30,3.564s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-28 17:52:30,2018-05-28 17:52:30,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-28 17:52:30,2018-05-28 17:56:31,4m - 1.211s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-28 17:56:31,2018-05-28 17:56:31,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-28 17:56:31,2018-05-28 17:56:32,0.677s,PASSED
+,,,,,,
+Test Cases/SummaryReportsTC/HME-Summary Report-12,Chrome 66.0.3359.181,To verify that public admin is able to generate daypart summary report for maximum of 3 weeks with 250 stores by using Advanced options,2018-05-28 17:56:32,2018-05-28 18:01:54,5m - 21.893s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-28 17:56:32,2018-05-28 17:56:36,3.507s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-28 17:56:36,2018-05-28 17:56:36,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-28 17:56:36,2018-05-28 18:01:53,5m - 17.500s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-28 18:01:53,2018-05-28 18:01:53,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-28 18:01:53,2018-05-28 18:01:54,0.653s,PASSED

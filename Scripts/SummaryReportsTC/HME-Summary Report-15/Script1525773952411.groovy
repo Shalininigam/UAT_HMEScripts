@@ -338,7 +338,7 @@ try{
 	'click GenerateReport button'
 	WebUI.click(findTestObject('ReportsPage/generateReport'))
 
-	String errMessage = CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('ReportsPage/errorMsg'))
+	String errMessage = CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('ReportsPage/report_failure_alertmsg'))
 	String errMsgText =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","DateErrorMsg4")
 	WebUI.verifyMatch(errMessage, errMsgText, false)
 
@@ -346,6 +346,8 @@ try{
 
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 
+	if(errMessage==errMsgText){
+	
 	WebUI.click(findTestObject('ReportsPage/fromDateSelector'))
 
 	WebUI.delay(GlobalVariable.MIN_DELAY)
@@ -449,7 +451,11 @@ try{
 			TCflag=false
 		System.out.println("Email Verification not received")
 	}
-
+	}else{
+		if(TCflag)
+		TCflag=false
+		System.out.println("Error Msg is not verified")
+	}
 	//Post-Condition : Deleting the created group
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/welcomeLink'))

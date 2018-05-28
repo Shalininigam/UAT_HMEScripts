@@ -337,11 +337,13 @@ try{
 	//Step 8: To verify that user will not be able to generate daypart summary report for more than 1 month
 	'click GenerateReport button'
 	WebUI.click(findTestObject('ReportsPage/generateReport'))
-
+	
 	WebUI.delay(GlobalVariable.LONG_DELAY)
 	String errMessage = CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('ReportsPage/report_failure_alertmsg'))
 	String errMsgText =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","DateRange5")
 	WebUI.verifyMatch(errMessage, errMsgText, false)
+	
+	if(errMessage==errMsgText){
 
 	//Step9: To verify that user is able to generate daypart summary report for maximum of one month
 	WebUI.delay(GlobalVariable.MED_DELAY)
@@ -394,6 +396,13 @@ try{
 		if(TCflag)
 			TCflag=false
 		System.out.println("Email Verification not received")
+	}
+	
+	}
+	else{
+		if(TCflag)
+		TCflag=false
+		System.out.println("Error Msg is not verified")
 	}
 
 	WebUI.delay(GlobalVariable.MED_DELAY)
