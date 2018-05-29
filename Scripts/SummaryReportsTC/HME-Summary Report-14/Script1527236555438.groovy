@@ -30,13 +30,13 @@ import java.text.SimpleDateFormat;
 
 boolean TCflag=true
 try{
-	
+
 	WebUI.navigateToUrl(GlobalVariable.devPublicCloudUrl)
 
 	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
 
 	WebUI.delay(GlobalVariable.MED_DELAY)
-	WebUI.delay(GlobalVariable.MED_DELAY)
+
 	//Pre-Condition: fetching store name from stores list
 
 	//Step 1: To verify that user is able to select Groups
@@ -52,10 +52,10 @@ try{
 
 	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupNameTxt'),
 
-			CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","Summarygrp"))
+	CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","Summarygrp"))
 	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupDescTxt'),
 
-			CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","GroupDesc"))
+	CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","GroupDesc"))
 
 	WebUI.delay(GlobalVariable.MED_DELAY)
 
@@ -66,8 +66,8 @@ try{
 	List<WebElement> grouplist = driver.findElements(By.xpath("//ul[@class='unlinked-grouplist']/li"))
 	WebUI.delay(GlobalVariable.MED_DELAY)
 
-	//for(int i=0; i<grouplist.size();i++){
-	for(int i=0; i<=5;i++){
+	for(int i=0; i<grouplist.size();i++){
+	//for(int i=0; i<100;i++){
 
 		println grouplist.get(i).getText()
 
@@ -83,8 +83,7 @@ try{
 
 	WebUI.delay(GlobalVariable.MED_DELAY)
 
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/secondSelectAllCB'))
-
+	
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/saveBtn'))
 	WebUI.delay(GlobalVariable.MED_DELAY)
 
@@ -110,7 +109,7 @@ try{
 	String[] monthTextArray= monthText.split(" ")
 	String month = monthTextArray[0]
 
-	String monthTextValue_march=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","Month_jan")
+	String monthTextValue_march=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","Month_January")
 
 	if(!monthTextValue_march.equals(month))
 	{
@@ -155,7 +154,7 @@ try{
 
 	}
 
-	String endDate=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","Enddate_april")
+	String endDate=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","enddate_april")
 
 	WebUI.delay(GlobalVariable.MED_DELAY)
 
@@ -170,7 +169,7 @@ try{
 
 	String dateAttr =WebUI.getAttribute(findTestObject('ReportsPage/selectedDate1'),"value")
 
-	String fromDateValue =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","fromDate_march")
+	String fromDateValue =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","fromDateJan")
 	if(!dateAttr.equals(fromDateValue))
 	{
 		if(TCflag)
@@ -181,7 +180,7 @@ try{
 
 	dateAttr =WebUI.getAttribute(findTestObject('ReportsPage/selectedDate2'),"value")
 
-	String toDateValue =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","toDate_april")
+	String toDateValue =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","toDate8")
 	if(!dateAttr.equals(toDateValue))
 	{
 		if(TCflag)
@@ -259,7 +258,7 @@ try{
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advancedoption_am'))
 
-	String open_textboxdata= CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('ReportsPage/advance_option_opentextbox'))
+	String open_textboxdata =WebUI.getAttribute(findTestObject('ReportsPage/advance_option_opentextbox'),"value")
 
 	if(!open_textboxdata.isEmpty()){
 
@@ -314,7 +313,7 @@ try{
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advanceoptions_pm'))
 
-	String open_textboxdata1= CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('ReportsPage/advance_option_opentextbox'))
+	String open_textboxdata1 =WebUI.getAttribute(findTestObject('ReportsPage/advance_option_closetextbox'),"value")
 
 	if(!open_textboxdata1.isEmpty()){
 
@@ -332,7 +331,7 @@ try{
 	//Step 8: To verify that user will not be able to generate day summary report for more than 1 month
 	WebUI.delay(GlobalVariable.MED_DELAY)
 	'click GenerateReport button'
-	WebUI.click(findTestObject('ReportsPage/reportpage'))
+	WebUI.click(findTestObject('ReportsPage/generateReport'))
 	WebUI.delay(GlobalVariable.MED_DELAY)
 	WebUI.verifyElementPresent(findTestObject('ReportsPage/report_failure_alertmsg'), 10)
 
@@ -351,7 +350,7 @@ try{
 
 	WebUI.delay(GlobalVariable.MED_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/Summarygrp'))
-	//WebUI.delay(GlobalVariable.MIN_DELAY)
+	WebUI.delay(GlobalVariable.MED_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/deleteBtn'))
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/confirmToDelBtn'))
 
