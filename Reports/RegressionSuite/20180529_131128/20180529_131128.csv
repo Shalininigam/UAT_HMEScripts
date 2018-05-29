@@ -1,0 +1,59 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+RegressionSuite,Chrome 66.0.3359.181,,2018-05-29 13:11:30,2018-05-29 13:42:44,31m - 14.104s,FAILED
+,,,,,,
+Test Cases/GoalStatisticsTC/HME-Goal Statistics Report-07,Chrome 66.0.3359.181,To verify that public admin is able to generate daypart report by selecting seconds in format.,2018-05-29 13:11:30,2018-05-29 13:16:20,4m - 49.830s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-29 13:11:30,2018-05-29 13:11:35,4.441s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-29 13:11:35,2018-05-29 13:11:35,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-29 13:11:35,2018-05-29 13:16:19,4m - 44.391s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-29 13:16:19,2018-05-29 13:16:19,0.002s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-29 13:16:19,2018-05-29 13:16:20,0.700s,PASSED
+,,,,,,
+Test Cases/GoalStatisticsTC/HME-Goal Statistics Report-08,Chrome 66.0.3359.181,To verify that public admin is able to create weekly report by selecting only one store with longest times.,2018-05-29 13:16:20,2018-05-29 13:20:01,3m - 40.979s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-29 13:16:20,2018-05-29 13:16:24,3.635s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-29 13:16:24,2018-05-29 13:16:24,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-29 13:16:24,2018-05-29 13:20:00,3m - 36.258s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-29 13:20:00,2018-05-29 13:20:00,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-29 13:20:00,2018-05-29 13:20:01,0.667s,PASSED
+,,,,,,
+Test Cases/MasqueradeTC/HME-Masquerade-07,Chrome 66.0.3359.181,To verify that public admin can view the stores based on user has access to the stores,2018-05-29 13:20:01,2018-05-29 13:21:50,1m - 48.769s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-29 13:20:01,2018-05-29 13:20:05,3.546s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-29 13:20:05,2018-05-29 13:20:05,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-29 13:20:05,2018-05-29 13:21:49,1m - 44.299s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-29 13:21:49,2018-05-29 13:21:49,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-29 13:21:49,2018-05-29 13:21:50,0.693s,PASSED
+,,,,,,
+Test Cases/SummaryReportsTC/HME-Summary Report-11,Chrome 66.0.3359.181,To verify that public admin is able to generate day summary report for maximum of 1 month with 250 stores by using Advanced options,2018-05-29 13:21:50,2018-05-29 13:25:33,3m - 42.959s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-29 13:21:50,2018-05-29 13:21:54,3.578s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-29 13:21:54,2018-05-29 13:21:54,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-29 13:21:54,2018-05-29 13:25:32,3m - 38.464s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-29 13:25:32,2018-05-29 13:25:32,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-29 13:25:32,2018-05-29 13:25:33,0.663s,PASSED
+,,,,,,
+Test Cases/SummaryReportsTC/HME-Summary Report-13,Chrome 66.0.3359.181,To verify that public admin is able to generate week summary report for maximum of 2 months with 250 stores by using Advanced options,2018-05-29 13:25:33,2018-05-29 13:28:13,2m - 39.911s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-29 13:25:33,2018-05-29 13:25:36,3.535s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-29 13:25:37,2018-05-29 13:25:37,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-29 13:25:37,2018-05-29 13:28:12,2m - 35.490s,PASSED
+Statement - Catch (Exception e),Chrome 66.0.3359.181,,2018-05-29 13:28:12,2018-05-29 13:28:12,0.008s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-29 13:28:12,2018-05-29 13:28:12,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-29 13:28:12,2018-05-29 13:28:13,0.672s,PASSED
+,,,,,,
+Test Cases/SummaryReportsTC/HME-Summary Report-12,Chrome 66.0.3359.181,To verify that public admin is able to generate daypart summary report for maximum of 3 weeks with 250 stores by using Advanced options,2018-05-29 13:28:13,2018-05-29 13:34:17,6m - 4.703s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-29 13:28:13,2018-05-29 13:28:16,3.620s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-29 13:28:17,2018-05-29 13:28:17,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-29 13:28:17,2018-05-29 13:34:17,6m - 0.176s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-29 13:34:17,2018-05-29 13:34:17,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-29 13:34:17,2018-05-29 13:34:17,0.659s,PASSED
+,,,,,,
+Test Cases/SummaryReportsTC/HME-Summary Report-14,Chrome 66.0.3359.181,To verify that public admin is able to generate day summary report for maximum of 1 month with 100 stores by using Advanced options,2018-05-29 13:34:17,2018-05-29 13:39:17,4m - 59.052s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-29 13:34:18,2018-05-29 13:34:21,3.581s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-29 13:34:21,2018-05-29 13:34:21,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-29 13:34:21,2018-05-29 13:39:16,4m - 54.540s,FAILED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-29 13:39:16,2018-05-29 13:39:16,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-29 13:39:16,2018-05-29 13:39:17,0.682s,PASSED
+,,,,,,
+Test Cases/SummaryReportsTC/HME-Summary Report-15,Chrome 66.0.3359.181,To verify that public admin is able to generate daypart summary report for maximum of 3 months with 100 stores by using Advanced options,2018-05-29 13:39:17,2018-05-29 13:42:44,3m - 27.512s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-05-29 13:39:17,2018-05-29 13:39:20,3.671s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-05-29 13:39:20,2018-05-29 13:39:20,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-05-29 13:39:20,2018-05-29 13:42:43,3m - 22.963s,FAILED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-05-29 13:42:43,2018-05-29 13:42:43,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-05-29 13:42:43,2018-05-29 13:42:44,0.659s,PASSED

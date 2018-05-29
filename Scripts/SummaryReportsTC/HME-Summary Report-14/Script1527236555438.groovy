@@ -345,10 +345,19 @@ try{
 	'click GenerateReport button'
 	WebUI.click(findTestObject('ReportsPage/generateReport'))
 	WebUI.delay(GlobalVariable.MED_DELAY)
+	
+	String errMessage = CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('ReportsPage/report_failure_alertmsg'))
+	String errMsgText =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","DateErrorMsg6")
+	WebUI.verifyMatch(errMessage, errMsgText, false)
+
+	if(errMessage==errMsgText){
 	WebUI.verifyElementPresent(findTestObject('ReportsPage/report_failure_alertmsg'), 10)
+	}else{
+	System.out.println("Error message is not displayed")
+	}
 
 	//Step 9: Pending
-
+	
 
 	// for deleting created group
 	WebUI.delay(GlobalVariable.MIN_DELAY)
