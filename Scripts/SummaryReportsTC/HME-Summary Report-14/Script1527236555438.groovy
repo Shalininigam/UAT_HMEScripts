@@ -252,7 +252,7 @@ try{
 
 	//Step 5: To verify that user is able to set open time
 
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advance_options_time'))
+	/*CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advance_options_time'))
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advance_options_min'))
 
@@ -269,7 +269,13 @@ try{
 		System.out.println("8:00 am time is not showing")
 	}
 
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/timemeasure_questionmark'))
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/timemeasure_questionmark'))*/
+	
+	
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advanced_openTimeText'))
+	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportsPage/advanced_openTimeText'),"8:00 am")
+
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/tooltip'))
 
 	//Step 6: To verify that user is able to select To time
 
@@ -307,7 +313,7 @@ try{
 
 
 
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advancedoption_closetimehour'))
+	/*CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advancedoption_closetimehour'))
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advance_options_min'))
 
@@ -324,7 +330,13 @@ try{
 		System.out.println("3:00 pm time is not showing")
 	}
 
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/timemeasure_questionmark'))
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/timemeasure_questionmark'))*/
+	
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advanced_openTimeText'))
+	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportsPage/advanced_openTimeText'),"03:00 pm")
+
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/tooltip'))
+	
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/Report_advancedoption'))
 
@@ -352,8 +364,9 @@ try{
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/Summarygrp'))
 	WebUI.delay(GlobalVariable.MED_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/deleteBtn'))
+	WebUI.delay(GlobalVariable.MED_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/confirmToDelBtn'))
-
+	WebUI.delay(GlobalVariable.MED_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/logoutLink'))
 
 

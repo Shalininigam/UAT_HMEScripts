@@ -251,24 +251,14 @@ try{
 
 	//Step 5: To verify that user is able to set open time
 
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advance_options_time'))
+	
+	
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advanced_openTimeText'))
+	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportsPage/advanced_openTimeText'),"8:00 am")
 
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advance_options_min'))
-
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advancedoption_am'))
-
-	String open_textboxdata =WebUI.getAttribute(findTestObject('ReportsPage/advance_option_opentextbox'),"value")
-
-	if(!open_textboxdata.isEmpty()){
-
-		System.out.println("8:00 am time shown ")
-	}else{
-		if(TCflag)
-			TCflag=false
-		System.out.println("8:00 am time is not showing")
-	}
-
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/timemeasure_questionmark'))
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/tooltip'))
+	
+	
 
 	//Step 6: To verify that user is able to select To time
 
@@ -305,25 +295,12 @@ try{
 	//Step 7: To verify that user is able to set close time
 
 
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advanced_openTimeText'))
+	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportsPage/advanced_openTimeText'),"03:00 pm")
 
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advancedoption_closetimehour'))
-
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advance_options_min'))
-
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advanceoptions_pm'))
-
-	String open_textboxdata1 =WebUI.getAttribute(findTestObject('ReportsPage/advance_option_closetextbox'),"value")
-
-	if(!open_textboxdata1.isEmpty()){
-
-		System.out.println("3:00 pm time shown ")
-	}else{
-		if(TCflag)
-			TCflag=false
-		System.out.println("3:00 pm time is not showing")
-	}
-
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/timemeasure_questionmark'))
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/tooltip'))
+	
+	
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/Report_advancedoption'))
 
@@ -349,6 +326,7 @@ try{
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/Summarygrp'))
 	WebUI.delay(GlobalVariable.MED_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/deleteBtn'))
+	WebUI.delay(GlobalVariable.MED_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/confirmToDelBtn'))
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 	
