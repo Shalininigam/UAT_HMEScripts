@@ -33,7 +33,8 @@ import java.text.SimpleDateFormat;
 boolean TCflag=true
 try{
 	WebUI.navigateToUrl(GlobalVariable.devPublicCloudUrl)
-	//            WebUI.navigateToUrl(GlobalVariable.newURL)
+	WebUI.delay(GlobalVariable.MED_DELAY)
+	WebUI.navigateToUrl(GlobalVariable.devPublicCloudUrl)
 
 	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
 
