@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>row2BelowWeekHeader</name>
+   <name>csvOption</name>
    <tag></tag>
-   <elementGuidId>9989a122-8b04-4c42-bb64-6c350eee132c</elementGuidId>
+   <elementGuidId>da490342-3809-4208-b741-5c266f4bb9db</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>(//td[@class='timeMeasureColumn show-table-cell'])[2]</value>
+         <value>//div[@class='downloadOptions show']/div[2]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

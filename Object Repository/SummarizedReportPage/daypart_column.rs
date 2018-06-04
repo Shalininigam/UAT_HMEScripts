@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>row2BelowWeekHeader</name>
+   <name>daypart_column</name>
    <tag></tag>
-   <elementGuidId>9989a122-8b04-4c42-bb64-6c350eee132c</elementGuidId>
+   <elementGuidId>b2887664-c126-432d-8503-1dcab8cff984</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>(//td[@class='timeMeasureColumn show-table-cell'])[2]</value>
+         <value>(//tr[@class='summary-row-data']/td)[1]/span[1]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

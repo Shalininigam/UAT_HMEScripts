@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>row2BelowWeekHeader</name>
+   <name>report_starttime</name>
    <tag></tag>
-   <elementGuidId>9989a122-8b04-4c42-bb64-6c350eee132c</elementGuidId>
+   <elementGuidId>40a43aed-700b-473f-9523-9b5a66f5d570</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>(//td[@class='timeMeasureColumn show-table-cell'])[2]</value>
+         <value>(//h2[@class='report-start-time-header']/span)[2]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

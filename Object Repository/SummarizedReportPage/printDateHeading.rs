@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>row2BelowWeekHeader</name>
+   <name>printDateHeading</name>
    <tag></tag>
-   <elementGuidId>9989a122-8b04-4c42-bb64-6c350eee132c</elementGuidId>
+   <elementGuidId>f7f72a2e-f243-4dee-adf4-b114e333586d</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>(//td[@class='timeMeasureColumn show-table-cell'])[2]</value>
+         <value>//table[@class='rawcar-header-labels clear']/tbody/tr[1]/th[3]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

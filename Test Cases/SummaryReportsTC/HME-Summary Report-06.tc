@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>To verify that public admin is able to generate day summary report for selected groups/stores for selected time period</description>
+   <name>HME-Summary Report-06</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f8564053-9667-4ffb-9804-35a8bdb5ec1d</testCaseGuid>
+</TestCaseEntity>

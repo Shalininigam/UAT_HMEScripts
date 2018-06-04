@@ -16,6 +16,7 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKeywords
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
+import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
@@ -27,96 +28,105 @@ import org.openqa.selenium.By.ByXPath
 import java.text.DateFormat;
 import java.util.Date;
 import java.text.SimpleDateFormat;
-import java.util.regex.Pattern;
 
 
 boolean TCflag=true
 try{
-
 	WebUI.navigateToUrl(GlobalVariable.devPublicCloudUrl)
-
-	WebUI.delay(GlobalVariable.LONG_DELAY)
+	//            WebUI.navigateToUrl(GlobalVariable.newURL)
 
 	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
+
+	WebUI.delay(GlobalVariable.MED_DELAY)
+
+	//Pre-Condition: fetching store name from stores list
+
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
+
+	//CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/store_secondrowview'))
+
+	//CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/zoomlabel'))
+
+	//CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/zoomViewDetails'))
+
+	String storenumber=CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('StorePage/storepage_storenumber'))
+
+	System.out.println(" the store number is--"+storenumber.trim())
 	
-	WebUI.delay(GlobalVariable.MED_DELAY)
-
-	WebDriver driver = DriverFactory.getWebDriver()
-
-	WebUI.delay(GlobalVariable.MED_DELAY)
-	//Step1: To verify that user is able to select Groups
+	//Step 1: To verify that user is able to select Groups
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/welcomeLink'))
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
 
-	WebUI.delay(GlobalVariable.MED_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
-
-	WebUI.delay(GlobalVariable.MIN_DELAY)
+	WebUI.delay(GlobalVariable.MED_DELAY)
+	
 	'Click on Add New Group button'
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/addNewGroup'))
 
-	WebUI.delay(GlobalVariable.MIN_DELAY)
-	String grpName= "Grp250_TC16"
+	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupNameTxt'),
 
-	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupNameTxt'),grpName)
-
+	CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","Summarygrp"))
 	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupDescTxt'),
-			CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","GroupDesc"))
 
+	CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","GroupDesc"))
 
-	WebUI.delay(10)
+	WebUI.delay(GlobalVariable.MED_DELAY)
 
-	List<WebElement> storesLabel = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 10)))
-	ArrayList<String> groupStoresList=new ArrayList<String>()
+	String groupmain=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","Summarygrp")
 
-	System.out.println(storesLabel.size())
+	WebDriver driver = DriverFactory.getWebDriver()
 
-	int size=storesLabel.size()
-	int index=0;
-	Pattern pattern = Pattern.compile("[0-9]+");
-	int count=0;
-	for(int i=0; i<storesLabel.size();i++)
-	{
+	List<WebElement> grouplist = driver.findElements(By.xpath("//ul[@class='unlinked-grouplist']/li"))
+	WebUI.delay(GlobalVariable.MED_DELAY)
 
-		String txt=storesLabel.get(i).getText()
-		index=i+1
-		boolean matched=pattern.matcher(txt).matches()
-		if(matched){
-			driver.findElement(By.xpath("(//ul[@class='unlinked-grouplist']/li/label)["+index+"]")).click()
-			count++
-			if(count >2)
-				break;
+	for(int i=0; i<grouplist.size();i++){
+
+		println grouplist.get(i).getText()
+
+		if(grouplist.get(i).getText().contains(storenumber.trim())){
+
+			driver.findElement(By.xpath("(//ul[@class='unlinked-grouplist']/li/label)["+(i+1)+"]")).click()
+			driver.findElement(By.xpath("//button[contains(text(),'>')]")).click()
+			break;
 		}
-
-
 	}
-	driver.findElement(By.xpath("//button[contains(text(),'>')]")).click()
-	
-	WebUI.delay(GlobalVariable.MIN_DELAY)
+
+	WebUI.delay(GlobalVariable.MED_DELAY)
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/secondSelectAllCB'))
-
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/saveBtn'))
 	WebUI.delay(GlobalVariable.MED_DELAY)
 
-	CustomKeywords.'uiaction.CommonUIActions.back'()
-	WebUI.delay(GlobalVariable.MIN_DELAY)
-	CustomKeywords.'uiaction.CommonUIActions.back'()
-
-	WebUI.delay(GlobalVariable.MIN_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('UsersPage/reportsLink'))
 
-	WebUI.delay(GlobalVariable.LONG_DELAY)
-	driver.findElement(By.xpath("//span[contains(text(),'"+grpName+"')]/../../../../span[1]")).click()
-
 	WebUI.delay(GlobalVariable.MED_DELAY)
+	driver.findElement(By.xpath("//span[contains(text(),'"+groupmain+"')]/../../../../span[1]")).click()
 
-	driver.findElement(By.xpath("//span[contains(text(),'"+grpName+"')]/../../../../span[2]")).click()
+	driver.findElement(By.xpath("//span[contains(text(),'"+storenumber.trim()+"')]")).isDisplayed()
 
-	//Step2: To verify that user is able to select From and To date by using calendar controls
+	driver.findElement(By.xpath("//span[contains(text(),'"+groupmain+"')]/../../../../span[2]")).click()
+
+	String cretiria_store= CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('ReportsPage/cretiria_store'))
+
+	if(cretiria_store.contains(storenumber.trim()))
+	{
+		System.out.println("Store is displayed in Criteria free text box")
+
+	}
+
+	else{
+		if(TCflag)
+			TCflag=false
+		System.out.println("Store is not displayed in Criteria free text box")
+	}
+
+	//Step 2: To verify that user is able to select From and To date by using calendar controls
+
+	//Step 2: To verify that user is able to select From and To date by using calendar controls
+
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 
 	WebUI.click(findTestObject('ReportsPage/fromDateSelector'))
@@ -127,7 +137,7 @@ try{
 	String[] monthTextArray= monthText.split(" ")
 	String month = monthTextArray[0]
 
-	String monthTextValue=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","JanMonth")
+	String monthTextValue=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","Month")
 
 	if(!monthTextValue.equals(month))
 	{
@@ -148,7 +158,7 @@ try{
 	WebElement startdateEle=driver.findElement(By.xpath(startDate))
 	startdateEle.click()
 
-	WebUI.delay(GlobalVariable.MED_DELAY)
+	WebUI.delay(GlobalVariable.MIN_DELAY)
 
 	WebUI.click(findTestObject('ReportsPage/toDateSelector'))
 
@@ -156,11 +166,9 @@ try{
 	monthTextArray= monthText.split(" ")
 	month = monthTextArray[0]
 
-	String monthTextValue1=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","Month_april")
-
-	if(!monthTextValue1.equals(month))
+	if(!monthTextValue.equals(month))
 	{
-		while(!monthTextValue1.equals(month))
+		while(!monthTextValue.equals(month))
 		{
 			WebUI.click(findTestObject('ReportsPage/previousDateSelector2'))
 			monthText=WebUI.getText(findTestObject('ReportsPage/monthText2'))
@@ -172,12 +180,10 @@ try{
 
 	}
 
-	String endDate=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","EndDate7")
+	String endDate=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","StartDate")
 
-	String toDate="(//div[@class='rdt date-time rdtOpen']/div[@class='rdtPicker']/div/table/tbody/tr/td[text()='"+endDate+"'])[1]"
+	String toDate="(//div[@class='rdtPicker']/div/table/tbody/tr/td[text()='"+endDate+"'])[3]"
 
-	println toDate
-	
 	WebElement toDateEle=driver.findElement(By.xpath(toDate))
 	toDateEle.click()
 
@@ -185,7 +191,7 @@ try{
 
 	String dateAttr =WebUI.getAttribute(findTestObject('ReportsPage/selectedDate1'),"value")
 
-	String fromDateValue =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","fromDate_January1")
+	String fromDateValue =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","fromDate")
 	if(!dateAttr.equals(fromDateValue))
 	{
 		if(TCflag)
@@ -196,7 +202,7 @@ try{
 
 	dateAttr =WebUI.getAttribute(findTestObject('ReportsPage/selectedDate2'),"value")
 
-	String toDateValue =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","toDate8")
+	String toDateValue =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","fromDate")
 	if(!dateAttr.equals(toDateValue))
 	{
 		if(TCflag)
@@ -204,48 +210,38 @@ try{
 		println "to Date is not selected properly"
 		WebUI.takeScreenshot()
 	}
-	
-	
-	'verify include text as None'
-	WebUI.verifyElementText(findTestObject('ReportsPage/includeText'),CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","includeText"))
-
-	'verify format text'
-	WebUI.verifyElementText(findTestObject('ReportsPage/formatText'),CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","formatText"))
 
 
-	//To select the time measure
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('Object Repository/ReportsPage/timeSelection'))
-
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('Object Repository/ReportsPage/weekTimeOption'))
-
-	WebUI.delay(GlobalVariable.MIN_DELAY)
 
 	//Step 3: To verify the options available under Advanced options link
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/Report_advancedoption'))
-	//Step4: To verify that user is able to select from time
+
+
 	boolean opencheckbox=CustomKeywords.'uiaction.CommonUIActions.isEnabled'(findTestObject('ReportsPage/Report_opencheckbox'))
 
 	if(!opencheckbox){
 
-		System.out.println("Open checkbox is checked by default")
+		System.out.println("Open checkbox is checked bydefault")
 	}else{
 		if(TCflag)
 			TCflag=false
-		System.out.println("Open checkbox is not checked by default")
+		System.out.println("Open checkbox is not checked bydefault")
 	}
 
 	boolean closecheckbox=CustomKeywords.'uiaction.CommonUIActions.isEnabled'(findTestObject('ReportsPage/Report_closecheckbox'))
 
 	if(!closecheckbox){
 
-		System.out.println("Close checkbox is checked by default")
+		System.out.println("Close checkbox is checked bydefault")
 	}else{
 		if(TCflag)
 			TCflag=false
-		System.out.println("Close checkbox is not checked by default")
+		System.out.println("Close checkbox is not checked bydefault")
 	}
 
+
+	//Step 4: To verify that user is able to select from time
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/opencheckbox'))
 
@@ -254,6 +250,8 @@ try{
 	WebUI.verifyElementPresent(findTestObject('ReportsPage/advancedoption_am'), 10)
 
 	WebUI.verifyElementPresent(findTestObject('ReportsPage/advanceoptions_pm'), 10)
+
+
 
 	boolean open_am=CustomKeywords.'uiaction.CommonUIActions.isEnabled'(findTestObject('ReportsPage/advancedoption_am'))
 
@@ -278,18 +276,28 @@ try{
 	}
 
 
-	WebUI.delay(GlobalVariable.MED_DELAY)
 	//Step 5: To verify that user is able to set open time
-	
+
+	/* CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advance_options_time'))
+	 CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advance_options_min'))
+	 CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advancedoption_am'))
+	 driver.findElement(By.xpath("(//span[contains(text(),'?')])[3]")).click()
+	 String open_textboxdata= CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('ReportsPage/advance_option_opentextbox'))
+	 if(open_textboxdata=="8:00 am"){
+	 System.out.println("8:00 am time shown ")
+	 }else{
+	 if(TCflag)
+	 TCflag=false
+	 System.out.println("8:00 am time is not showing")
+	 }
+	 */
+
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advanced_openTimeText'))
 	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportsPage/advanced_openTimeText'),"8:00 am")
-
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/tooltip'))
 
+	//Step 6: To verify that user is able to select To time
 	WebUI.delay(GlobalVariable.MED_DELAY)
-
-	
-	//Step6 : To verify that user is able to set open time
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advanceoption_closecheckbox'))
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/Report_closetimepicker'))
@@ -297,7 +305,7 @@ try{
 	WebUI.verifyElementPresent(findTestObject('ReportsPage/advancedoption_am'), 10)
 
 	WebUI.verifyElementPresent(findTestObject('ReportsPage/advanceoptions_pm'), 10)
-	
+
 	boolean close_am=CustomKeywords.'uiaction.CommonUIActions.isEnabled'(findTestObject('ReportsPage/advancedoption_am'))
 
 	if(close_am){
@@ -321,104 +329,37 @@ try{
 	}
 
 
-	WebUI.delay(10)
-	
-	//Step7: To verify that user is able to set open time
+	//Step 7: To verify that user is able to set close time
+
+	/* CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advancedoption_closetimehour'))
+	 CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advance_options_min'))
+	 CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advanceoptions_pm'))
+	 String open_textboxdata1= CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('ReportsPage/advance_option_opentextbox'))
+	 if(open_textboxdata1=="3:00 pm"){
+	 System.out.println("3:00 pm time shown ")
+	 }else{
+	 if(TCflag)
+	 TCflag=false
+	 System.out.println("3:00 pm time is not showing")
+	 }*/
+
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/advanced_openTimeText'))
-	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportsPage/advanced_openTimeText'),"11:00 am")
+	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportsPage/advanced_openTimeText'),"03:00 pm")
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/tooltip'))
 
-	WebUI.delay(GlobalVariable.MED_DELAY)
+	//Step 8: To Generate report
 
-	
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('Object Repository/ReportsPage/timeSelection'))
-
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('Object Repository/ReportsPage/weekTimeOption'))
-
-
-
-	//Step 8: To verify that user will not be able to generate week summary report for more than 1 month
-	'click GenerateReport button'
-	WebUI.click(findTestObject('ReportsPage/generateReport'))
-
-	WebUI.delay(GlobalVariable.LONG_DELAY)
-	
-		
-	String errMessage = CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('ReportsPage/report_failure_alertmsg'))
-	String errMsgText =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","DateErrorMsg")
-	WebUI.verifyMatch(errMessage, errMsgText, false)
-
-	//Step9: To verify that user is able to generate week summary report for maximum of one month
-	if(errMessage==errMsgText){
-	
-	WebUI.delay(GlobalVariable.MED_DELAY)
-	
-	WebUI.click(findTestObject('ReportsPage/toDateSelector'))
-	
-	monthText=WebUI.getText(findTestObject('ReportsPage/monthText2'))
-	monthTextArray= monthText.split(" ")
-	month = monthTextArray[0]
-
-	monthTextValue1=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","Month")
-
-	if(!monthTextValue1.equals(month))
-	{
-		while(!monthTextValue1.equals(month))
-		{
-			WebUI.click(findTestObject('ReportsPage/previousDateSelector2'))
-			monthText=WebUI.getText(findTestObject('ReportsPage/monthText2'))
-			monthTextArray= monthText.split(" ")
-			month = monthTextArray[0]
-
-		}
-
-
-	}
-
-	
-	endDate=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","StartDate")
-
-
-	toDate="(//div[@class='rdt date-time rdtOpen']/div[@class='rdtPicker']/div/table/tbody/tr/td[text()='"+endDate+"'])[1]"
-	toDateEle=driver.findElement(By.xpath(toDate))
-	toDateEle.click()
-
-	WebUI.delay(GlobalVariable.MIN_DELAY)
-
-	dateAttr =WebUI.getAttribute(findTestObject('ReportsPage/selectedDate1'),"value")
-
-	fromDateValue =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","fromDateJan")
-	if(!dateAttr.equals(fromDateValue))
-	{
-		if(TCflag)
-			TCflag=false
-		println "From date is not selected properly"
-		WebUI.takeScreenshot()
-	}
-
-	dateAttr =WebUI.getAttribute(findTestObject('ReportsPage/selectedDate2'),"value")
-
-	toDateValue =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","fromDate")
-	if(!dateAttr.equals(toDateValue))
-	{
-		if(TCflag)
-			TCflag=false
-		println "to Date is not selected properly"
-		WebUI.takeScreenshot()
-	}
-		
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 	'click GenerateReport button'
 	WebUI.click(findTestObject('ReportsPage/generateReport'))
+	WebUI.delay(GlobalVariable.MED_DELAY)
 
-	WebUI.delay(GlobalVariable.LONG_DELAY)
-
-
+	WebUI.delay(GlobalVariable.MED_DELAY)
 	String confirmationText= CustomKeywords.'projectSpecific.Reusability.getTestData'("SummarizedReportPage","confirmationText1")
 	String actualconfirmationText= CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('SummarizedReportPage/emailConfirmation'))
 
-	confirm = WebUI.verifyMatch(confirmationText,actualconfirmationText,false)
+	boolean confirm = WebUI.verifyMatch(confirmationText,actualconfirmationText,false)
 	if(confirm){
 
 		System.out.println("Email Verification received")
@@ -427,45 +368,34 @@ try{
 			TCflag=false
 		System.out.println("Email Verification not received")
 	}
-	}else{
-		if(TCflag)
-		TCflag=false
-		System.out.println("Error Msg is not verified")
-	}
 
-	WebUI.delay(GlobalVariable.MED_DELAY)
-	
+
+	// for deleting created group
+	WebUI.delay(GlobalVariable.MIN_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/welcomeLink'))
-	WebUI.delay(GlobalVariable.MED_DELAY)
-	
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
-	
-	WebUI.delay(GlobalVariable.MED_DELAY)
-	
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
-		 
-	WebUI.delay(GlobalVariable.MED_DELAY)
-	
+	WebUI.delay(GlobalVariable.MIN_DELAY)
 
-	String groupLink= "//span[text()='"+ grpName+ "']"
-	
-	driver.findElement(By.xpath(groupLink)).click()
-	
-	
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
+	WebUI.delay(GlobalVariable.MIN_DELAY)
+
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
+
 	WebUI.delay(GlobalVariable.MED_DELAY)
-	
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/Summarygrp'))
+	WebUI.delay(GlobalVariable.MED_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/deleteBtn'))
 	WebUI.delay(GlobalVariable.MED_DELAY)
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/confirmToDelBtn'))
-
-	
 	WebUI.delay(GlobalVariable.MED_DELAY)
-
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/logoutLink'))
 
-}
-catch(Exception e)
-{
+
+
+
+
+
+
+}catch(Exception e){
 	e.printStackTrace()
 	println "Exception of element not found"
 	if(TCflag)
@@ -473,6 +403,3 @@ catch(Exception e)
 }
 
 assert TCflag==true
-
-
-

@@ -24,26 +24,68 @@ import org.openqa.selenium.WebElement
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.By as By
 import org.openqa.selenium.By.ByXPath
+import java.util.regex.Pattern;
 
 
 boolean TCflag=true
 try{
 	WebUI.navigateToUrl(GlobalVariable.devPublicCloudUrl)
+	WebUI.delay(GlobalVariable.MED_DELAY)
+	WebUI.navigateToUrl(GlobalVariable.devPublicCloudUrl)
 
 	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
+	WebUI.delay(GlobalVariable.LONG_DELAY)
+	WebUI.delay(GlobalVariable.LONG_DELAY)
+
+	//Pre-Condition : To redirect to Group hirerchy page
+	'Click on Stores Link'
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
+
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
+
+	'Click on Add New Group button'
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/addNewGroup'))
+
+	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupNameTxt'), CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","dummyGroupName1"))
+	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupDescTxt'), CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","GroupDesc"))
+
+	WebUI.delay(GlobalVariable.MED_DELAY)
+
+	WebDriver driver = DriverFactory.getWebDriver()
+	List<WebElement> grouplist = driver.findElements(By.xpath("//ul[@class='unlinked-grouplist']/li"))
 	WebUI.delay(GlobalVariable.MIN_DELAY)
 
-	String reportHeaders =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","ReportsColumnHeader")
+	Pattern pattern = Pattern.compile("[0-9]+");
+	int store_count=1;
+	//for(int i=0; i<grouplist.size();i++)
+	for(int i=0; i<20;i++)
+	{
+		println grouplist.get(i).getText()
+		String txt=grouplist.get(i).getText()
+		boolean matched=pattern.matcher(txt).matches()
+		if(matched){
+
+			driver.findElement(By.xpath("(//ul[@class='unlinked-grouplist']/li/label)["+(i+1)+"]")).click()
+			store_count++;
+		}
+	}
+
+	driver.findElement(By.xpath("//button[contains(text(),'>')]")).click()
+
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/saveBtn'))
+	WebUI.delay(GlobalVariable.MIN_DELAY)
+
 
 	'Click on Reports Link'
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('UsersPage/reportsLink'))
 
 	//Step1 : To verify that user is able to select Groups
-	WebUI.delay(GlobalVariable.MIN_DELAY)
-
-	WebDriver driver = DriverFactory.getWebDriver()
-
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/AllStoresCheckbox'))
+	WebUI.delay(GlobalVariable.MED_DELAY)
+	
+	String groupmain=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","dummyGroupName1")
+	driver.findElement(By.xpath("//span[contains(text(),'"+groupmain+"')]/../../../../span[2]")).click()
+	
+	/*CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/AllStoresCheckbox'))
 
 	List<WebElement> storesCheckBoxList = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 4)))
 
@@ -59,20 +101,27 @@ try{
 		if(TCflag)
 			TCflag=false
 		System.out.println("Store checkboxes are unchecked")
-	}
+	}*/
 
-	WebUI.delay(GlobalVariable.MIN_DELAY)
+	WebUI.delay(GlobalVariable.MED_DELAY)
 
 	//To get the Criteria Store List
 
+	WebUI.mouseOver(findTestObject('ReportsPage/mouseOver'))
+
+
+	//List<WebElement> criteriaStoreList=driver.findElements(By.xpath("//div[@class='storesTooltip ']/span"))
+
+
 	List<WebElement> criteriaStoreList = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 15)))
 	List<String> criteriaSTList=new ArrayList<String>();
-	for(int i=1;i<criteriaStoreList.size();i++)
+	for(int i=0;i<criteriaStoreList.size();i++)
 	{
 		String value= criteriaStoreList[i].getText()
+		println value
 		value=value.replace(",","")
 		value=value.trim()
-		criteriaSTList[i-1]=value
+		criteriaSTList[i]=value
 	}
 
 	println criteriaSTList
@@ -254,9 +303,11 @@ try{
 	if(date1.contains(todayDate))
 		println "matched"
 
+		WebUI.delay(GlobalVariable.MIN_DELAY)
 	String firstDateRange =CustomKeywords.'projectSpecific.Reusability.getTestData'("SummarizedReportPage","firstDateRange")
 	WebUI.verifyElementText(findTestObject('SummarizedReportPage/firstWeekDateRange'),firstDateRange)
 
+	WebUI.delay(GlobalVariable.MIN_DELAY)
 	//Step10 : To verify the store names displayed under Store column
 
 	List<WebElement> storeNames = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 9)))
@@ -286,9 +337,23 @@ try{
 	println storeNamesList
 
 	boolean contains=true
+	
+	for(int i=0;i<criteriaSTList.size();i++){
+		
+		
+		if(storeNamesList.contains(criteriaSTList[i])){
+			println "Store names are listed"
+			
+		}else{
+		if(TCflag)
+		TCflag=false
+	println "Store name is not listed"
+		
+		}
+	}
 
-	contains=criteriaSTList.containsAll(storeNamesList)
-	if(!contains)
+	//contains=criteriaSTList.containsAll(storeNamesList)
+	/*if(!contains)
 	{
 		if(TCflag)
 			TCflag=false
@@ -297,7 +362,7 @@ try{
 	}
 	else{
 		println "Store names are listed"
-	}
+	}*/
 
 	//Step 11 'To verify the column headers displayed in the Average Time(min:sec) grid'
 	/* The below column headers will be shown in the grid:
@@ -309,6 +374,7 @@ try{
 	 6. Lane Total
 	 7. Total Cars*/
 
+	String reportHeaders =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","ReportsColumnHeader")
 	String[] reportsArray=reportHeaders.split(',')
 
 	def reportsHeaderList=new ArrayList(Arrays.asList(reportsArray))
@@ -359,9 +425,9 @@ try{
 	for(int totalrows=2;totalrows<reportTotalWeek.size();totalrows++){
 
 		if(reportTotalWeek.get(totalrows).getText().contains("Total Week")){
-			
+
 			totalWeek= driver.findElement(By.xpath("(//table[@class='summaryreport-table']/tbody/tr["+(totalrows+1)+"]/td)[1]")).getText()
-			
+
 			break
 		}else{
 
@@ -386,7 +452,7 @@ try{
 	//Step 14 'To verify that user is able to view weekly report for a single store'
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('SummarizedReportPage/storeFirst'))
-	
+
 	WebUI.delay(GlobalVariable.MED_DELAY)
 
 	String summheadingforSingleStore =CustomKeywords.'projectSpecific.Reusability.getTestData'("SummarizedReportPage","summaryHeading")
@@ -438,7 +504,7 @@ try{
 	//Step 16: To verfiy the column headers displayed in Average Time(min:sec) Grid
 	String avgTimeHeader =CustomKeywords.'projectSpecific.Reusability.getTestData'("SummarizedReportPage","averageTimeHeader")
 	String[] avgTimeHeader1=avgTimeHeader.split(',')
-	
+
 	def avgTimeHeaderExpectedList=new ArrayList(Arrays.asList(avgTimeHeader1))
 	avgTimeHeaderExpectedList.unique()
 	System.out.println(avgTimeHeaderExpectedList)
@@ -490,6 +556,27 @@ try{
 	//Step 19: To verify the CSV file (Pending) from here till 34 steps is pending
 
 
+	//Post-Condition : Deleting the created group
+	
+		CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/welcomeLink'))
+	
+		WebUI.delay(GlobalVariable.MIN_DELAY)
+	
+		'Click on Stores Link'
+		CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
+		WebUI.delay(GlobalVariable.MIN_DELAY)
+	
+		CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
+		WebUI.delay(GlobalVariable.MED_DELAY)
+	
+		CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/groupdummy1'))
+	
+		WebUI.delay(GlobalVariable.MIN_DELAY)
+		CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/deleteBtn'))
+	
+		CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/confirmToDelBtn'))
+	
+		CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/logoutLink'))
 
 }
 catch(Exception e){

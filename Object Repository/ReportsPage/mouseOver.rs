@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>row2BelowWeekHeader</name>
+   <name>mouseOver</name>
    <tag></tag>
-   <elementGuidId>9989a122-8b04-4c42-bb64-6c350eee132c</elementGuidId>
+   <elementGuidId>407218c7-f46c-4f46-802a-9eb32aba7627</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>(//td[@class='timeMeasureColumn show-table-cell'])[2]</value>
+         <value>//span[@class='storesDots']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
