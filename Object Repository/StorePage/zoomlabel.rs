@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id='store-tabs']/ul/li[2]/a</value>
+         <value>//span[text()='ZOOM']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

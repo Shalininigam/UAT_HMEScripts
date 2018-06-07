@@ -29,16 +29,18 @@ import org.openqa.selenium.WebElement
 
 boolean TCflag=true
 try{
-	WebUI.navigateToUrl(GlobalVariable.devPublicCloudUrl)
+	WebUI.navigateToUrl(GlobalVariable.cloud_UATUrl)
 
-	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
+	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","UAT_Username"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","UAT_Password"))
 	WebUI.delay(GlobalVariable.MED_DELAY)
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/welcomeLink'))
 
-	WebUI.delay(GlobalVariable.MIN_DELAY)
+	WebUI.delay(GlobalVariable.MED_DELAY)
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
+	
+	WebUI.delay(GlobalVariable.MED_DELAY)
 
 	WebUI.verifyElementPresent(findTestObject('StorePage/StoreListHeading'), 5)
 

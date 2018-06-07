@@ -1,9 +1,0 @@
-Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
-RegressionSuite,Chrome 66.0.3359.181,,2018-06-04 17:11:57,2018-06-04 17:18:06,6m - 9.298s,PASSED
-,,,,,,
-Test Cases/SummaryReportsTC/HME-Summary Report-04,Chrome 66.0.3359.181,To verify that public admin is able to generate daypart summary report for selected groups/stores for selected duration,2018-06-04 17:11:57,2018-06-04 17:18:06,6m - 8.878s,PASSED
-Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-06-04 17:11:57,2018-06-04 17:12:01,4.246s,PASSED
-Statement - TCflag = true,Chrome 66.0.3359.181,,2018-06-04 17:12:02,2018-06-04 17:12:02,0.001s,PASSED
-Statement - Try,Chrome 66.0.3359.181,,2018-06-04 17:12:02,2018-06-04 17:18:05,6m - 3.565s,PASSED
-Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-06-04 17:18:05,2018-06-04 17:18:05,0.000s,PASSED
-Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-06-04 17:18:05,2018-06-04 17:18:06,0.711s,PASSED

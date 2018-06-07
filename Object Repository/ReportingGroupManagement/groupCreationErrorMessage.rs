@@ -6,13 +6,12 @@
    <elementGuidId>bcb5a737-d34c-40d0-bc25-4d955747a819</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@class='alert alert-danger'] 
-</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[@class='alert alert-danger errors'] 
+</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

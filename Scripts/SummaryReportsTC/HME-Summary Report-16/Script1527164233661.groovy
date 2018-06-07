@@ -63,7 +63,7 @@ try{
 	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupNameTxt'),grpName)
 
 	CustomKeywords.'uiaction.CommonUIActions.enter'(findTestObject('ReportingGroupManagement/groupDescTxt'),
-			CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","GroupDesc"))
+	CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportingGroupManagementPage","GroupDesc"))
 
 
 	WebUI.delay(10)
@@ -172,7 +172,7 @@ try{
 
 	}
 
-	String endDate=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","EndDate7")
+	String endDate=CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","endDate7")
 
 	String toDate="(//div[@class='rdt date-time rdtOpen']/div[@class='rdtPicker']/div/table/tbody/tr/td[text()='"+endDate+"'])[1]"
 
@@ -332,9 +332,9 @@ try{
 	WebUI.delay(GlobalVariable.MED_DELAY)
 
 	
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('Object Repository/ReportsPage/timeSelection'))
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/timeSelection'))
 
-	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('Object Repository/ReportsPage/weekTimeOption'))
+	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportsPage/weekTimeOption'))
 
 
 
@@ -346,7 +346,7 @@ try{
 	
 		
 	String errMessage = CustomKeywords.'uiaction.CommonUIActions.getText'(findTestObject('ReportsPage/report_failure_alertmsg'))
-	String errMsgText =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","DateErrorMsg")
+	String errMsgText =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","errorMsgAdvancedOptionSelection")
 	WebUI.verifyMatch(errMessage, errMsgText, false)
 
 	//Step9: To verify that user is able to generate week summary report for maximum of one month

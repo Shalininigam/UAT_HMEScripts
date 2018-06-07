@@ -1,0 +1,94 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+TestSuiteDemo,Chrome 66.0.3359.181,,2018-06-06 19:22:58,2018-06-06 20:26:12,1h - 3m - 14.057s,FAILED
+,,,,,,
+Test Cases/TimeZoneTC/HME-Browser-Timezone-01,Chrome 66.0.3359.181,To verify that time zone is displayed in EST in Day summary report,2018-06-06 19:22:58,2018-06-06 19:25:00,2m - 2.319s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-06-06 19:22:58,2018-06-06 19:23:03,4.414s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-06-06 19:23:03,2018-06-06 19:23:03,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-06-06 19:23:03,2018-06-06 19:25:00,1m - 56.895s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-06-06 19:25:00,2018-06-06 19:25:00,0.002s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-06-06 19:25:00,2018-06-06 19:25:00,0.719s,PASSED
+,,,,,,
+Test Cases/TimeZoneTC/HME-Browser-Timezone-02,Chrome 66.0.3359.181,To verify that time zone is displayed in EST in Daypart summary report,2018-06-06 19:25:00,2018-06-06 19:26:53,1m - 52.140s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-06-06 19:25:00,2018-06-06 19:25:04,3.682s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-06-06 19:25:04,2018-06-06 19:25:04,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-06-06 19:25:04,2018-06-06 19:26:52,1m - 47.548s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-06-06 19:26:52,2018-06-06 19:26:52,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-06-06 19:26:52,2018-06-06 19:26:53,0.673s,PASSED
+,,,,,,
+Test Cases/TimeZoneTC/HME-Browser-Timezone-03,Chrome 66.0.3359.181,To verify that time zone is displayed in EST in Weekly summary report.,2018-06-06 19:26:53,2018-06-06 19:28:25,1m - 32.107s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-06-06 19:26:53,2018-06-06 19:26:56,3.690s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-06-06 19:26:56,2018-06-06 19:26:56,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-06-06 19:26:56,2018-06-06 19:28:24,1m - 27.545s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-06-06 19:28:24,2018-06-06 19:28:24,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-06-06 19:28:24,2018-06-06 19:28:25,0.671s,PASSED
+,,,,,,
+Test Cases/TimeZoneTC/HME-Account_Setting-Timezone-04,Chrome 66.0.3359.181,To verify that time zone is displayed in CST in Day summary report,2018-06-06 19:28:25,2018-06-06 19:30:48,2m - 23.009s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-06-06 19:28:25,2018-06-06 19:28:28,3.576s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-06-06 19:28:28,2018-06-06 19:28:28,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-06-06 19:28:28,2018-06-06 19:30:47,2m - 18.550s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-06-06 19:30:47,2018-06-06 19:30:47,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-06-06 19:30:47,2018-06-06 19:30:48,0.686s,PASSED
+,,,,,,
+Test Cases/TimeZoneTC/HME-Account_Setting-Timezone-05,Chrome 66.0.3359.181,To verify that time zone is displayed in CST in Daypart summary report,2018-06-06 19:30:48,2018-06-06 19:33:09,2m - 21.558s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-06-06 19:30:48,2018-06-06 19:30:51,3.547s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-06-06 19:30:51,2018-06-06 19:30:51,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-06-06 19:30:51,2018-06-06 19:33:09,2m - 17.091s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-06-06 19:33:09,2018-06-06 19:33:09,0.002s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-06-06 19:33:09,2018-06-06 19:33:09,0.720s,PASSED
+,,,,,,
+Test Cases/TimeZoneTC/HME-Account_Setting-Timezone-06,Chrome 66.0.3359.181,To verify that time zone is displayed in CST in weekly summary report,2018-06-06 19:33:09,2018-06-06 19:34:23,1m - 13.726s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-06-06 19:33:09,2018-06-06 19:33:13,3.482s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-06-06 19:33:13,2018-06-06 19:33:13,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-06-06 19:33:13,2018-06-06 19:34:22,1m - 9.380s,PASSED
+Statement - Catch (Exception e),Chrome 66.0.3359.181,,2018-06-06 19:34:22,2018-06-06 19:34:22,0.011s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-06-06 19:34:22,2018-06-06 19:34:22,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-06-06 19:34:22,2018-06-06 19:34:23,0.677s,PASSED
+,,,,,,
+Test Cases/CreateGroupTC/HME-StoreListPage-01,Chrome 66.0.3359.181,To verify that public admin is able to view Manage report groups button,2018-06-06 19:34:23,2018-06-06 19:35:48,1m - 25.411s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-06-06 19:34:23,2018-06-06 19:34:27,3.589s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-06-06 19:34:27,2018-06-06 19:34:27,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-06-06 19:34:27,2018-06-06 19:35:48,1m - 21.011s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-06-06 19:35:48,2018-06-06 19:35:48,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-06-06 19:35:48,2018-06-06 19:35:48,0.678s,PASSED
+,,,,,,
+Test Cases/CreateGroupTC/HME-StoreListPage-02,Chrome 66.0.3359.181,To verify that Manage Report Groups button is shown based on user's authorization,2018-06-06 19:35:48,2018-06-06 19:39:33,3m - 44.975s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-06-06 19:35:48,2018-06-06 19:35:52,3.877s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-06-06 19:35:52,2018-06-06 19:35:52,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-06-06 19:35:52,2018-06-06 19:39:33,3m - 40.334s,FAILED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-06-06 19:39:33,2018-06-06 19:39:33,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-06-06 19:39:33,2018-06-06 19:39:33,0.632s,PASSED
+,,,,,,
+Test Cases/CreateGroupTC/HME-ReportingGroupManagement-03,Chrome 66.0.3359.181,To verify that public admin is able to view Reporting Group Management screen,2018-06-06 19:39:33,2018-06-06 19:42:09,2m - 35.144s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-06-06 19:39:33,2018-06-06 19:39:37,3.748s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-06-06 19:39:37,2018-06-06 19:39:37,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-06-06 19:39:37,2018-06-06 19:42:08,2m - 30.604s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-06-06 19:42:08,2018-06-06 19:42:08,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-06-06 19:42:08,2018-06-06 19:42:09,0.657s,PASSED
+,,,,,,
+Test Cases/CreateGroupTC/HME-CreateGroup-04,Chrome 66.0.3359.181,To verify that public admin is able to create a group,2018-06-06 19:42:09,2018-06-06 19:58:45,16m - 36.019s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-06-06 19:42:09,2018-06-06 19:42:13,3.982s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-06-06 19:42:13,2018-06-06 19:42:13,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-06-06 19:42:13,2018-06-06 19:58:44,16m - 30.799s,FAILED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-06-06 19:58:44,2018-06-06 19:58:44,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-06-06 19:58:44,2018-06-06 19:58:45,0.945s,PASSED
+,,,,,,
+Test Cases/CreateGroupTC/HME-EditGroup-05,Chrome 66.0.3359.181,To verify that public admin is able to view Manage report groups button,2018-06-06 19:58:45,2018-06-06 20:17:09,18m - 24.725s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-06-06 19:58:45,2018-06-06 19:58:53,8.673s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-06-06 19:58:54,2018-06-06 19:58:54,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-06-06 19:58:54,2018-06-06 20:17:08,18m - 14.728s,FAILED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-06-06 20:17:08,2018-06-06 20:17:08,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-06-06 20:17:08,2018-06-06 20:17:09,0.937s,PASSED
+,,,,,,
+Test Cases/CreateGroupTC/HME-CreateGroup-06,Chrome 66.0.3359.181,To verify that public admin is able to create a parent group,2018-06-06 20:17:09,2018-06-06 20:21:25,4m - 16.063s,PASSED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-06-06 20:17:09,2018-06-06 20:17:16,6.992s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-06-06 20:17:17,2018-06-06 20:17:17,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-06-06 20:17:17,2018-06-06 20:21:25,4m - 8.133s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-06-06 20:21:25,2018-06-06 20:21:25,0.000s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-06-06 20:21:25,2018-06-06 20:21:25,0.687s,PASSED
+,,,,,,
+Test Cases/CreateGroupTC/HME-DeleteGroup-07,Chrome 66.0.3359.181,To verify that public admin is able to delete a group,2018-06-06 20:21:25,2018-06-06 20:26:12,4m - 46.281s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-06-06 20:21:25,2018-06-06 20:21:29,3.874s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-06-06 20:21:30,2018-06-06 20:21:30,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-06-06 20:21:30,2018-06-06 20:26:11,4m - 41.326s,FAILED
+Statement - Catch (Exception e),Chrome 66.0.3359.181,,2018-06-06 20:26:11,2018-06-06 20:26:11,0.003s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-06-06 20:26:11,2018-06-06 20:26:12,0.745s,PASSED

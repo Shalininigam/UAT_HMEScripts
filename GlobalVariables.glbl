@@ -3,22 +3,12 @@
    <description></description>
    <tag></tag>
    <GlobalVariableEntity>
-      <description></description>
-      <initValue>'https://uat.hmedtcloud.com/?pg=Login'</initValue>
-      <name>Superuser_url</name>
+      <description>UAT cloud URL</description>
+      <initValue>'https://uat.hmedtcloud.com'</initValue>
+      <name>cloud_UATUrl</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'https://hme-dev-public-cloud-app.azurewebsites.net/admin'</initValue>
-      <name>SuperAdminUrl</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description>First Build URL</description>
-      <initValue>'https://hme-dev-public-cloud-app.azurewebsites.net/'</initValue>
-      <name>devPublicCloudUrl</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description>delay time</description>
       <initValue>5</initValue>
       <name>MIN_DELAY</name>
    </GlobalVariableEntity>

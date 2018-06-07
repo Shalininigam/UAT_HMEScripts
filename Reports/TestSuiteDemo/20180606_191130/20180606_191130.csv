@@ -1,0 +1,22 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+TestSuiteDemo,Chrome 66.0.3359.181,,2018-06-06 19:11:31,2018-06-06 19:15:34,4m - 2.702s,INCOMPLETE
+,,,,,,
+Test Cases/TimeZoneTC/HME-Browser-Timezone-01,Chrome 66.0.3359.181,To verify that time zone is displayed in EST in Day summary report,2018-06-06 19:11:32,2018-06-06 19:13:21,1m - 49.077s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-06-06 19:11:32,2018-06-06 19:11:36,4.506s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-06-06 19:11:36,2018-06-06 19:11:36,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-06-06 19:11:36,2018-06-06 19:13:20,1m - 43.622s,PASSED
+Statement - Catch (Exception e),Chrome 66.0.3359.181,,2018-06-06 19:13:20,2018-06-06 19:13:20,0.016s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-06-06 19:13:20,2018-06-06 19:13:20,0.003s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-06-06 19:13:20,2018-06-06 19:13:21,0.660s,PASSED
+,,,,,,
+Test Cases/TimeZoneTC/HME-Browser-Timezone-02,Chrome 66.0.3359.181,To verify that time zone is displayed in EST in Daypart summary report,2018-06-06 19:13:21,2018-06-06 19:15:09,1m - 48.334s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-06-06 19:13:21,2018-06-06 19:13:24,3.535s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-06-06 19:13:24,2018-06-06 19:13:25,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-06-06 19:13:25,2018-06-06 19:15:08,1m - 43.814s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-06-06 19:15:08,2018-06-06 19:15:08,0.001s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-06-06 19:15:08,2018-06-06 19:15:09,0.694s,PASSED
+,,,,,,
+Test Cases/TimeZoneTC/HME-Browser-Timezone-03,Chrome 66.0.3359.181,To verify that time zone is displayed in EST in Weekly summary report.,2018-06-06 19:15:09,2018-06-06 19:15:34,24.853s,INCOMPLETE
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-06-06 19:15:09,2018-06-06 19:15:13,3.481s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-06-06 19:15:13,2018-06-06 19:15:13,0.000s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-06-06 19:15:13,2018-06-06 19:15:34,21.183s,INCOMPLETE

@@ -2,6 +2,9 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import org.openqa.selenium.WebDriver
+
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -19,11 +22,19 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.By as By
+import org.openqa.selenium.By.ByXPath
+
 boolean TCflag=true
 try{
-	WebUI.navigateToUrl(GlobalVariable.devPublicCloudUrl)
+	WebUI.navigateToUrl(GlobalVariable.cloud_UATUrl)
+	
+	WebUI.delay(GlobalVariable.LONG_DELAY)
 
-	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","otherUser"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","otherUserPwd"))
+	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","UAT_OtherUser"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","UAT_OtherUserPwd"))
 		
 	WebUI.delay(GlobalVariable.MED_DELAY)
 	
@@ -41,7 +52,9 @@ try{
 	//Manage Report Groups button will not be shown  in store list page
 	
 	WebUI.verifyElementNotPresent(findTestObject('StorePage/ManageLeaderGroupsButton'),5)
+		
 	'To verify that Manage report groups button is visible to the user'
+
 	WebUI.verifyElementNotPresent(findTestObject('StorePage/ManageReportGroupsButtton'),5)
 	
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/engdevLogout'))

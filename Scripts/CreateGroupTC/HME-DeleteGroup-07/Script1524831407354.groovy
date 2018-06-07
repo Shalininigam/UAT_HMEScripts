@@ -28,15 +28,19 @@ import org.openqa.selenium.By.ByXPath
 boolean TCflag=true
 try {
 
-	WebUI.navigateToUrl(GlobalVariable.devPublicCloudUrl)
+	WebUI.navigateToUrl(GlobalVariable.cloud_UATUrl)
+	
+	WebUI.delay(GlobalVariable.LONG_DELAY)
 
-	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
+	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","UAT_Username"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","UAT_Password"))
 
-	WebUI.delay(GlobalVariable.MIN_DELAY)
+	WebUI.delay(GlobalVariable.MED_DELAY)
 
 	//Pre-Condition : To redirect to Group hirerchy page
 	'Click on Stores Link'
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
+	
+	WebUI.delay(GlobalVariable.MED_DELAY)
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
 

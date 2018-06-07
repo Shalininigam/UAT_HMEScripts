@@ -4,7 +4,7 @@
    <name>RegressionSuite</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-06-04T18:35:34</lastRun>
+   <lastRun>2018-06-05T12:01:30</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -14,7 +14,7 @@
    <testCaseLink>
       <guid>e61ed930-6cb2-4cf4-b1e4-86d19a691166</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/SummaryReportsTC/HME-Summary Report-02</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -38,7 +38,7 @@
    <testCaseLink>
       <guid>5bae61b9-edb7-4a38-953b-61c7f534bc48</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/SummaryReportsTC/HME-Summary Report-16</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

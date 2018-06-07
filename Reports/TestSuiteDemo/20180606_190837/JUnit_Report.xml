@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="TestSuiteDemo" time="84" tests="0" failures="1" errors="0">
+   <testsuite name="TestSuiteDemo" tests="0" failures="1" errors="0" time="84" timestamp="2018-06-06 19:08:38" hostname="shalinin - NIBC2129.nousinfo.com" id="Test Suites/TestSuiteDemo">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="C:\\Users\\shalinin\\Katalon Studio\\HME_UAT_TestScripts\\Reports\\TestSuiteDemo\\20180606_190837"/>
+         <property name="logFiles" value="C:\\Users\\shalinin\\Katalon Studio\\HME_UAT_TestScripts\\Reports\\TestSuiteDemo\\20180606_190837\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="shalinin - NIBC2129.nousinfo.com"/>
+         <property name="os" value="Windows 7 64bit"/>
+         <property name="katalonVersion" value="5.3.1.1"/>
+         <property name="browser" value="Chrome 66.0.3359.181"/>
+         <property name="hostAddress" value="10.10.50.72"/>
+         <property name="sessionId" value="ee4202f7245a98c39e0b2a17dbb143ec"/>
+         <property name="seleniumVersion" value="3.7.1"/>
+         <property name="proxyInformation" value="ProxyInformation{proxyOption=NO_PROXY, proxyServerType=HTTP, password=, proxyServerAddress=, proxyServerPort=0}"/>
+         <property name="platform" value="Windows 7"/>
+      </properties>
+      <testcase name="Test Cases/TimeZoneTC/HME-Browser-Timezone-01" classname="Test Cases/TimeZoneTC/HME-Browser-Timezone-01" status="FAILED">
+         <failure type="FAILED" message="org.codehaus.groovy.runtime.powerassert.PowerAssertionError: assert TCflag==true
+       |     |
+       false false"/>
+         <system-out><![CDATA[2018-06-06 19:08:39 - [TEST_CASE][FAILED] - Test Cases/TimeZoneTC/HME-Browser-Timezone-01: Test Cases/TimeZoneTC/HME-Browser-Timezone-01 FAILED because (of) org.codehaus.groovy.runtime.powerassert.PowerAssertionError: assert TCflag==true
+       |     |
+       false false
+
+2018-06-06 19:08:39 - [TEST_STEP][PASSED] - Start listener action : sampleBeforeTestCase: uiaction.CommonUIActions.deleteAllCookies is PASSED
+
+2018-06-06 19:08:39 - [TEST_STEP][PASSED] - openBrowser: Browser is opened with url: ''
+
+2018-06-06 19:08:42 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+2018-06-06 19:08:42 - [TEST_STEP][PASSED] - maximizeWindow: Current window maximized
+
+2018-06-06 19:08:43 - [MESSAGE][PASSED] - Current window maximized
+
+2018-06-06 19:08:43 - [TEST_STEP][PASSED] - uiaction.CommonUIActions.deleteAllCookies: uiaction.CommonUIActions.deleteAllCookies is PASSED
+
+2018-06-06 19:08:43 - [MESSAGE][PASSED] - Delete all cookies successfully
+
+2018-06-06 19:08:43 - [MESSAGE][PASSED] - uiaction.CommonUIActions.deleteAllCookies is PASSED
+
+2018-06-06 19:08:43 - [TEST_STEP][PASSED] - Statement - TCflag = true: null
+
+2018-06-06 19:08:43 - [TEST_STEP][PASSED] - Statement - Try: null
+
+2018-06-06 19:08:43 - [TEST_STEP][PASSED] - navigateToUrl: Navigate to 'https://uat.hmedtcloud.com' successfully
+
+2018-06-06 19:09:01 - [MESSAGE][PASSED] - Navigate to 'https://uat.hmedtcloud.com' successfully
+
+2018-06-06 19:09:01 - [TEST_STEP][PASSED] - projectSpecific.Reusability.login: projectSpecific.Reusability.login is PASSED
+
+2018-06-06 19:09:01 - [MESSAGE][PASSED] - projectSpecific.Reusability.getTestData is PASSED
+
+2018-06-06 19:09:01 - [MESSAGE][PASSED] - projectSpecific.Reusability.getTestData is PASSED
+
+2018-06-06 19:09:02 - [MESSAGE][PASSED] - Text 'swtest01@hme.com' is set on object 'Object Repository/LoginPage/Username'
+
+2018-06-06 19:09:02 - [MESSAGE][PASSED] - Text 'SWTest01' is set on object 'Object Repository/LoginPage/Password'
+
+2018-06-06 19:09:13 - [MESSAGE][PASSED] - Object: 'Object Repository/LoginPage/Login' is clicked on
+
+2018-06-06 19:09:13 - [MESSAGE][PASSED] - projectSpecific.Reusability.login is PASSED
+
+2018-06-06 19:09:13 - [TEST_STEP][PASSED] - delay: Delayed 10 second(s)
+
+2018-06-06 19:09:23 - [MESSAGE][PASSED] - Delayed 10 second(s)
+
+2018-06-06 19:09:23 - [TEST_STEP][PASSED] - Statement - welcomeMsg = CustomKeywords.uiaction.CommonUIActions.getText(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(HomePage/welcomeMessage)): uiaction.CommonUIActions.getText is PASSED
+
+2018-06-06 19:09:23 - [MESSAGE][PASSED] - uiaction.CommonUIActions.getText is PASSED
+
+2018-06-06 19:09:23 - [TEST_STEP][PASSED] - Statement - expactedWelcomeMsg = CustomKeywords.projectSpecific.Reusability.getTestData("HomePage", "welcomeMsg"): projectSpecific.Reusability.getTestData is PASSED
+
+2018-06-06 19:09:23 - [MESSAGE][PASSED] - projectSpecific.Reusability.getTestData is PASSED
+
+2018-06-06 19:09:23 - [TEST_STEP][PASSED] - Statement - If (welcomeMsg.contains(expactedWelcomeMsg)): null
+
+2018-06-06 19:09:23 - [TEST_STEP][PASSED] - Statement - out.println("Welcome message is verified"): null
+
+2018-06-06 19:09:23 - [TEST_STEP][PASSED] - uiaction.CommonUIActions.click: uiaction.CommonUIActions.click is PASSED
+
+2018-06-06 19:09:26 - [MESSAGE][PASSED] - uiaction.CommonUIActions.click is PASSED
+
+2018-06-06 19:09:26 - [TEST_STEP][PASSED] - Statement - storenumber = CustomKeywords.uiaction.CommonUIActions.getText(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(StorePage/storepage_storenumber)): uiaction.CommonUIActions.getText is PASSED
+
+2018-06-06 19:09:27 - [MESSAGE][PASSED] - uiaction.CommonUIActions.getText is PASSED
+
+2018-06-06 19:09:27 - [TEST_STEP][PASSED] - Statement - out.println(" the store number is--" + storenumber.trim()): null
+
+2018-06-06 19:09:27 - [TEST_STEP][PASSED] - uiaction.CommonUIActions.click: uiaction.CommonUIActions.click is PASSED
+
+2018-06-06 19:09:48 - [MESSAGE][PASSED] - uiaction.CommonUIActions.click is PASSED
+
+2018-06-06 19:09:48 - [TEST_STEP][PASSED] - delay: Delayed 10 second(s)
+
+2018-06-06 19:09:58 - [MESSAGE][PASSED] - Delayed 10 second(s)
+
+2018-06-06 19:09:58 - [TEST_STEP][PASSED] - Statement - driver = com.kms.katalon.core.webui.driver.DriverFactory.getWebDriver(): null
+
+2018-06-06 19:09:58 - [TEST_STEP][PASSED] - Statement - driver.findElement(org.openqa.selenium.By.xpath("//span[contains(text(),'" + storenumber.trim() + "')]")).click(): null
+
+2018-06-06 19:09:58 - [TEST_STEP][PASSED] - Statement - Catch (Exception e): null
+
+2018-06-06 19:09:58 - [TEST_STEP][PASSED] - Statement - e.printStackTrace(): null
+
+2018-06-06 19:09:58 - [TEST_STEP][PASSED] - Statement - println("Exception of element not found"): null
+
+2018-06-06 19:09:58 - [TEST_STEP][PASSED] - Statement - If (TCflag): null
+
+2018-06-06 19:09:58 - [TEST_STEP][PASSED] - Statement - assert TCflag == true: null
+
+2018-06-06 19:09:58 - [TEST_STEP][PASSED] - Start listener action : sampleAfterTestCase: Browser is closed
+
+2018-06-06 19:09:58 - [TEST_STEP][PASSED] - Statement - println(testCaseContext.getTestCaseId()): null
+
+2018-06-06 19:09:58 - [TEST_STEP][PASSED] - Statement - println(testCaseContext.getTestCaseStatus()): null
+
+2018-06-06 19:09:58 - [TEST_STEP][PASSED] - closeBrowser: Browser is closed
+
+2018-06-06 19:09:59 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[2018-06-06 19:08:39 - [TEST_CASE][FAILED] - Test Cases/TimeZoneTC/HME-Browser-Timezone-01: Test Cases/TimeZoneTC/HME-Browser-Timezone-01 FAILED because (of) org.codehaus.groovy.runtime.powerassert.PowerAssertionError: assert TCflag==true
+       |     |
+       false false]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/TimeZoneTC/HME-Browser-Timezone-02" classname="Test Cases/TimeZoneTC/HME-Browser-Timezone-02" status="INCOMPLETE">
+         <system-out><![CDATA[2018-06-06 19:09:59 - [TEST_CASE][INCOMPLETE] - Test Cases/TimeZoneTC/HME-Browser-Timezone-02: null
+
+2018-06-06 19:09:59 - [TEST_STEP][INCOMPLETE] - Start listener action : sampleBeforeTestCase: null
+
+2018-06-06 19:09:59 - [TEST_STEP][PASSED] - openBrowser: Browser is opened with url: ''
+
+2018-06-06 19:10:01 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+2018-06-06 19:10:01 - [TEST_STEP][PASSED] - maximizeWindow: Current window maximized
+
+2018-06-06 19:10:02 - [MESSAGE][PASSED] - Current window maximized
+
+2018-06-06 19:10:02 - [TEST_STEP][INCOMPLETE] - uiaction.CommonUIActions.deleteAllCookies: null]]></system-out>
+         <system-err><![CDATA[2018-06-06 19:09:59 - [TEST_CASE][INCOMPLETE] - Test Cases/TimeZoneTC/HME-Browser-Timezone-02: null]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2018-06-06 19:08:38 - [TEST_SUITE][INCOMPLETE] - TestSuiteDemo: null]]></system-out>
+      <system-err><![CDATA[2018-06-06 19:08:38 - [TEST_SUITE][INCOMPLETE] - TestSuiteDemo: null]]></system-err>
+   </testsuite>
+</testsuites>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+   <description></description>
+   <name>HME_UAT_TestScripts</name>
+   <tag></tag>
+   <UUID>82b469b3-3a70-4eb0-9fe6-398a35e058e4</UUID>
+   <pageLoadTimeout>30</pageLoadTimeout>
+</Project>

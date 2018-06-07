@@ -29,14 +29,18 @@ boolean TCflag=true
 
 try{
 
-	WebUI.navigateToUrl(GlobalVariable.devPublicCloudUrl)
+	WebUI.navigateToUrl(GlobalVariable.cloud_UATUrl)
+	
+	WebUI.delay(GlobalVariable.LONG_DELAY)
 
 	'User login to Application'
 
 	WebDriver driver = DriverFactory.getWebDriver()
 
-	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
+	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","UAT_Username"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","UAT_Password"))
 
+	WebUI.delay(GlobalVariable.MED_DELAY)
+	
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/welcomeLink'))
 
 	WebUI.delay(GlobalVariable.MED_DELAY)
@@ -83,7 +87,7 @@ try{
 
 		if(groupHierarchyList.get(i).getText().equals(groupName))
 		{
-			index=i;
+			index=5;
 			break;
 		}
 
@@ -91,7 +95,7 @@ try{
 
 	WebUI.delay(GlobalVariable.MED_DELAY)
 
-	if(index !=0)
+	if(index==5)
 	{
 		println "Group is available in group hierarchy"
 

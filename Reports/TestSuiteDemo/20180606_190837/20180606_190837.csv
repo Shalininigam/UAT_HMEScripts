@@ -1,0 +1,13 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+TestSuiteDemo,Chrome 66.0.3359.181,,2018-06-06 19:08:38,2018-06-06 19:10:02,1m - 24.151s,INCOMPLETE
+,,,,,,
+Test Cases/TimeZoneTC/HME-Browser-Timezone-01,Chrome 66.0.3359.181,To verify that time zone is displayed in EST in Day summary report,2018-06-06 19:08:39,2018-06-06 19:09:59,1m - 20.424s,FAILED
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-06-06 19:08:39,2018-06-06 19:08:43,4.580s,PASSED
+Statement - TCflag = true,Chrome 66.0.3359.181,,2018-06-06 19:08:43,2018-06-06 19:08:43,0.001s,PASSED
+Statement - Try,Chrome 66.0.3359.181,,2018-06-06 19:08:43,2018-06-06 19:09:58,1m - 14.760s,PASSED
+Statement - Catch (Exception e),Chrome 66.0.3359.181,,2018-06-06 19:09:58,2018-06-06 19:09:58,0.021s,PASSED
+Statement - assert TCflag == true,Chrome 66.0.3359.181,,2018-06-06 19:09:58,2018-06-06 19:09:58,0.003s,PASSED
+Start listener action : sampleAfterTestCase,Chrome 66.0.3359.181,,2018-06-06 19:09:58,2018-06-06 19:09:59,0.777s,PASSED
+,,,,,,
+Test Cases/TimeZoneTC/HME-Browser-Timezone-02,Chrome 66.0.3359.181,To verify that time zone is displayed in EST in Daypart summary report,2018-06-06 19:09:59,2018-06-06 19:10:02,3.283s,INCOMPLETE
+Start listener action : sampleBeforeTestCase,Chrome 66.0.3359.181,,2018-06-06 19:09:59,2018-06-06 19:10:02,3.260s,INCOMPLETE

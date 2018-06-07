@@ -29,13 +29,15 @@ boolean TCflag=true
 
 try{
 
-	WebUI.navigateToUrl(GlobalVariable.devPublicCloudUrl)
+	WebUI.navigateToUrl(GlobalVariable.cloud_UATUrl)
 
+	WebUI.delay(GlobalVariable.LONG_DELAY)
+	
 	'User login to Application'
 
 	WebDriver driver = DriverFactory.getWebDriver()
 
-	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
+	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","UAT_Username"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","UAT_Password"))
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/welcomeLink'))
 

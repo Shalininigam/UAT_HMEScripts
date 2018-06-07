@@ -28,15 +28,19 @@ import org.openqa.selenium.By.ByXPath
 
 boolean TCflag=true
 try{
-	WebUI.navigateToUrl(GlobalVariable.devPublicCloudUrl)
+	WebUI.navigateToUrl(GlobalVariable.cloud_UATUrl)
+	
+	WebUI.delay(GlobalVariable.LONG_DELAY)
 
-	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudUsername"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","cloudPassword"))
+	CustomKeywords.'projectSpecific.Reusability.login'(CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","UAT_Username"),CustomKeywords.'projectSpecific.Reusability.getTestData'("HomePage","UAT_Password"))
 
 	WebUI.delay(GlobalVariable.MED_DELAY)
 
 	//Pre-Condition : To redirect to Group hirerchy page
 	'Click on Stores Link'
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('HomePage/storesLink'))
+	
+	WebUI.delay(GlobalVariable.MED_DELAY)
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('StorePage/ManageReportGroupsButtton'))
 
@@ -218,7 +222,7 @@ try{
 	List<WebElement> StoresCBList1 = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 12)))
 	List<WebElement> storesLabel = driver.findElements(By.xpath(findTestData('OR_file').getValue(2, 10)))
 	ArrayList<String> groupStoresList=new ArrayList<String>()
-	ArrayList<String> groupStoresList1=new ArrayList<String>()
+	//ArrayList<String> groupStoresList1=new ArrayList<String>()
 
 	System.out.println(StoresCBList1.size())
 	int  size =StoresCBList1.size()
@@ -229,12 +233,12 @@ try{
 
 	}
 
-	for(int i=0;i<StoresCBList1.size()-10;i++){
+	/*for(int i=0;i<StoresCBList1.size()-10;i++){
 
 		groupStoresList1[i]=storesLabel.get(i).getText()
 
 
-	}
+	}*/
 	System.out.println(groupStoresList)
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/moveToButton'))
@@ -268,6 +272,7 @@ try{
 	//Step 10 : To Save the changes
 
 	CustomKeywords.'uiaction.CommonUIActions.click'(findTestObject('ReportingGroupManagement/saveBtn'))
+	WebUI.delay(GlobalVariable.MED_DELAY)
 	WebUI.verifyElementPresent(findTestObject('ReportingGroupManagement/groupCreatedMsg'), 10)
 
 	WebUI.delay(GlobalVariable.MED_DELAY)
@@ -318,11 +323,11 @@ try{
 		subGroupList[i-1]=childgroup
 	}
 	println subGroupList
-	println groupStoresList1
+	//println groupStoresList1
 
 
 
-	if(subGroupList.containsAll(groupStoresList1))
+	if(subGroupList.containsAll(groupStoresList))
 	{
 		println "Parent group have all the associated stores and groups"
 	}

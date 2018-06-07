@@ -374,7 +374,7 @@ try{
 	 6. Lane Total
 	 7. Total Cars*/
 
-	String reportHeaders =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","ReportsColumnHeader")
+	String reportHeaders =CustomKeywords.'projectSpecific.Reusability.getTestData'("ReportsPage","ReportsColumnHeader1")
 	String[] reportsArray=reportHeaders.split(',')
 
 	def reportsHeaderList=new ArrayList(Arrays.asList(reportsArray))
